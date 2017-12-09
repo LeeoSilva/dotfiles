@@ -164,6 +164,8 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
+new_window 1pixel
+
 bindsym $mod+r mode "resize"
 
 bindsym $mod+Shift+x exec i3lock
