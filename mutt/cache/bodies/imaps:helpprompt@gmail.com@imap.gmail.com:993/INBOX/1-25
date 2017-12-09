@@ -1,0 +1,153 @@
+Delivered-To: helpprompt@gmail.com
+Received: by 10.103.125.208 with SMTP id y199csp609587vsc;
+        Thu, 30 Nov 2017 04:11:56 -0800 (PST)
+X-Received: by 10.46.93.157 with SMTP id v29mr2920436lje.177.1512043915999;
+        Thu, 30 Nov 2017 04:11:55 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1512043915; cv=none;
+        d=google.com; s=arc-20160816;
+        b=N4CUxlsGHU3mOpfM8GSVW6MUgUbtgJsNRfMycGe44zJ7uazxIWLTrxs2N49Q3EtlAo
+         clSevB9IAmekAOrcFTxeHYUhopasbDh9ZIzXnl7pBT179FX46FTp5syrD1QBk3j7GhMw
+         BdG8MocZvQ7yTvlGPfecBs7yT52tUqf9NcSttCWOjstJEtAyrHukhFf5e3qWR8GbLC47
+         UygwvjkBqBy8bAZixHjUsBC0WkTDjt8tZWq0UYL7AtmpEINuywKliUSILz82BqPm3+pS
+         CfgwfL68o4WeLio1tBYAt304GSi2WMOfqtjZEXxLtSkdTiNBgmH4yW+VLo46cO+dwuvQ
+         kSsQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature
+         :arc-authentication-results;
+        bh=qD6cT72eQZOdAvKFDut2aHopdmSCZmK/UpGMn/Zt3+k=;
+        b=lC1XdmNO9GFvPTg7nEp2vZ9UTJQqrcobA9PPKynOTjeBE47abH/gwxMWe4C02Vm/4/
+         PZlqBn6qJ4QlhuOs6+Rb6v2Zd0ltCiB1ORcT/Ty3WLk9ef4fILBZ+/xrRr32W0UgUbiw
+         pVgRH0BGVz60O9SSs/Hf/+VjPJylqC8uhZLSBpbrshz38Vy3hWL4QeyxxUrQ+/4JWRX/
+         SCj6+GWpUnSYuGNP8svdE7liBMO0cnEK2pJqWsWtXhTMtg8Gb0K+uz54h2DTYSBTcYtV
+         pGD/KVu9CipThIAYCR78aRSO9XArCtA+zoXAxmMBBLmxaZBinDwTAqO26WGs9xxSiCEv
+         46AA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@univem-edu-br.20150623.gappssmtp.com header.s=20150623 header.b=vEnCjTmh;
+       spf=pass (google.com: domain of larissachadi@univem.edu.br designates 209.85.220.41 as permitted sender) smtp.mailfrom=larissachadi@univem.edu.br
+Return-Path: <larissachadi@univem.edu.br>
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id e81sor792899ljf.78.2017.11.30.04.11.55
+        for <helpprompt@gmail.com>
+        (Google Transport Security);
+        Thu, 30 Nov 2017 04:11:55 -0800 (PST)
+Received-SPF: pass (google.com: domain of larissachadi@univem.edu.br designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@univem-edu-br.20150623.gappssmtp.com header.s=20150623 header.b=vEnCjTmh;
+       spf=pass (google.com: domain of larissachadi@univem.edu.br designates 209.85.220.41 as permitted sender) smtp.mailfrom=larissachadi@univem.edu.br
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=univem-edu-br.20150623.gappssmtp.com; s=20150623;
+        h=mime-version:from:date:message-id:subject:to;
+        bh=qD6cT72eQZOdAvKFDut2aHopdmSCZmK/UpGMn/Zt3+k=;
+        b=vEnCjTmhclECnIuqrP5dq+XdYyLuabrTWR74mfwCsfs/R4exxM7QwCmrV+pUg8LFt9
+         QNUPlzyWQEeIAXDgt85sIDaqS5NxgVw2YBL/IwQik25OLPTOh7gbJgdHxDKmP0QLRy7F
+         7BUKuXJ/UGUxXGvdFJ8/zRozPQNRreoVl6rNND6nXB+UwkkyKLn+3ryJIUsMaGaBa97Y
+         5T1PP8HOBoH2VQQKSSeuC115v7brJR8vCbqipbG27hKDCAbJueVgbXJFTFPc7rene3Qq
+         FugVL3zF90+XyW0E4aMo78jIG2cl1poFTDPPieeJmw1IRvIbg10why3LoRIxUHhsed/z
+         /plw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:from:date:message-id:subject:to;
+        bh=qD6cT72eQZOdAvKFDut2aHopdmSCZmK/UpGMn/Zt3+k=;
+        b=UqUnjE0J+a4g5g5+KVCds9joxxdye4Zrc53WWItfqZ5KsOYCwnc3+oA3jxRw5cvo7t
+         EFRGb1xBfOmGaREGQg67mPSjBe0tc5s2QDd+7lxQRmoRFgLAIdBHU6yZhCs8Wd0suoSn
+         quiJRgS9t6oVJ4phH9LUcAdvwbiIo8tqcLZWr24MD7wF0ieb37oXcxG4IR/xtY6/JCvF
+         aO/yvt8dkD/e9U16GiPdPnYLrqaAGDz3uSo7aCQYO4qu9gnfhd+fRrf8ta8IVfXU4uQw
+         a8+01A5qeTWPN5cviV8utU1Qam0Xm26WQxPOx5yVeCfdtvO7zWKnbhrYyyZh0xaUzzpz
+         GENQ==
+X-Gm-Message-State: AJaThX7M2uQ27uCZrFpmUdhD4Z5nGujetXBiF3hmAOQDedXks/7YpJD+
+	yy86RjDRcYQ2nZOkxpTRUAZZqbkidpdhywQZJPeLRg==
+X-Google-Smtp-Source: AGs4zMa1e1IHUqM3zfiusDBiYr9da7A0l9JAXhCDFquKjOrembueyWHyUnzgzFYDlG4VnVUckVnCRTTI0BtCaFQhH0w=
+X-Received: by 10.46.2.87 with SMTP id 84mr2968361ljc.0.1512043915335; Thu, 30
+ Nov 2017 04:11:55 -0800 (PST)
+MIME-Version: 1.0
+Received: by 10.25.81.133 with HTTP; Thu, 30 Nov 2017 04:11:54 -0800 (PST)
+From: Larissa Chadi e Silva <larissachadi@univem.edu.br>
+Date: Thu, 30 Nov 2017 10:11:54 -0200
+Message-ID: <CAOE7QZBMs2MW-9NXLDXLv0jccPV2NC92GBfMcqTytT04S0kjxw@mail.gmail.com>
+Subject: =?UTF-8?Q?DOCUMENTA=C3=87=C3=83O_URGENTE_=2D_INNOVASPACE_COWORKING?=
+To: "De: JPKodemux ." <jpcalandrin@gmail.com>
+Content-Type: multipart/alternative; boundary="94eb2c1a16827570dc055f3228d1"
+Bcc: helpprompt@gmail.com
+
+--94eb2c1a16827570dc055f3228d1
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Prezados,
+
+
+Venho por meio desta solicitar, com urg=C3=AAncia, que envie at=C3=A9 o dia=
+ *05/12/17*
+os seguintes documentos:
+
+*Dados para efetiva=C3=A7=C3=A3o do contrato:*
+
+*C=C3=93PIA DOS DOCUMENTOS*
+
+*RG *
+*CPF*
+*COMPROVANTE DE RESIDENCIA*
+
+*De todos os participantes do projeto que est=C3=A3o envolvidos diretamente=
+ no
+projeto e utilizar=C3=A3o o espa=C3=A7o do coworking.*
+
+*Dados para o site:*
+
+
+*LOGOMARCA DO PROJETO (ENVIAR A IMAGEM)*
+*BREVE DESCRI=C3=87=C3=83O DO PROJETO*
+*CONTATO *
+
+
+Desde j=C3=A1 agrade=C3=A7o.
+
+
+Atenciosamente
+
+
+
+,
+--=20
+*Larissa Chadi e Silva *
+*Secretaria Executiva do CIEM*
+*(14) 2105-0834*
+*larissachadi@univem.edu.br <larissachadi@univem.edu.br>*
+*incubadora@univem.edu.br <incubadora@univem.edu.br>*
+
+--94eb2c1a16827570dc055f3228d1
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr">Prezados,=C2=A0<div><br></div><div><br></div><div>Venho po=
+r meio desta solicitar, com urg=C3=AAncia, que envie at=C3=A9 o dia <b><fon=
+t size=3D"4" style=3D"background-color:rgb(255,255,0)">05/12/17</font></b> =
+os seguintes documentos:</div><div><br></div><div><b><u>Dados para efetiva=
+=C3=A7=C3=A3o do contrato:</u></b></div><div><b><br></b></div><div><b style=
+=3D"background-color:rgb(255,255,0)">C=C3=93PIA DOS DOCUMENTOS</b></div><di=
+v><br></div><div><b>RG=C2=A0</b></div><div><b>CPF</b></div><div><b>COMPROVA=
+NTE DE RESIDENCIA</b></div><div><font color=3D"#ff0000"><br></font></div><d=
+iv><u><b><font color=3D"#ff0000">De todos os participantes do projeto que e=
+st=C3=A3o envolvidos diretamente no projeto e utilizar=C3=A3o o espa=C3=A7o=
+ do <i>coworking.</i></font></b></u></div><div><i><br></i></div><div><b><u>=
+Dados para o site:</u></b></div><div><br></div><div><br></div><div><b>LOGOM=
+ARCA DO PROJETO (<span style=3D"background-color:rgb(255,255,0)">ENVIAR A I=
+MAGEM</span>)</b></div><div><b>BREVE DESCRI=C3=87=C3=83O DO PROJETO</b></di=
+v><div><b>CONTATO=C2=A0</b></div><div><br></div><div><br></div><div>Desde j=
+=C3=A1 agrade=C3=A7o.</div><div><br></div><div><br></div><div>Atenciosament=
+e</div><div><br></div><div><br></div><div><br></div><div><div>,=C2=A0</div>=
+-- <br><div class=3D"gmail_signature" data-smartmail=3D"gmail_signature"><d=
+iv dir=3D"ltr"><div><div dir=3D"ltr"><b style=3D"background-color:rgb(243,2=
+43,243)"><font color=3D"#38761d">Larissa Chadi e Silva </font></b><div><b s=
+tyle=3D"background-color:rgb(243,243,243)"><font color=3D"#38761d">Secretar=
+ia Executiva do CIEM</font></b></div><div><b style=3D"background-color:rgb(=
+243,243,243)"><font color=3D"#38761d">(14) 2105-0834</font></b></div><div><=
+b style=3D"background-color:rgb(243,243,243)"><font color=3D"#38761d"><a hr=
+ef=3D"mailto:larissachadi@univem.edu.br" target=3D"_blank">larissachadi@uni=
+vem.edu.br</a></font></b></div><div><b style=3D"background-color:rgb(243,24=
+3,243)"><font color=3D"#38761d"><a href=3D"mailto:incubadora@univem.edu.br"=
+ target=3D"_blank">incubadora@univem.edu.br</a></font></b></div></div></div=
+></div></div>
+</div></div>
+
+--94eb2c1a16827570dc055f3228d1--

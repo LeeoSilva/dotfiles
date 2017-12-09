@@ -1,0 +1,31 @@
+# Email Account
+
+macro index <f4> 'source ~/.config/mutt/HelpPrompt'
+macro index <f5> 'source ~/.config/mutt/EtecMail'
+
+source ~/.config/mutt/muttcol
+source ~/.config/mutt/aliases
+
+set editor="vim -c 'set syntax=mail ft=mail enc=utf-8'
+set text_flowed=yes"
+set menu_scroll=yes
+set editor = "vim"
+set timeout = "5"
+set mail_check = "120"
+
+set date_format = "%d/%m/%I:%M"
+
+set sort = 'threads'
+set sort_aux = 'last-date-received'
+
+set move = no  #Prevents mutt from asking to move read messages to INBOX
+set imap_keepalive = 900
+
+set markers=no # removes the "+" sign from the beginning of wrapped lines
+
+auto_view text/enrichedn
+#alternative_order text/plain text/enriched text/html
+
+# Which Account should be loaded at startup
+source ~/.config/mutt/EtecMail
+#source ~/.config/mutt/HelpPrompt

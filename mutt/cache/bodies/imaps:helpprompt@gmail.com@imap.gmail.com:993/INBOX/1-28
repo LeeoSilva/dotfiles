@@ -1,0 +1,178 @@
+Delivered-To: helpprompt@gmail.com
+Received: by 10.103.125.208 with SMTP id y199csp4091516vsc;
+        Sun, 3 Dec 2017 15:30:44 -0800 (PST)
+X-Received: by 10.157.44.41 with SMTP id f38mr15099080otb.211.1512343844346;
+        Sun, 03 Dec 2017 15:30:44 -0800 (PST)
+ARC-Seal: i=1; a=rsa-sha256; t=1512343844; cv=none;
+        d=google.com; s=arc-20160816;
+        b=mpK+9bpZfSt2SVhdYZp8fVPWCpageziyNzkGzYYthLx8Wmi28//F5s5Y4t+nMlgQy1
+         xQO3rdNQVaaa3kW9int3WWP1ZZXuqtW9dp567ABVssVOO48mRF+xMaRbI6HR4DLc5M+/
+         1na1yTW8FtISL6CjEPEnUAR8ojN/HvW9V13bIPdkBiuhgo42D66k5WOVun4YBHyN97+s
+         bvpsReeTZi2FlB7TxPK/NcCQskmqx9ITfcOaznlEP5ABII6nJbCt9cwjh3MC7gZV0INE
+         37JQqozdnJgG/pIaDHs+YqjuiiZOJTJ6wdNEW/jeb6oIO9KuE8g1jVOnYDtCGh0pzyzA
+         JyDA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:from:subject:message-id:feedback-id:date:mime-version
+         :dkim-signature:arc-authentication-results;
+        bh=m+3SKYCLZszMLlK/Ze4F3PjHDYhAPo2rO67ia+SXRgU=;
+        b=t4XT/VHvLA39P/4BO3bw7IejzraQGieFqkjS74zzveDy7S5amM9JVK5JStuegIdjsN
+         MQ5LmPoPzBIQGocKmJaX5gCOF7sdj/mKSC+gOuABzv0zaZcpa+XBC+Gmb1Qwjas0Jy6R
+         lpj5bh8RhM5u8fVZO4j2plyMX2rt51qMRMhYfAj7fCIE/K5hSSuj5AtWukRwcJhonCP0
+         0+t/KDIBnlwpDUtVE8a4yn2k8qgBj0jEiGWqm1Agw2XkOoi67umOzleII/2n5rmOsmX+
+         vee4f6wvMUD1EQXlbxoqsfbHn/eiwc4HiOojXrXGt0RPWcYNRGmpAYdc100mAuoabSjv
+         69zA==
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@accounts.google.com header.s=20161025 header.b=WkG5qQrj;
+       spf=pass (google.com: domain of 3jikkwggtcp8mn-qdokx9bbntmsr.fnnfkd.bnlgdkooqnlosfl9hk.bnl@gaia.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3JIkkWggTCp8MN-QDOKX9BBNTMSR.FNNFKD.BNLGDKOOQNLOSFL9HK.BNL@gaia.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com
+Return-Path: <3JIkkWggTCp8MN-QDOKX9BBNTMSR.FNNFKD.BNLGDKOOQNLOSFL9HK.BNL@gaia.bounces.google.com>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id i190sor481705oib.189.2017.12.03.15.30.44
+        for <helpprompt@gmail.com>
+        (Google Transport Security);
+        Sun, 03 Dec 2017 15:30:44 -0800 (PST)
+Received-SPF: pass (google.com: domain of 3jikkwggtcp8mn-qdokx9bbntmsr.fnnfkd.bnlgdkooqnlosfl9hk.bnl@gaia.bounces.google.com designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@accounts.google.com header.s=20161025 header.b=WkG5qQrj;
+       spf=pass (google.com: domain of 3jikkwggtcp8mn-qdokx9bbntmsr.fnnfkd.bnlgdkooqnlosfl9hk.bnl@gaia.bounces.google.com designates 209.85.220.69 as permitted sender) smtp.mailfrom=3JIkkWggTCp8MN-QDOKX9BBNTMSR.FNNFKD.BNLGDKOOQNLOSFL9HK.BNL@gaia.bounces.google.com;
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=accounts.google.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=accounts.google.com; s=20161025;
+        h=mime-version:date:feedback-id:message-id:subject:from:to;
+        bh=m+3SKYCLZszMLlK/Ze4F3PjHDYhAPo2rO67ia+SXRgU=;
+        b=WkG5qQrj5qQes3/ALPQmvq8qcJKGkq9Rnu+MVd4yyJNSDYfNvgRMUZpAwFqC4ZUwkq
+         q/XQe1pUzU8eNYG/RzCY/VocJGci0RvJPPwnImWWwWTsUmnPgPZbCS1//hBG/Aza4pim
+         sT3OvlbPO5sMpr+A9plkQhRQWvky/h5ZwW4HJPvuTHwgyHot8gouv8+L2TLgy3NOxC/g
+         rYYVBn2TV70zlanyTWbqjcQybhPPvrrP/XMsGuvovzyeokSmQqeddfPp5H8AtFgiYqF/
+         hHRaQBkOeXexfy/oXslTZ3awmPI7PxOXwSyT9hLHYo7vE/z0k0eooeorRaiSYJt+dNjM
+         oCPw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20161025;
+        h=x-gm-message-state:mime-version:date:feedback-id:message-id:subject
+         :from:to;
+        bh=m+3SKYCLZszMLlK/Ze4F3PjHDYhAPo2rO67ia+SXRgU=;
+        b=SFSwRO+h7lpChdO58EIYemrDR0hwMtm/d2FQV+++GmMnkAZVKFVimIay5aUyPAxc2g
+         S07SilRn1qcHBEY1/rQ4PEPvhozjdWH18uqRn7+rwiwuZiLPc2d8TLwNnny2GPbTuX+J
+         lB+SdUo0daOQUsMBvR/vlGXx4yZrfwvMUmOCQ2/lf9Txl/dsziD+Qxvu22UOeonn8NhD
+         NY6sux+kQBif2zmvZe8NZAKbce2+o6mAt4CAe1YdQrLn2GaqsQ4I2RxchnVv+CgbYfDV
+         Zp6Y9+dP/NvRsNh2WEdsPH0XgfhLZ47NyAqy4ZfzJprIrVngxlWz7YJUDBGwGhj77aX5
+         E8Sg==
+X-Gm-Message-State: AJaThX5DZK1OWzskiVNX3oCJo8/b+iBlrrCnZT3nNH4ATNHsydOi2g11
+	NLaxGEc+wYOb+WyBCr0UC7fqahgNBiby
+X-Google-Smtp-Source: AGs4zMapppn6xAM3BRvgRjR6ym+GHyiYhtr/JnK/0QmU6hNyNVieC4XyB0lG7LQJ9Ot1HS5kRTp7tc0Cqlro/Delqvk1uQ==
+MIME-Version: 1.0
+X-Received: by 10.202.61.138 with SMTP id k132mr8371781oia.26.1512343844195;
+ Sun, 03 Dec 2017 15:30:44 -0800 (PST)
+Date: Sun, 3 Dec 2017 23:30:34 +0000 (UTC)
+X-Notifications: XEAAAACWDE5ScuE5YALGfRYXEcvA
+X-Account-Notification-Type: 28
+Feedback-ID: 28:account-notifier
+Message-ID: <pNvC5Cv5IVBCqECM9mkQGw@notifications.google.com>
+Subject: O acesso a aplicativos menos seguros foi ativado
+From: Google <no-reply@accounts.google.com>
+To: helpprompt@gmail.com
+Content-Type: multipart/alternative; boundary="001a113dd4ca9c906a055f77fd90"
+
+--001a113dd4ca9c906a055f77fd90
+Content-Type: text/plain; charset="UTF-8"; format=flowed; delsp=yes
+Content-Transfer-Encoding: base64
+
+TyBhY2Vzc28gYSBhcGxpY2F0aXZvcyBtZW5vcyBzZWd1cm9zIGZvaSBhdGl2YWRvDQoNCg0KDQpP
+bMOhIEhlbHAsDQpSZWNlbnRlbWVudGUsIHZvY8OqIGFsdGVyb3Ugc3VhcyBjb25maWd1cmHDp8O1
+ZXMgZGUgc2VndXJhbsOnYS4gUG9yIGVzc2UNCm1vdGl2bywgc3VhIENvbnRhIGRvIEdvb2dsZSBo
+ZWxwcHJvbXB0QGdtYWlsLmNvbSBuw6NvIGVzdMOhIG1haXMgcHJvdGVnaWRhDQpwb3IgcGFkcsO1
+ZXMgZGUgc2VndXJhbsOnYSBtb2Rlcm5vcy4NCg0KRXN0ZWphIGNpZW50ZSBkZSBxdWUgYWdvcmEg
+w6kgbWFpcyBmw6FjaWwgaW52YWRpciBzdWEgY29udGEuIEVsYSBwb2RlcsOhDQp2b2x0YXIgYSBz
+ZXIgc2VndXJhIHNlIHZvY8OqIGRlc2ZpemVyIGVzc2EgYWx0ZXJhw6fDo28gYXF1aQ0KPGh0dHBz
+Oi8vbXlhY2NvdW50Lmdvb2dsZS5jb20vbGVzc3NlY3VyZWFwcHM+IGUgYWx0ZXJuYXIgcGFyYSBh
+cGxpY2F0aXZvcw0KZG8gR29vZ2xlLCBjb21vIG8gR21haWwsIHBhcmEgYWNlc3PDoS1sYS4NCg0K
+Kk7Do28gcmVjb25oZWNlIGVzc2EgYXRpdmlkYWRlPyoNClJldmlzZSBzZXVzIGRpc3Bvc2l0aXZv
+cyB1c2Fkb3MgcmVjZW50ZW1lbnRlDQo8aHR0cHM6Ly9hY2NvdW50cy5nb29nbGUuY29tL0FjY291
+bnRDaG9vc2VyP0VtYWlsPWhlbHBwcm9tcHRAZ21haWwuY29tJmNvbnRpbnVlPWh0dHBzOi8vbXlh
+Y2NvdW50Lmdvb2dsZS5jb20vZGV2aWNlLWFjdGl2aXR5P3JmbiUzRDI4JTI2cmZuYyUzRDElMjZl
+aWQlM0QtNDkyNDMzNTQ5MTk1MjY0ODY1NyUyNmV0JTNEMCUyNmFzYWUlM0QyPg0KYWdvcmEuDQpF
+cXVpcGUgZGFzIENvbnRhcyBkbyBHb29nbGUNCg0KDQoNCk7Do28gcmVzcG9uZGEgYSBlc3RlIGUt
+bWFpbC4gUGFyYSB2ZXIgbWFpcyBpbmZvcm1hw6fDtWVzLCB2aXNpdGUgYSBDZW50cmFsIGRlDQpB
+anVkYSBkYXMgQ29udGFzIGRvIEdvb2dsZQ0KPGh0dHBzOi8vc3VwcG9ydC5nb29nbGUuY29tL2Fj
+Y291bnRzL2Fuc3dlci82MDEwMjU1Pi4NCg0KDQoNCkVzdGUgY29tdW5pY2FkbyBkZSBzZXJ2acOn
+byDDqSBvYnJpZ2F0w7NyaW8gZSBmb2kgZW52aWFkbyBwb3IgZS1tYWlsIHBhcmENCmluZm9ybWFy
+IHNvYnJlIGFsdGVyYcOnw7VlcyBpbXBvcnRhbnRlcyBuYSBzdWEgY29udGEgb3Ugbm8gc2V1IHBy
+b2R1dG8gZG8NCkdvb2dsZS4NCg0KwqkgMjAxNyBHb29nbGUgSW5jLiwgMTYwMCBBbXBoaXRoZWF0
+cmUgUGFya3dheSwgTW91bnRhaW4gVmlldywgQ0EgOTQwNDMsIFVTQQ0KZXQ6MjgNCg==
+--001a113dd4ca9c906a055f77fd90
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<html lang=3D"pt"><head><meta name=3D"format-detection" content=3D"date=3Dn=
+o"/><meta name=3D"format-detection" content=3D"email=3Dno"/><style>.awl a {=
+color: #FFFFFF; text-decoration: none;}.abml a {color: #000000; font-family=
+: Roboto-Medium,Helvetica,Arial,sans-serif; font-weight: bold; text-decorat=
+ion: none;}.afal a {color: #b0b0b0; text-decoration: none;}@media screen an=
+d (min-width: 600px) {.v2sp {padding: 6px 30px 0px;} .v2rsp {padding: 0px 1=
+0px;}}</style></head><body style=3D"margin: 0; padding: 0;" bgcolor=3D"#FFF=
+FFF"><table width=3D"100%" height=3D"100%" style=3D"min-width: 348px;" bord=
+er=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr height=3D"32px"></tr><tr a=
+lign=3D"center"><td width=3D"32px"></td><td><table border=3D"0" cellspacing=
+=3D"0" cellpadding=3D"0" style=3D"max-width: 600px;"><tr><td><table width=
+=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"><tr><td align=3D=
+"left"><img width=3D"92" height=3D"32" src=3D"https://www.gstatic.com/accou=
+ntalerts/email/googlelogo_color_188x64dp.png" style=3D"display: block; widt=
+h: 92px; height: 32px;"></td><td align=3D"right"><img width=3D"32" height=
+=3D"32" style=3D"display: block; width: 32px; height: 32px;" src=3D"https:/=
+/www.gstatic.com/accountalerts/email/shield.png"></td></tr></table></td></t=
+r><tr height=3D"16"></tr><tr><td><table bgcolor=3D"#D94235" width=3D"100%" =
+border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"min-width: 332px;=
+ max-width: 600px; border: 1px solid #F0F0F0; border-bottom: 0; border-top-=
+left-radius: 3px; border-top-right-radius: 3px;"><tr><td height=3D"72px" co=
+lspan=3D"3"></td></tr><tr><td width=3D"32px"></td><td style=3D"font-family:=
+ Roboto-Regular,Helvetica,Arial,sans-serif; font-size: 24px; color: #FFFFFF=
+; line-height: 1.25; min-width: 300px;">O acesso a aplicativos menos seguro=
+s foi ativado</td><td width=3D"32px"></td></tr><tr><td height=3D"18px" cols=
+pan=3D"3"></td></tr></table></td></tr><tr><td><table bgcolor=3D"#FAFAFA" wi=
+dth=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=3D"0" style=3D"min-=
+width: 332px; max-width: 600px; border: 1px solid #F0F0F0; border-bottom: 1=
+px solid #C0C0C0; border-top: 0; border-bottom-left-radius: 3px; border-bot=
+tom-right-radius: 3px;"><tr height=3D"16px"><td width=3D"32px" rowspan=3D"3=
+"></td><td></td><td width=3D"32px" rowspan=3D"3"></td></tr><tr><td><table s=
+tyle=3D"min-width: 300px;" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+><tr><td style=3D"font-family: Roboto-Regular,Helvetica,Arial,sans-serif; f=
+ont-size: 13px; color: #202020; line-height: 1.5;padding-bottom: 4px;">Ol=
+=C3=A1 Help,</td></tr><tr><td style=3D"font-family: Roboto-Regular,Helvetic=
+a,Arial,sans-serif; font-size: 13px; color: #202020; line-height: 1.5;paddi=
+ng: 4px 0;">Recentemente, voc=C3=AA alterou suas configura=C3=A7=C3=B5es de=
+ seguran=C3=A7a. Por esse motivo, sua Conta do Google <a>helpprompt@gmail.c=
+om</a> n=C3=A3o est=C3=A1 mais protegida por padr=C3=B5es de seguran=C3=A7a=
+ modernos.<br><br>Esteja ciente de que agora =C3=A9 mais f=C3=A1cil invadir=
+ sua conta. Ela poder=C3=A1 voltar a ser segura se voc=C3=AA desfizer essa =
+altera=C3=A7=C3=A3o <a href=3D"https://myaccount.google.com/lesssecureapps"=
+ style=3D"text-decoration: none; color: #4285F4;" target=3D"_blank">aqui</a=
+> e alternar para aplicativos do Google, como o Gmail, para acess=C3=A1-la.=
+<br><br><b>N=C3=A3o reconhece essa atividade?</b><br>Revise seus <a href=3D=
+"https://accounts.google.com/AccountChooser?Email=3Dhelpprompt@gmail.com&am=
+p;continue=3Dhttps://myaccount.google.com/device-activity?rfn%3D28%26rfnc%3=
+D1%26eid%3D-4924335491952648657%26et%3D0%26asae%3D2" data-meta-key=3D"revie=
+w-devices" style=3D"text-decoration: none; color: #4285F4;" target=3D"_blan=
+k">dispositivos usados recentemente</a> agora.</td></tr><tr><td style=3D"fo=
+nt-family: Roboto-Regular,Helvetica,Arial,sans-serif; font-size: 13px; colo=
+r: #202020; line-height: 1.5; padding-top: 28px;">Equipe das Contas do Goog=
+le</td></tr><tr height=3D"16px"></tr><tr><td><table style=3D"font-family: R=
+oboto-Regular,Helvetica,Arial,sans-serif; font-size: 12px; color: #B9B9B9; =
+line-height: 1.5;"><tr><td>N=C3=A3o responda a este e-mail. Para ver mais i=
+nforma=C3=A7=C3=B5es, visite a <a href=3D"https://support.google.com/accoun=
+ts/answer/6010255" data-meta-key=3D"help" style=3D"text-decoration: none; c=
+olor: #4285F4;" target=3D"_blank">Central de Ajuda das Contas do Google</a>=
+.</td></tr></table></td></tr></table></td></tr><tr height=3D"32px"></tr></t=
+able></td></tr><tr height=3D"16"></tr><tr><td style=3D"max-width: 600px; fo=
+nt-family: Roboto-Regular,Helvetica,Arial,sans-serif; font-size: 10px; colo=
+r: #BCBCBC; line-height: 1.5;"><tr><td><table style=3D"font-family: Roboto-=
+Regular,Helvetica,Arial,sans-serif; font-size: 10px; color: #666666; line-h=
+eight: 18px; padding-bottom: 10px"><tr><td>Este comunicado de servi=C3=A7o =
+=C3=A9 obrigat=C3=B3rio e foi enviado por e-mail para informar sobre altera=
+=C3=A7=C3=B5es importantes na sua conta ou no seu produto do Google.</td></=
+tr><tr height=3D"6px"></tr><tr><td><div style=3D"direction: ltr; text-align=
+: left">&copy; 2017 Google Inc., 1600 Amphitheatre Parkway, Mountain View, =
+CA 94043, USA</div><div style=3D"display: none !important; mso-hide:all; ma=
+x-height:0px; max-width:0px;">et:28</div></td></tr></table></td></tr></td><=
+/tr></table></td><td width=3D"32px"></td></tr><tr height=3D"32px"></tr></ta=
+ble></body></html>
+--001a113dd4ca9c906a055f77fd90--
