@@ -190,7 +190,7 @@ hide_edge_borders both
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3blocks -c ~/dotfiles/i3/i3blocks.conf
+        status_command i3blocks -c /MeuBolso/Codes/dotfiles/i3/i3blocks.conf
 	position top
 	
 	colors {
@@ -207,5 +207,5 @@ bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 800 -opaci
 
 
 exec --no-startup-id compton -f
-exec_always feh --bg-scale ~/dotfiles/wallpaper.jpg
+exec_always feh --bg-scale /MeuBolso/Codes/dotfiles/wallpaper.jpg
 

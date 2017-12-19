@@ -11,7 +11,7 @@ font = Monospace 9
 scrollback_lines = 10000
 search_wrap = true
 micon_name = terminal
-#geometry = 640x480
+geometry = 640x480
 cursor_blink = true
 cursor_shape = block
 browser = firefox
@@ -28,7 +28,7 @@ cursor = #93a1a1
 # colors from color0 to color254 can be set
 color0 = #073642
 color1 = #dc322f
-color2 = #859900
+color2 = #859944
 color3 = #b58900
 color4 = #268bd2
 color5 = #d33682
