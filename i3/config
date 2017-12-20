@@ -143,6 +143,8 @@ assign [class="subl"] $ws3
 
 
 assign [class="steam" floating="true"] $ws6
+assign [class="Lutris" floating="true"] $ws6
+
 assign [class="Spotify"] $ws4
 
 # reload the configuration file
