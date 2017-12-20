@@ -142,10 +142,33 @@ assign [class="Atom"] $sw3
 assign [class="subl"] $ws3
 
 
-assign [class="steam" floating="true"] $ws6
-assign [class="Lutris" floating="true"] $ws6
+assign [class="steam"] $ws6
+assign [class="Lutris"] $ws6
 
 assign [class="Spotify"] $ws4
+
+
+
+# Open specific applications in floating mode
+for_window [title="steam"] floating enable
+for_window [title="Lutris"] floating enable
+for_window [title="alsamixer"] floating enable border pixel 2
+for_window [title="tty-clock"] floating enable border pixel 2
+for_window [class="Clipgrab"] floating enable
+for_window [title="File Transfer*"] floating enable
+for_window [class="Galculator"] floating enable border pixel 2
+for_window [class="GParted"] floating enable border normal
+for_window [class="Lxappearance"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [class="(?i)System-config-printer.py"] floating enable border normal
+for_window [class="(?i)virtualbox"] floating enable border normal
+for_window [class="net-minecraft-bootstrap-Bootstrap"] floating enable
+for_window [class="Minecraft 1.7.10"] floating enable
+for_window [class="Transmission-gtk"] floating enable
+for_window [class="Vlc"] floating enable border pixel 2
+for_window [class="Arista-gtk"] floating enable border pixel 2
+
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload

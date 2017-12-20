@@ -73,7 +73,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-source $HOME/dotfiles/zsh/prompt.sh
+source /MeuBolso/Codes/dotfiles/zsh/prompt.sh
+source /MeuBolso/Codes/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
@@ -104,3 +105,4 @@ source $HOME/dotfiles/zsh/prompt.sh
  alias zshconfig="mate ~/.zshrc"
  alias ohmyzsh="mate ~/.oh-my-zsh"
 alias ls='ls --color=auto'
+source /MeuBolso/Codes/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
