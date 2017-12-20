@@ -11,7 +11,7 @@ font = Monospace 9
 scrollback_lines = 10000
 search_wrap = true
 micon_name = terminal
-geometry = 640x480
+geometry = 640x720
 cursor_blink = true
 cursor_shape = block
 browser = firefox
@@ -26,19 +26,29 @@ cursor = #93a1a1
 #highlight = #839496
 
 # colors from color0 to color254 can be set
-color0 = #073642
-color1 = #dc322f
-color2 = #859944
-color3 = #b58900
-color4 = #268bd2
-color5 = #d33682
-color6 = #2aa198
-color7 = #eee8d5
-color8 = #839496
-color9 = #cb4b16
-color10 = #586e75
+color0  = #073642
+color1  = #dc322f
+
+# +rwx background color
+color2  = #8589FF
+
+
+color3  = #b58900
+color4  = #268bd2c
+color5  = #d33682
+color6  = #2aa198
+color7  = #eee8d5
+color8  = #839496
+color9  = #cb4b16
+
+#color10 = #586e75
+color10 = #00FF50
+
 color11 = #657b83
-color12 = #839496
+
+#color12 = #839496
+color12  = #00FF10
+
 color13 = #6c71c4
 color14 = #93a1a1
 color15 = #fdf6e3
