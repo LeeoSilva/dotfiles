@@ -138,7 +138,7 @@ assign [class="TelegramDesktop"] $ws5
 
 # Text-Editor / IDEs
 assign [class="code"] $ws3
-assign [class="Atom"] $sw3
+assign [class="Atom"] $ws3
 assign [class="subl"] $ws3
 
 
