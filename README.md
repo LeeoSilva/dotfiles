@@ -20,5 +20,5 @@ My personal workflow settings.
 
 ## Dependencies:
 
-+ !['https://github.com/haikarainen/light'](Light)
++ ![Light]('https://github.com/haikarainen/light')
 
