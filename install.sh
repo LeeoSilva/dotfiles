@@ -2,11 +2,14 @@
 
 # Self-Explanatory name '-'
 
+
 echo "Installing...";
-cp -f conky/conky.conf /home/$USER/.conky.conf;
-cp -f htop/htoprc /home/$USER/.config/htop/htoprc;
-cp -f termite/config /home/$USER/.config/termite/config;
-cp -f tmux/tmux.conf /home/$USER/.tmux.conf;
-cp -f vim/vimrc /home/$USER/.vimrc;
-cp -f zsh/zshrc /home/$USER/.zshrc;
+cp -uvf compton/compton.conf /home/$USER/.config/compton.conf
+cp -uvf conky/conky.conf /home/$USER/.conky.conf;
+cp -uvf htop/htoprc /home/$USER/.config/htop/htoprc;
+cp -uvf termite/config /home/$USER/.config/termite/config;
+cp -uvf tmux/tmux.conf /home/$USER/.tmux.conf;
+cp -uvf vim/vimrc /home/$USER/.vimrc;
+cp -uvf zsh/zshrc /home/$USER/.zshrc;
+cp -uvf ranger/* /home/$USER/.config/ranger/
 echo "Installed";

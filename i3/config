@@ -208,6 +208,25 @@ bindsym $mod+r mode "resize"
 bindsym $mod+Shift+x exec i3lock
 
 
+# Function buttons
+## Not actual funtions buttons
+## But $mod + function,,,
+## I personally think its better and
+## more formal to use the mod key
+## for live configuring some settings.
+
+#bindsym $mod+F1
+bindsym $mod+F2 exec light -U 10 
+bindsym $mod+F3 exec light -A 10
+#bindsym $mod+F4
+#bindsym $mod+F5
+bindsym $mod+F6 exec amixer set Master -q toggle
+bindsym $mod+F7 exec amixer set Master 10%-
+bindsym $mod+F8 exec amixer set Master 10%+
+bindsym $mod+F9 exec light -S 0 
+#bindsym $mod+F10
+#bindsym $mod+F11
+#bindsym $mod+F12
 
 set $bg-color 	         #2f343f
 set $inactive-bg-color   #2f343f
@@ -246,4 +265,4 @@ bindsym $mod+d exec --no-startup-id rofi -show run -lines 3 -eh 2 -width 100 -pa
 exec --no-startup-id compton -f
 exec --no-startup-id ./opt/Telegram/Telegram
 exec_always --no-startup-id feh --bg-scale /MeuBolso/Codes/dotfiles/wallpaper.jpg
-
+exec_always --no-startup-id unclutter -idle 2 -root
