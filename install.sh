@@ -4,6 +4,8 @@
 
 
 echo "Installing...";
+cp -uvf fonts/* /home/$USER/.fonts/
+cp -uvf i3/config /home/$USER/.config/i3/config
 cp -uvf compton/compton.conf /home/$USER/.config/compton.conf
 cp -uvf conky/conky.conf /home/$USER/.conky.conf;
 cp -uvf htop/htoprc /home/$USER/.config/htop/htoprc;
