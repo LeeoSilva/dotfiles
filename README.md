@@ -22,4 +22,9 @@ My personal workflow settings.
 
 + [Light](https://github.com/haikarainen/light)
 + [Oh My ZSH](https://github.com/robbyrussell/oh-my-zsh)
++ [feh](https://github.com/derf/feh)
++ [rofi](https://github.com/DaveDavenport/rofi)
++ [compton](https://github.com/chjj/compton)
++ [unclutter](https://github.com/Airblader/unclutter-xfixes)
+
 
