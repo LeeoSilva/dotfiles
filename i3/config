@@ -271,4 +271,5 @@ bindsym $mod+d exec --no-startup-id rofi -show run -lines 3 -eh 2 -width 100 -pa
 exec --no-startup-id compton -f
 exec --no-startup-id ./opt/Telegram/Telegram
 exec_always --no-startup-id feh --bg-scale /MeuBolso/Codes/dotfiles/wallpaper.jpg
-exec_always --no-startup-id unclutter -idle 2 -root
+exec_always --no-startup-id unclutter --ignore-scrolling -idle 2 -root
+exec --no-startup-id conky

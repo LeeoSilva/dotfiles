@@ -22,13 +22,13 @@ xftfont caviar dreams:size=10
 xftalpha 0.5
 uppercase no
 
-gap_x 40
+gap_x 55
 gap_y 70
 minimum_size 300 900
-maximum_width 350
+maximum_width 410
 
 own_window yes
-own_window_type normal
+own_window_type override
 own_window_transparent yes
 own_window_argb_visual yes
 own_window_argb_visual yes
@@ -61,22 +61,22 @@ TEXT
 # Header and System info
 #
 ${color4}┌────────────────────┐
-│${offset 5}${font Monospace:normal:size=10}${color5}SYSTEM: $nodename${offset 3}${color4}   ├────────────────────┐
-├────────────────────┘                    
-│${offset 15}${font Monospace:normal:size=10}${color5}Architecture: ${color4}ARCH LINUX $kernel   
-│${offset 15}${font Monospace:normal:size=10}${color5}Local Time: ${color4}$time${offset 9}──┘ $alignr                
-│${offset 15}${font Monospace:normal:size=10}${color5}UpTime: ${color4}$uptime${offset 9}────────┘ $alignr                
-└───┬─────────────────────────────────────┘
+│${offset 5}${font Monospace:normal:size=10}${color5}SYSTEM: $nodename${offset 3}${color4}  ├────────────────────────────┐
+├────────────────────┘
+│${offset 15}${font Monospace:normal:size=10}${color5}Architecture: ${color4}ARCH LINUX $kernel
+│${offset 15}${font Monospace:normal:size=10}${color5}Local Time: ${color4}$time${offset 9}──┘ $alignr
+│${offset 15}${font Monospace:normal:size=10}${color5}UpTime: ${color4}$uptime${offset 9}────────┘ $alignr
+└───┬─────────────────────────────────────────────┘
 #
 # Showing CPU/Mem/Disk info
 #
 ${offset 32}│
- ┌──┴─────────────────────────────────────┐
+ ┌──┴─────────────────────────────────────────────┐
 ┌┤ ${color5}CPU USAGE: $alignr${color2}$cpu% ${color4}
 ││ ${color5}MEM: $alignr${color2}$mem / $memmax ${color4}
 ││ ${color5}Swap Usage:$alignr${color2} $swap${color2}/${color2}$swapmax - $swapperc% ${color4}
 ││ ${color5}Disk I/O: $alignr${color2}${diskio}${color4}
-│└────────────────────────────────────────┘
+│└────────────────────────────────────────────────┘
 │
 ├── ${font Ubuntu:normal:size=9}${color2}Intel Core i3 ${alignr}${freq_g cpu0}GHz - ${if_existing /sys/class/hwmon/hwmon0/temp1_input}${hwmon 0 temp 1}°C${else}${if_existing /sys/class/hwmon/hwmon1/temp1_input}${hwmon 1 temp 1}°C${else}temp not detected${endif}{else}temp not detected${endif}${if_existing /sys/class/hwmon/hwmon1/temp2_input} ${color4}
 ├── ${font Ubuntu:normal:size=9}${color2}Intel HD Graphics 5500${alignr}${hwmon 1 temp 2}°C${else} - GPU temp not detected${endif}${color4}
@@ -94,25 +94,33 @@ ${color4}│${font Monospace:normal:size=10}${color4}    └───── ${fo
 # Detects which network interface you are currently using
 #
 ${color4}└───┐
-${if_existing /proc/net/route enp2s0}${color4} ┌──┴─────┐ 
+${if_existing /proc/net/route enp2s0}${color4} ┌──┴─────┐
 ${color4} │ ${color5}enp2s0${color4} │
-${color4} └─┬──────┘  
-${color4}   │ 
-${color4}   ├────── ${color5}Local IP: ${color2}${alignr}${addr enp2s0}
+${color4} └─┬──────┘
+${color4}   │
+${color4}   ├────── ${color5}Active Interface ${color2}${alignr}$gw_iface
+${color4}   ├────── ${color5}Local IP: ${color2}${alignr}${addr enp20}
 ${color4}   ├────── ${color5}Public IP: ${color2}${alignr}${exec curl -s www.icanhazip.com}
-${color4}   │ └───── ${color5}Down/Up $alignr${color2} ${downspeedf enp2s0}/s ${upspeed enp2s0}/s
-${color4}   │  └───── ${color5}Downloaded: ${color2}$alignr${totaldown enp2s0}
-${color4}   │   └───── ${color5}Uploaded: ${color2}$alignr${totalup enp2s0}
+${color4}   ├────── ${color5}Firewall ${alignr}${exec systemctl status ufw | grep active | cut -c 11-27}
+${color4}   ├────── ${color5}Packets $alignr In:${tcp_portmon 1 32767 count}  Out: ${tcp_portmon 32768 61000 count}
+${color4}   │ └───── ${color5}Down/Up $alignr${color2} ${downspeedf enp20}/s ${upspeed enp20}/s
+${color4}   │  └───── ${color5}Downloaded: ${color2}$alignr${totaldown enp20}
+${color4}   │   └───── ${color5}Uploaded: ${color2}$alignr${totalup enp20}
 ${color4}   │    └───── ${color5}Signal: ${color2}${alignr}Cable
-${color4}   └──────────────────────────────────────┘
-${else if_existing /proc/net/route wlp1s0}${color4} ┌──┴─────┐ 
+${color4}       └───── ${downspeedgraph enp20 70,230  000000 ff0000} ${alignr}${upspeedgraph enp20 70,230 000000 00ff00}
+${else if_existing /proc/net/route wlp1s0}${color4} ┌──┴─────┐
 ${color4} │ ${color5}wlp1s0${color4} │
-${color4} └─┬──────┘  
-${color4}   │ 
+${color4} └─┬──────┘
+${color4}   │
+${color4}   ├────── ${color5}Active Interface ${color2}${alignr}$gw_iface
 ${color4}   ├────── ${color5}Local IP: $color2$alignr${addr wlp1s0}
 ${color4}   ├────── ${color5}Public IP: ${color2}${alignr}${exec curl -s www.icanhazip.com}
+${color4}   ├────── ${color5}Firewall ${color2}${alignr}${exec systemctl status ufw | grep active | cut -c 11-27}
+${color4}   ├────── ${color5}Packets ${color2}${alignr} In:${tcp_portmon 1 32767 count}  Out: ${tcp_portmon 32768 61000 count}
 ${color4}   │ └───── ${color5}Down/Up $alignr${color2} ${downspeed wlp1s0}/s ${upspeed wlp1s0}/s
 ${color4}   │  └───── ${color5}Downloaded: ${color2}$alignr${totaldown wlp1s0}
 ${color4}   │   └───── ${color5}Uploaded: ${color2}$alignr${totalup wlp1s0}
-${color4}   │    └───── ${color5}Signal: ${color2}${alignr}${wireless_link_qual_perc wlp1s0}
-${color4}   └──────────────────────────────────────┘${endif}
+${color4}   ┴    └───── ${color5}Signal: ${color2}${alignr}${wireless_link_qual_perc wlp1s0}
+${downspeedgraph wlp1s0 70,230  000000 ff0000} ${alignr}${upspeedgraph wlp1s0 70,230 000000 00ff00}
+${endif}
+${color5}${font xirod:size=13}PACMAN LOG $color4${hr 2}$color2 ${font Monospace:normal:size=9}${execi 30 tail -n10 /var/log/pacman.log}
