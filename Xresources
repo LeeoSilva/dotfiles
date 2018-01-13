@@ -1,0 +1,74 @@
+! URxvt config
+
+!URxvt*font:			-misc-tamzen-medium-*-*-*-15-*-*-*-*-*-*-*,-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
+!URxvt*font:			-*-gohufont-medium-*-*-*-11-*-*-*-*-*-*-*,-wuncon-siji-medium-r-normal--10-100-75-75-c-80-iso10646-1
+
+URxvt.font:          		xft:Monospace:size=9
+URxvt.scrollBar: 		false
+URxvt.internalBorder: 		3
+URxvt*geometry: 		120x32
+URxvt.cursorBlink: 		true
+URxvt.urlLauncher:      	chromium
+URxvt*iso14755:			false
+URxvt.iso14755_52:     		false
+!URxvt.transparent:		true
+
+URxvt*depth:			32
+
+! Without transparency
+URxvt*background:		rgba:0000/0000/0000/cccc
+!URxvt*background:		#000000
+URxvt*foreground:               #dfdfdf
+URxvt*cursorColor:              #dfdfdf
+
+URxvt*scrollColor:              #dfdfdf
+URxvt*highlightColor:           #0d9ba5
+URxvt*highlightTextColor:       #ffffff
+
+URxvt*color0:                   #1a1a1a
+URxvt*color1:                   #e4442b
+URxvt*color2:                   #5dad35
+URxvt*color3:                   #fcb910
+URxvt*color4:                   #1b7fc6
+URxvt*color5:                   #7e43a7
+URxvt*color6:                   #0d9ba5
+URxvt*color7:                   #cacaca
+URxvt*color8:                   #606060
+URxvt*color9:                   #ff6051
+URxvt*color10:                  #95d861
+URxvt*color11:                  #ffd050
+URxvt*color12:                  #7fd1ef
+URxvt*color13:                  #e0a8d9
+URxvt*color14:                  #7cd6d1
+URxvt*color15:                  #eeeeee
+
+URxvt*color16:                  #db7b55
+URxvt*color17:                  #8a553f
+URxvt*color18:                  #8ec43d
+URxvt*color19:                  #3B758C
+URxvt*color20:                  #43a5d5
+URxvt*color21:                  #eeeeee
+
+! URxvt Controlls
+URxvt.keysym.C-S-0x43: eval:selection_to_clipboard
+URxvt.keysym.C-S-0x56: eval:paste_clipboard
+
+
+
+! == Rofi settings == !
+! 
+!                       'background', 'border', 'dividing line'
+rofi.color-window:	    #2E3440, #D8DEE9, #D8DEE9
+!                       'bg',   'fg'    'bgalt'   'hlbg'   'hlfg'
+rofi.color-normal:	    #2E3440, #D8DEE9, #2E3440, #5E81AC, #2E3440
+rofi.color-active:	    #D8DEE9, #5E81AC, #00000000, #D8DEE9, #000000
+rofi.color-urgent:	    #D8DEE9, #5E81AC, #00000000, #D8DEE9, #000000
+
+rofi.font:              Monaco 14
+rofi.fullscreen:        false
+rofi.padding:           300
+rofi.lines:             10
+rofi.bw:                4
+rofi.case-sensitive:    false
+rofi.dpi:               1
+rofi.hide-scrollbar:    true

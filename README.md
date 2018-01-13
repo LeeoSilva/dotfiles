@@ -26,5 +26,6 @@ My personal workflow settings.
 + [rofi](https://github.com/DaveDavenport/rofi)
 + [compton](https://github.com/chjj/compton)
 + [unclutter](https://github.com/Airblader/unclutter-xfixes)
-
-
++ [pulseaudio](https://www.freedesktop.org/wiki/Software/PulseAudio/Download)
++ [dunst](https://github.com/dunst-project/dunst)
++ [udiskie (It's optional actually)](https://github.com/coldfix/udiskie)
