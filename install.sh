@@ -1,17 +1,30 @@
 #!/bin/bash
 
 # Self-Explanatory name '-'
-
+COMPTON="/home/$USER/.config/compton.conf";
+CONKY="/home/$USER/.conkyrc";
+DUNST="/home/leonardo/.config/dunst/dunstrc";
+FONTS="/home/$USER/.fonts/*";
+HTOP="/home/$USER/.config/htop/htoprc";
+I3="/home/$USER/.config/i3/config";
+POLYBAR="/home/$USER/.config/polybar/config";
+RANGER="/home/$USER/.config/ranger/*";
+TERMITE="/home/$USER/.config/termite/config";
+TMUX="/home/$USER/.tmux.conf";
+VIM="/home/$USER/.vimrc";
+ZSH="/home/$USER/.zshrc";
 
 echo "Installing...";
-cp -uvf fonts/* /home/$USER/.fonts/
-cp -uvf i3/config /home/$USER/.config/i3/config
-cp -uvf compton/compton.conf /home/$USER/.config/compton.conf
-cp -uvf conky/conky.conf /home/$USER/.conky.conf;
-cp -uvf htop/htoprc /home/$USER/.config/htop/htoprc;
-cp -uvf termite/config /home/$USER/.config/termite/config;
-cp -uvf tmux/tmux.conf /home/$USER/.tmux.conf;
-cp -uvf vim/vimrc /home/$USER/.vimrc;
-cp -uvf zsh/zshrc /home/$USER/.zshrc;
-cp -uvf ranger/* /home/$USER/.config/ranger/
+cp -uvf fonts/* $FONTS;
+cp -uvf i3/config $I3;
+cp -uvf dunst/dunstrc $DUNST
+cp -uvf compton/compton.conf $COMPTON;
+cp -uvf conky/conky.conf $CONKY;
+cp -uvf htop/htoprc $HTOP;
+cp -uvf termite/config $TERMITE;
+cp -uvf tmux/tmux.conf $TMUX;
+cp -uvf vim/vimrc $VIM;
+cp -uvf zsh/zshrc $ZSH;
+cp -uvf ranger/* $RANGER;
+cp -uvf polybar/config $POLYBAR;
 echo "Installed";
