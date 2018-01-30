@@ -68,10 +68,10 @@ modules-left = i3 cpu memory
 modules-center = date 
 modules-right = mpd wlan eth volume battery
 
-;tray-position = right
+tray-position = right
 tray-padding = 5
-;tray-transparent = true
-;tray-background = #121212
+#tray-transparent = true
+tray-background = ${colors.background}
 
 
 ;wm-restack = bspwm

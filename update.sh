@@ -15,6 +15,8 @@ TERMITE="/home/$USER/.config/termite/config";
 TMUX="/home/$USER/.tmux.conf";
 VIM="/home/$USER/.vimrc";
 ZSH="/home/$USER/.zshrc";
+NCMPCPP="/home/$USER/.ncmpcpp/config";
+MPD="/home/$USER/.config/mpd/mpd.conf";
 
 echo "Updating...";
 cp -uvf $COMPTON /MeuBolso/Codes/dotfiles/compton/compton.conf;
@@ -29,4 +31,6 @@ cp -uvf $RANGER /MeuBolso/Codes/dotfiles/ranger/;
 cp -uvf $POLYBAR /MeuBolso/Codes/dotfiles/polybar/;
 cp -uvf $FONTS /MeuBolso/Codes/dotfiles/fonts/;
 cp -uvf $DUNST /MeuBolso/Codes/dotfiles/dunst/;
+cp -uvf $NCMPCPP /MeuBolso/Codes/dotfiles/ncmpcpp/;
+cp -uvf $MPD /MeuBolso/Codes/dotfiles/mpd/;
 echo "Updated!";

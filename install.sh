@@ -13,9 +13,13 @@ TERMITE="/home/$USER/.config/termite/config";
 TMUX="/home/$USER/.tmux.conf";
 VIM="/home/$USER/.vimrc";
 ZSH="/home/$USER/.zshrc";
+NCMPCPP="/home/$USER/.ncmpcpp/config";
+MPD="/home/$USER/.config/mpd/mpd.conf";
 
 echo "Installing...";
 cp -uvf fonts/* $FONTS;
+cp -uvf ncmpcpp/config $NCMPCPP;
+cp -ucf mpd/mpd.conf $MPD;
 cp -uvf i3/config $I3;
 cp -uvf dunst/dunstrc $DUNST
 cp -uvf compton/compton.conf $COMPTON;
