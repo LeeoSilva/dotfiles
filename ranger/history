@@ -3,3 +3,8 @@ map r bulkrename
 open_with 
 open_with dwijdawoij
 open_with bulkrename
+search K.Flay
+search K.fla
+search Valesco
+rename Vanic x K.Flay - Can't Sleep.mp3
+delete Vanic

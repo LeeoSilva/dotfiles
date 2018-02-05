@@ -102,9 +102,9 @@ assign [class="Firefox"] $ws1
 assign [class="Chromium"] $ws1
 assign [class="Google-chrome"] $ws1
 assign [class="Opera"] $ws1
+assign [class="qutebrowser"] $ws1
 
-
-
+# Chat
 assign [class="TelegramDesktop"] $ws5
 
 # Text-Editor / IDEs
@@ -112,10 +112,11 @@ assign [class="code"] $ws3
 assign [class="Atom"] $ws3
 assign [class="subl"] $ws3
 
-
+# Game lib
 assign [class="steam"] $ws6
 assign [class="Lutris"] $ws6
 
+# Music
 assign [class="Spotify"] $ws4
 
 # Games
