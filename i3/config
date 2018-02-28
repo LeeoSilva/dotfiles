@@ -106,6 +106,7 @@ assign [class="qutebrowser"] $ws1
 
 # Chat
 assign [class="TelegramDesktop"] $ws5
+assign [class="discord"] $ws5
 
 # Text-Editor / IDEs
 assign [class="code"] $ws3
