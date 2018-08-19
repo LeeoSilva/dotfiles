@@ -73,8 +73,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-source /home/$USER/Codes/dotfiles/zsh/prompt.sh
-source /home/$USER/Codes/dotfiles/zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/prompt.sh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
@@ -108,6 +108,5 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/MeuBolso/Songs/%(title)s.%(ext)s"' 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-source /home/$USER//Codes/dotfiles/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 stty -ixon
 

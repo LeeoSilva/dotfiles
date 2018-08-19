@@ -13,6 +13,7 @@ TERMITE="/home/$USER/.config/termite/config";
 TMUX="/home/$USER/.tmux.conf";
 VIM="/home/$USER/.config/nvim/init.vim";
 ZSH="/home/$USER/.zshrc";
+ZSHDIR="/home/$USER/.zsh/";
 NCMPCPP="/home/$USER/.ncmpcpp/config";
 MPD="/home/$USER/.config/mpd/mpd.conf";
 
@@ -29,6 +30,7 @@ cp -uvf termite/config $TERMITE;
 cp -uvf tmux/tmux.conf $TMUX;
 cp -uvf nvim/init.vim $VIM;
 cp -uvf zsh/zshrc $ZSH;
+cp -uvf zsh/prompt.sh $ZSHDIR;
 cp -uvf ranger/* $RANGER;
 cp -uvf polybar/config $POLYBAR;
 echo "Installed";

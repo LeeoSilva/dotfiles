@@ -15,6 +15,7 @@ TERMITE="/home/$USER/.config/termite/config";
 TMUX="/home/$USER/.tmux.conf";
 VIM="/home/$USER/.vimrc";
 ZSH="/home/$USER/.zshrc";
+ZSHPROMPT="/home/$USER/.zsh/prompt.sh"
 NCMPCPP="/home/$USER/.ncmpcpp/config";
 MPD="/home/$USER/.config/mpd/mpd.conf";
 $PATH=$(pwd)_
@@ -25,6 +26,7 @@ cp -uvf $HTOP $PATH/htop/htoprc
 cp -uvf $TERMITE $PATH/termite/config
 cp -uvf $I3 $PATH/i3/
 cp -uvf $ZSH $PATH/zsh/zshrc
+cp -uvf $ZSH $PATH/zsh/prompt.sh
 cp -uvf $CONKY $PATH/conky/conkyrc;
 cp -uvf $VIM $PATH/nvim/init.vim;
 cp -uvf $TMUX $PATH/tmux/tmux.conf;
