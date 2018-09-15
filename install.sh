@@ -3,60 +3,52 @@
 # If the script is running without root permissions
 # Enter root.
 
-function checkRoot{
-	checkRoot = id -u $USER
-	if [ checkRoot == "1000" ]
-		then # Running with sudo
-		echo "You are running this with root permissions and the files will be installed in /root";
-		echo "Installing in 3...";
-		sleep 1;
-		echo "Installing in 2...";
-		sleep 1;
-		echo "Installing in 1...";
-		sleep 1;
-	fi
-}
 
-checkRoot
+if [ $EUID == "0" ]
+	then # Running with sudo
+	echo -e "You are running this with root permissions and the files will be installed in /root";
+	echo -e "Installing in 3...";
+	sleep 1;
+	echo -e "Installing in 2...";
+	sleep 1;
+	echo -e "Installing in 1...";
+	sleep 1;
+fi
+
 
 # Variables for the PATH of all config files
-COMPTON="~/.config/compton.conf";
-CONKY="~/.conkyrc";
-DUNST="/home/leonardo/.config/dunst/dunstrc";
-FONTS="~/.fonts/";
-HTOP="~/.config/htop/htoprc";
-I3="~/.config/i3/config";
-POLYBAR="~/.config/polybar/config";
-RANGER="~/.config/ranger/";
-TERMITE="~/.config/termite/config";
-TMUX="~/.tmux.conf";
-VIM="~/.config/nvim/init.vim";
-ZSH="~/.zshrc";
-ZSHDIR="~/.zsh/";
-NCMPCPP="~/.ncmpcpp/config";
-MPD="~/.config/mpd/mpd.conf";
+#compton="$HOME/.config/compton.conf";
+conky="$HOME/.conkyrc";
+dunst="/home/leonardo/.config/dunst/dunstrc";
+fonts="$HOME/.fonts/";
+htop="$HOME/.config/htop/htoprc";
+i3="$HOME/.config/i3/config";
+polybar="$HOME/.config/polybar/config";
+ranger="$HOME/.config/ranger/";
+termite="$HOME/.config/termite/config";
+tmux="$HOME/.tmux.conf";
+vim="$HOME/.config/nvim/init.vim";
+zsh="$HOME/.zshrc";
+zshdir="$HOME/.zsh/";
+ncmpcpp="$HOME/.ncmpcpp/config";
+mpd="$HOME/.config/mpd/mpd.conf";
 
-COLOR_NC='\e[0m' # No Color
-COLOR_GREEN='\e[0;32m'
-COLOR_LIGHT_GREEN='\e[1;32m'
-COLOR_RED='\e[0;31m'
+color_nc='\033[0m'; # No Color
+color_light_green='\033[1;32m';
 
-echo "Installing...";
+if [ ! -d "$HOME/.fonts" ]; then mkdir -p "$fonts" && cp -uvf fonts/* "$fonts"; fi
+if [ ! -d "$HOME/.config" ]; then mkdir -p "$HOME/.config"; fi
 
-if [ ! -d "~/.fonts" ] then mkdir -p ~/.fonts && cp -uvf fonts/* $FONTS fi || echo "${COLOR_RED}Error${COLOR_NC} creating ~/.fonts";
-if [ ! -d "~/.config" ] then mkdir -p ~/.config fi || echo "${COLOR_RED}Error${COLOR_NC} creating ~/.config";
-
-cp -uf ncmpcpp/config $NCMPCPP && echo "NCMPCPP config [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf mpd/mpd.conf $MPD; && echo "MPD config [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf i3/config $I3; && echo "I3 config [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf dunst/dunstrc $DUNST && echo "DUNST config [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf conky/conkyrc $CONKY; && echo "CONKY config [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf htop/htoprc $HTOP; && echo "HTOP config [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf termite/config $TERMITE; && echo "TERMITE config [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf tmux/tmux.conf $TMUX; && echo "TMUX config [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf nvim/init.vim $VIM; && echo "NVIM config [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf zsh/zshrc $ZSH; && echo "ZSH config [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf zsh/prompt.sh $ZSHDIR; && echo "ZSH prompt script [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf ranger/* $RANGER; && echo "RANGER config [${COLOR_GREEN}Installed${COLOR_NC}]";
-cp -uf polybar/config $POLYBAR; && echo "POLYBAR config [${COLOR_GREEN}Installed${COLOR_NC}]";
-echo "Installed";
+cp -uf ncmpcpp/config "$ncmpcpp" 2> /dev/null && echo -e "NCMPCPP config [${color_light_green}Installed${color_nc}]";
+cp -uf mpd/mpd.conf "$mpd" 2> /dev/null && echo -e "MPD config [${color_light_green}Installed${color_nc}]";
+cp -uf i3/config "$i3" 2> /dev/null && echo -e "I3 config [${color_light_green}Installed${color_nc}]";
+cp -uf dunst/dunstrc "$dunst" 2> /dev/null && echo -e "DUNST config [${color_light_green}Installed${color_nc}]";
+cp -uf conky/conkyrc "$conky" 2> /dev/null && echo -e "CONKY config [${color_light_green}Installed${color_nc}]";
+cp -uf htop/htoprc "$htop" 2> /dev/null && echo -e "HTOP config [${color_light_green}Installed${color_nc}]";
+cp -uf termite/config "$termite" 2> /dev/null && echo -e "TERMITE config [${color_light_green}Installed${color_nc}]";
+cp -uf tmux/tmux.conf "$tmux" 2> /dev/null && echo -e "TMUX config [${color_light_green}Installed${color_nc}]";
+cp -uf nvim/init.vim "$vim" 2> /dev/null && echo -e "NVIM config [${color_light_green}Installed${color_nc}]";
+cp -uf zsh/zshrc "$zsh" 2> /dev/null && echo -e "ZSH config [${color_light_green}Installed${color_nc}]";
+cp -uf zsh/prompt.sh "$zshdir" 2> /dev/null && echo -e "ZSH prompt script [${color_light_green}Installed${color_nc}]";
+cp -uf ranger/* "$ranger" 2> /dev/null && echo -e "RANGER config [${color_light_green}Installed${color_nc}]";
+cp -uf polybar/config "$polybar" 2> /dev/null && echo -e "POLYBAR config [${color_light_green}Installed${color_nc}]";
