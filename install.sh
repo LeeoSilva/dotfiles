@@ -15,7 +15,6 @@ if [ $EUID == "0" ]
 	sleep 1;
 fi
 
-
 # Variables for the PATH of all config files
 #compton="$HOME/.config/compton.conf";
 conky="$HOME/.conkyrc";
@@ -36,9 +35,10 @@ mpd="$HOME/.config/mpd/mpd.conf";
 color_nc='\033[0m'; # No Color
 color_light_green='\033[1;32m';
 
-if [ ! -d "$HOME/.fonts" ]; then mkdir -p "$fonts" && cp -uvf fonts/* "$fonts"; fi
+if [ ! -d "$HOME/.fonts" ]; then mkdir -p "$fonts"; fi
 if [ ! -d "$HOME/.config" ]; then mkdir -p "$HOME/.config"; fi
 
+cp -uf fonts/* "$fonts" 2> /dev/null && echo -e "Fonts [${color_light_green}Installed${color_nc}]";
 cp -uf ncmpcpp/config "$ncmpcpp" 2> /dev/null && echo -e "NCMPCPP config [${color_light_green}Installed${color_nc}]";
 cp -uf mpd/mpd.conf "$mpd" 2> /dev/null && echo -e "MPD config [${color_light_green}Installed${color_nc}]";
 cp -uf i3/config "$i3" 2> /dev/null && echo -e "I3 config [${color_light_green}Installed${color_nc}]";
