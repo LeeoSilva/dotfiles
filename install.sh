@@ -2,10 +2,7 @@
 
 # If the script is running without root permissions
 # Enter root.
-
-
-if [ $EUID == "0" ]
-	then # Running with sudo
+if [ $EUID == "0" ] then
 	echo -e "You are running this with root permissions and the files will be installed in /root";
 	echo -e "Installing in 3...";
 	sleep 1;
@@ -16,21 +13,21 @@ if [ $EUID == "0" ]
 fi
 
 # Variables for the PATH of all config files
-#compton="$HOME/.config/compton.conf";
-conky="$HOME/.conkyrc";
-dunst="/home/leonardo/.config/dunst/dunstrc";
-fonts="$HOME/.fonts/";
-htop="$HOME/.config/htop/htoprc";
-i3="$HOME/.config/i3/config";
-polybar="$HOME/.config/polybar/config";
-ranger="$HOME/.config/ranger/";
-termite="$HOME/.config/termite/config";
-tmux="$HOME/.tmux.conf";
-vim="$HOME/.config/nvim/init.vim";
-zsh="$HOME/.zshrc";
-zshdir="$HOME/.zsh/";
-ncmpcpp="$HOME/.ncmpcpp/config";
-mpd="$HOME/.config/mpd/mpd.conf";
+conky="~/.conkyrc";
+compton="~/.config/compton.conf";
+dunst="~/.config/dunst/dunstrc";
+fonts="~/.fonts/";
+htop="~/.config/htop/htoprc";
+i3="~/.config/i3/config";
+polybar="~/.config/polybar/config";
+ranger="~/.config/ranger/";
+termite="~/.config/termite/config";
+tmux="~/.tmux.conf";
+vim="~/.config/nvim/init.vim";
+zsh="~/.zshrc";
+zshdir="~/.zsh/";
+ncmpcpp="~/.ncmpcpp/config";
+mpd="~/.config/mpd/mpd.conf";
 
 color_nc='\033[0m'; # No Color
 color_light_green='\033[1;32m';

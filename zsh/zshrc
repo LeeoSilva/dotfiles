@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/leonardo/.oh-my-zsh
+export ZSH=/home/leonardo/.oh-my-zsh
 
 # ZSH Theme
 ZSH_THEME="miloshadzic"
@@ -38,23 +38,28 @@ source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 source ~/.zsh/prompt.sh
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # User configuration
-
 export LANG=en_US.UTF-8
 
 # Aliases
 alias vim='nvim'
-alias zshconfig="mate ~/.zshrc"
+alias zshconfig="nvim ~/.zshrc"
 alias ohmyzsh="mate ~/.oh-my-zsh"
 alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/MeuBolso/Songs/%(title)s.%(ext)s"' 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
+alias tmux="tmux new-session -A -s main"
 
 # Aliases->Dirs
-
-alias hps="cd /srv/http"
+alias hps="cd /srv/http/"
 alias codes="cd ~/Codes/"
+alias etec="cd ~/Codes/ETEC/"
+alias dotfiles="cd ~/Codes/dotfiles/"
+alias hpo="cd ~/Codes/HelpPromptOffice/"
 
-# Disables CTRL+S terminal lock (better combined with VIM)
+# Disables CTRL+S and CTRL+Q on the terminal
 stty -ixon
+
+
