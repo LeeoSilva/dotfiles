@@ -20,7 +20,7 @@ ncmpcpp="$HOME/.ncmpcpp/config";
 mpd="$HOME/.config/mpd/mpd.conf";
 path="$(pwd)";
 
-color_nc='\033[0m'; # No Color
+color_nc='\033[0m';
 color_light_green='\033[1;32m';
 
 cp -uf "$fonts" "$path"/fonts/ 2> /dev/null && echo -e "FONTS [${color_light_green}UPDATED{$color_nc}];"

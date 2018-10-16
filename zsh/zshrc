@@ -50,7 +50,7 @@ alias ohmyzsh="mate ~/.oh-my-zsh"
 alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/MeuBolso/Songs/%(title)s.%(ext)s"' 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias tmux="tmux new-session -A -s main"
+alias tmux="tmux -u new-session -A -s main"
 
 # Aliases->Dirs
 alias hps="cd /srv/http/"
