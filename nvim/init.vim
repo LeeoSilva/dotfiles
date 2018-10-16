@@ -6,6 +6,9 @@ set hlsearch
 set incsearch
 set mouse=a
 set splitright
+set nowrap
+set tabstop=4
+set ignorecase
 
 " Turning backup off
 set nobackup
@@ -20,6 +23,13 @@ set cursorline
 set number relativenumber 
 
 "" Mapings
+
+" Press / twice to clear the search buffer
+nmap <silent> // :nohlsearch<CR>
+
+
+" Don't need to press shift ;
+nnoremap ; :
 
 " Mapping the save command :w to Ctrl+S
 inoremap <c-s> <Esc>:w<CR>l 
