@@ -1,11 +1,9 @@
 " Vim settings 
-
-syntax on
 set showmatch
-set  t_Co=256
+set t_Co=256
 set background=dark
 set hlsearch
-set incsearch 	
+set incsearch
 set mouse=a
 set splitright
 
@@ -21,16 +19,21 @@ set number
 set cursorline
 set number relativenumber 
 
-" Mappings
+"" Mapings
 
 " Mapping the save command :w to Ctrl+S
-noremap <silent> <C-S>          :update<CR>
-vnoremap <silent> <C-S>         <C-C>:update<CR>
-inoremap <silent> <C-S>         <C-O>:update<CR>
+inoremap <c-s> <Esc>:w<CR>l 
+
+" Try the following so Shift-Space also enters insert mode.
+:imap kj <Esc>
+" Or just Space to enter insert mode.
+:nmap <Space> i
+
+map <C-w> :qa<CR>
 
 " Insert newline without entering insert mode with ENTER
-nmap <S-Enter> O<Esc>
+nmap <S-Enter> o<Esc>
 nmap <CR> o<Esc>
 
-" Plugins
+"" Plugins
 set runtimepath^=~/.vim/bundle/ctrlp.vim
