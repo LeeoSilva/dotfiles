@@ -13,15 +13,18 @@ polybar="$HOME/.config/polybar/config";
 ranger="$HOME/.config/ranger/";
 termite="$HOME/.config/termite/config";
 tmux="$HOME/.tmux.conf";
+tmuxsessions="$HOME/.tmux/sessions/";
 vim="$HOME/.config/nvim/init.vim";
 zsh="$HOME/.zshrc";
 zshprompt="$HOME/.zsh/prompt.sh";
 ncmpcpp="$HOME/.ncmpcpp/config";
 mpd="$HOME/.config/mpd/mpd.conf";
-path="$(pwd)";
+path="$(pwd)"; # One day i'll correct this '-'
 
 color_nc='\033[0m';
 color_light_green='\033[1;32m';
+
+
 
 cp -uf "$fonts" "$path"/fonts/ 2> /dev/null && echo -e "FONTS [${color_light_green}UPDATED{$color_nc}];"
 cp -uf "$compton" "$path"/compton/compton.conf 2> /dev/null && echo -e "COMPTON [${color_light_green}UPDATED${color_nc}];"
@@ -33,6 +36,7 @@ cp -uf "$zshprompt" "$path"/zsh/prompt.sh 2> /dev/null && echo -e "ZSH prompt sc
 cp -uf "$conky" "$path"/conky/conkyrc 2> /dev/null && echo -e "CONKY [${color_light_green}UPDATED${color_nc}];"
 cp -uf "$vim" "$path"/nvim/init.vim 2> /dev/null && echo -e "VIM [${color_light_green}UPDATED${color_nc}];"
 cp -uf "$tmux" "$path"/tmux/tmux.conf 2> /dev/null && echo -e "TMUX [${color_light_green}UPDATED${color_nc}];"
+cp -urf "$tmuxsessions" "$path"/tmux/ 2> /dev/null && echo -e "TMUX sessions [${color_light_green}UPDATED${color_nc}];"
 cp -uf "$ranger" "$path"/ranger/ 2> /dev/null && echo -e "RANGER [${color_light_green}UPDATED${color_nc}];"
 cp -uf "$polybar" "$path"/polybar/ 2> /dev/null && echo -e "POLYBAR [${color_light_green}UPDATED${color_nc}];"
 cp -uf "$dunst" "$path"/dunst/ 2> /dev/null && echo -e "DUNST [${color_light_green}UPDATED${color_nc}];"
