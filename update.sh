@@ -19,12 +19,10 @@ zsh="$HOME/.zshrc";
 zshprompt="$HOME/.zsh/prompt.sh";
 ncmpcpp="$HOME/.ncmpcpp/config";
 mpd="$HOME/.config/mpd/mpd.conf";
-path="$(pwd)"; # One day i'll correct this '-'
+path="$(pwd)"; # One day i'll fix this '-'
 
 color_nc='\033[0m';
 color_light_green='\033[1;32m';
-
-
 
 cp -uf "$fonts" "$path"/fonts/ 2> /dev/null && echo -e "FONTS [${color_light_green}UPDATED{$color_nc}];"
 cp -uf "$compton" "$path"/compton/compton.conf 2> /dev/null && echo -e "COMPTON [${color_light_green}UPDATED${color_nc}];"
