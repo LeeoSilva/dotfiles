@@ -1,6 +1,10 @@
 # Path to your oh-my-zsh installation.
 export ZSH=/home/leonardo/.oh-my-zsh
 
+# Exporting Neo-Vim as editor
+export EDITOR="nvim"
+export VISUAL="nvim"
+
 # ZSH Theme
 ZSH_THEME="miloshadzic"
 
@@ -21,6 +25,19 @@ ENABLE_CORRECTION="true"
 
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
+
+## Shell options
+
+# Assume "cd" when a command is a directory
+setopt autocd 
+
+# Share the same history between all shells
+setopt sharehistory 
+
+# Disables auto-correction
+setopt correct
+setopt correct_all 
+
 
 # Plugins
 
@@ -44,13 +61,27 @@ source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export LANG=en_US.UTF-8
 
 # Aliases
+alias vi='nvim'
 alias vim='nvim'
-alias zshconfig="nvim ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
 alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/MeuBolso/Songs/%(title)s.%(ext)s"' 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-alias tmux='sh ~/.tmux/sessions/session1'
+alias fgrep="fgrep --color=auto"
+alias egrep="egrep --color=auto"
+alias t='sh ~/.tmux/sessions/session1'
+alias cls='clear'
+alias fucking='sudo'
+alias xclip="xclip -selection clipboard"
+alias sudo='sudo '
+alias yolo='git commit --allow-empty-message -m "" && git push origin master'
+alias please='sudo $(history -p !!)'
+alias :q="exit"
+alias :wq="exit"
+
+# Aliases->Edit_Configs
+alias zshconfig="nvim ~/.zshrc"
+alias vimconfig="nvim ~/.config/nvim/init.vim" 
+alias tmuxconfig="nvim ~/.tmux.conf"
 
 # Aliases->Dirs
 alias hps="cd /srv/http/"
@@ -61,8 +92,4 @@ alias hpo="cd ~/Codes/HelpPromptOffice/"
 
 # Disables CTRL+S and CTRL+Q on the terminal
 stty -ixon
-
-# Disables auto-correction
-unsetopt correct_all  
-setopt correct
 
