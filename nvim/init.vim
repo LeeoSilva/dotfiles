@@ -1,5 +1,4 @@
 "" Vim settings 
-
 set showmatch							" Show matching characters
 set t_Co=256							" Allow 256 colors
 set clipboard=unnamedplus				" Copy and pasting goes to system clipboard
@@ -24,6 +23,10 @@ set number relativenumber				" Enable relative line numbers
 set autoread							" Re-read files changed outside of vim
 set confirm								" Confirm commands instead of failing
 set visualbell							" Visual bell instead of beeping
+set noexpandtab
+set shiftwidth=4
+set softtabstop=4
+set virtualedit=onemore
 
 "" Plugins
 set runtimepath^=~/.vim/bundle/ctrlp.vim
@@ -48,4 +51,11 @@ map <C-w> :qa<CR>
 " Insert newline without entering insert mode with ENTER
 nmap <S-Enter> o<Esc>
 nmap <CR> o<Esc>
+
+" Ctrl-Backspace to delete previuous word
+noremap! <C-BS> <C-w>
+noremap! <C-h> <C-w>
+
+" $ Actually goes to the end of an line
+:noremap $ g$
 
