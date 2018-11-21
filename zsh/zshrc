@@ -6,6 +6,10 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export TERM=xterm-256color
 
+
+## User configuration
+export LANG=en_US.UTF-8
+
 # ZSH Theme
 ZSH_THEME="miloshadzic"
 
@@ -40,9 +44,7 @@ setopt sharehistory
 unsetopt correct
 unsetopt correct_all 
 
-
 # Plugins
-
 plugins=(
   git
   zsh-syntax-highlighting
@@ -55,12 +57,10 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-source ~/.zsh/prompt.sh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source ~/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source "${ZDOTDIR:-$HOME}/prompt.sh"
+source "${ZDOTDIR:-$HOME}/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "${ZDOTDIR:-$HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-# User configuration
-export LANG=en_US.UTF-8
 
 # Aliases
 alias vi='nvim'
@@ -84,7 +84,7 @@ alias :wq="exit"
 alias zshconfig="nvim '$HOME'/.zshrc"
 alias vimconfig="nvim '$HOME'/.config/nvim/init.vim" 
 alias tmuxconfig="nvim '$HOME'/.tmux.conf"
-alias hpsserve="cd '$HOME'/Codes/HelpPromptOffice/ && ionic serve --local --no-open"
+alias hposerve="cd '$HOME'/Codes/HelpPromptOffice/ && ionic serve --local --no-open"
 
 # Aliases->Dirs
 alias hps="cd /srv/http/"
