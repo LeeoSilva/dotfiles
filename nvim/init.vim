@@ -23,12 +23,18 @@ set number relativenumber				" Enable relative line numbers
 set autoread							" Re-read files changed outside of vim
 set confirm								" Confirm commands instead of failing
 set visualbell							" Visual bell instead of beeping
-set noexpandtab
-set shiftwidth=4
-set softtabstop=4
-set virtualedit=onemore
+set noexpandtab							" Tab format
+set shiftwidth=4						" Width of tabs is 4 spaces
+set softtabstop=4						" Width of tabs in 4 spaces
+set virtualedit=onemore					" Makes the cursor goes after the last character
+set noshowmode							" Dont show the mode of the GUI
 
 "" Plugins
+
+call plug#begin('~/nvim/plugged')
+Plug 'itchyny/lightline.vim'
+Plug 'https://github.com/tpope/vim-commentary'
+call plug#end()
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "" Mapings
@@ -58,4 +64,6 @@ noremap! <C-h> <C-w>
 
 " $ Actually goes to the end of an line
 :noremap $ g$
+
+
 

@@ -4,6 +4,7 @@ export ZSH=/home/leonardo/.oh-my-zsh
 # Exporting Neo-Vim as editor
 export EDITOR="nvim"
 export VISUAL="nvim"
+export TERM=xterm-256color
 
 # ZSH Theme
 ZSH_THEME="miloshadzic"
@@ -22,6 +23,7 @@ DISABLE_AUTO_TITLE="true"
 
 # Enable command auto-correction.
 ENABLE_CORRECTION="false"
+DISABLE_CORRECTION="true"
 
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
@@ -35,8 +37,8 @@ setopt autocd
 setopt sharehistory 
 
 # Disables auto-correction
-setopt correct
-setopt correct_all 
+unsetopt correct
+unsetopt correct_all 
 
 
 # Plugins
@@ -82,6 +84,7 @@ alias :wq="exit"
 alias zshconfig="nvim ~/.zshrc"
 alias vimconfig="nvim ~/.config/nvim/init.vim" 
 alias tmuxconfig="nvim ~/.tmux.conf"
+alias ionicserve="ionic serve --local --no-open"
 
 # Aliases->Dirs
 alias hps="cd /srv/http/"
