@@ -81,17 +81,17 @@ alias :q="exit"
 alias :wq="exit"
 
 # Aliases->Edit_Configs
-alias zshconfig="nvim ~/.zshrc"
-alias vimconfig="nvim ~/.config/nvim/init.vim" 
-alias tmuxconfig="nvim ~/.tmux.conf"
-alias ionicserve="ionic serve --local --no-open"
+alias zshconfig="nvim '$HOME'/.zshrc"
+alias vimconfig="nvim '$HOME'/.config/nvim/init.vim" 
+alias tmuxconfig="nvim '$HOME'/.tmux.conf"
+alias hpsserve="cd '$HOME'/Codes/HelpPromptOffice/ && ionic serve --local --no-open"
 
 # Aliases->Dirs
 alias hps="cd /srv/http/"
-alias codes="cd ~/Codes/"
-alias etec="cd ~/Codes/ETEC/"
-alias dotfiles="cd ~/Codes/dotfiles/"
-alias hpo="cd ~/Codes/HelpPromptOffice/"
+alias codes="cd '$HOME'/Codes/"
+alias etec="cd '$HOME'/Codes/ETEC/"
+alias dotfiles="cd '$HOME'/Codes/dotfiles/"
+alias hpo="cd '$HOME'/Codes/HelpPromptOffice/"
 
 # Disables CTRL+S and CTRL+Q on the terminal
 stty -ixon
