@@ -2,14 +2,15 @@
 
 # If the script is running without root permissions
 # Enter root.
-if [ $EUID == "0" ] then
-	echo -e "You are running this with root permissions and the files will be installed in /root";
-	echo -e "Installing in 3...";
-	sleep 1;
-	echo -e "Installing in 2...";
-	sleep 1;
-	echo -e "Installing in 1...";
-	sleep 1;
+if [ $EUID == "0" ]
+	then
+		echo -e "You are running this with root permissions and the files will be installed in /root";
+		echo -e "Installing in 3...";
+		sleep 1;
+		echo -e "Installing in 2...";
+		sleep 1;
+		echo -e "Installing in 1...";
+		sleep 1;
 fi
 
 # Variables for the PATH of all config files
