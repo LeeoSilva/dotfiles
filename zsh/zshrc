@@ -35,14 +35,14 @@ COMPLETION_WAITING_DOTS="true"
 ## Shell options
 
 # Assume "cd" when a command is a directory
-setopt autocd 
+setopt autocd
 
 # Share the same history between all shells
-setopt sharehistory 
+setopt sharehistory
 
 # Disables auto-correction
 unsetopt correct
-unsetopt correct_all 
+unsetopt correct_all
 
 # Plugins
 plugins=(
@@ -57,20 +57,20 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-source "${ZDOTDIR:-$HOME}/prompt.sh"
-source "${ZDOTDIR:-$HOME}/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "${ZDOTDIR:-$HOME}/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source "${ZDOTDIR:-$HOME}/.zsh/prompt.sh"
+source "${ZDOTDIR:-$HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
+source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 
 # Aliases
 alias vi='nvim'
 alias vim='nvim'
-alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/MeuBolso/Songs/%(title)s.%(ext)s"' 
+alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/MeuBolso/Songs/%(title)s.%(ext)s"'
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
-alias t='sh ~/.tmux/sessions/session1'
+alias t='sh ~/.tmux/sessions/startup'
 alias cls='clear'
 alias fucking='sudo'
 alias xclip="xclip -selection clipboard"
@@ -82,7 +82,7 @@ alias :wq="exit"
 
 # Aliases->Edit_Configs
 alias zshconfig="nvim '$HOME'/.zshrc"
-alias vimconfig="nvim '$HOME'/.config/nvim/init.vim" 
+alias vimconfig="nvim '$HOME'/.config/nvim/init.vim"
 alias tmuxconfig="nvim '$HOME'/.tmux.conf"
 alias hposerve="cd '$HOME'/Codes/HelpPromptOffice/ && ionic serve --local --no-open"
 
@@ -95,4 +95,3 @@ alias hpo="cd '$HOME'/Codes/HelpPromptOffice/"
 
 # Disables CTRL+S and CTRL+Q on the terminal
 stty -ixon
-
