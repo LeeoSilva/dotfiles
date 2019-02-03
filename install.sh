@@ -37,7 +37,7 @@ color_light_green='\033[1;32m';
 if [ ! -d "$HOME/.fonts" ]; then mkdir -p "$fonts"; fi
 if [ ! -d "$HOME/.config" ]; then mkdir -p "$HOME/.config"; fi
 if [ ! -d "$HOME/.zsh" ]; then mkdir -p "$HOME/.zsh"; fi
-if [ ! -d "$HOME/.tmux/sessions/" ]; then mkdir -p "$HOME/.tmux/sessions/"; fi
+if [ ! -d "$HOME/.tmux/sessions/" ]; then mkdir -p "$HOME/.tmux/sessions/	"; fi
 
 cp -uf fonts/* "$fonts" 2> /dev/null && echo -e "Fonts [${color_light_green}Installed${color_nc}]";
 cp -uf ncmpcpp/config "$ncmpcpp" 2> /dev/null && echo -e "NCMPCPP config [${color_light_green}Installed${color_nc}]";
@@ -65,6 +65,12 @@ git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$H
 # Installing TMUX Sessions
 echo -e "Installing [${color_light_green}TMUX Sessions${color_nc}]";
 cp -urf tmux/sessions/* "$tmuxsession" 2> /dev/null && echo -e "TMUX sessions [${color_light_green}Installed${color_nc}]";
+
+# Installing VIM Plugins
+echo -e "Installing [${color_light_green}NEOVIM Plugins${color_nc}]";
+curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;
+vim -c :PlugInstall -c :q! -c q!;
 
 # Finishing up
 echo -e "${color_light_green}All Set-up!${color_nc}";

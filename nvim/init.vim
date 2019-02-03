@@ -31,11 +31,11 @@ set noshowmode							" Dont show the mode of the GUI
 
 "" Plugins
 
-call plug#begin('~/nvim/plugged')
+call plug#begin('~/.nvim/plugged')
 Plug 'itchyny/lightline.vim'
 Plug 'https://github.com/tpope/vim-commentary'
 call plug#end()
-set runtimepath^=~/.vim/bundle/ctrlp.vim
+"" set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "" Mapings
 " Press / twice to clear the search buffer

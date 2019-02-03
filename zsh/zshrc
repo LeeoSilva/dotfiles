@@ -6,7 +6,6 @@ export EDITOR="nvim"
 export VISUAL="nvim"
 export TERM=xterm-256color
 
-
 ## User configuration
 export LANG=en_US.UTF-8
 
@@ -31,8 +30,6 @@ DISABLE_CORRECTION="true"
 
 # Display red dots whilst waiting for completion.
 COMPLETION_WAITING_DOTS="true"
-
-## Shell options
 
 # Assume "cd" when a command is a directory
 setopt autocd
@@ -95,3 +92,7 @@ alias hpo="cd '$HOME'/Codes/HelpPromptOffice/"
 
 # Disables CTRL+S and CTRL+Q on the terminal
 stty -ixon
+
+# Sets the keyboard layout to BR-ABNT2
+setxkbmap -model abnt2 -layout br -variant abnt2 
+
