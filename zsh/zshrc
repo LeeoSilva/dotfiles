@@ -76,6 +76,7 @@ alias yolo='git commit -m "minor change" && git push origin master'
 alias please='sudo $(history -p !!)'
 alias :q="exit"
 alias :wq="exit"
+alias run="./a.out"
 
 # Aliases->Edit_Configs
 alias zshconfig="nvim '$HOME'/.zshrc"
@@ -89,6 +90,8 @@ alias codes="cd '$HOME'/Codes/"
 alias etec="cd '$HOME'/Codes/ETEC/"
 alias dotfiles="cd '$HOME'/Codes/dotfiles/"
 alias hpo="cd '$HOME'/Codes/HelpPromptOffice/"
+alias docs="cd '$HOME'/Documents/"
+alias univem="cd '$HOME'/Codes/UNIVEM/"
 
 # Disables CTRL+S and CTRL+Q on the terminal
 stty -ixon
