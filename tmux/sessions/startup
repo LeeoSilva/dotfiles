@@ -8,7 +8,7 @@ tmux -u new-session -s main -d
 tmux split-window -h \; 
 tmux send-keys 'clear;neofetch' C-m  \;
 tmux split-window -v \;
-tmux send-keys 'htop' C-m \;
+tmux send-keys 'gotop --rate=3 --color=monokai -s' C-m \;
 tmux select-pane -t 0
 
 tmux attach -t main
