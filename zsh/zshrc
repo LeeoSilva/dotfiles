@@ -58,7 +58,6 @@ source "${ZDOTDIR:-$HOME}/.zsh/prompt.sh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
-
 # Aliases
 alias vi='nvim'
 alias vim='nvim'
@@ -77,6 +76,7 @@ alias please='sudo $(history -p !!)'
 alias :q="exit"
 alias :wq="exit"
 alias run="./a.out"
+alias python3="python3"
 
 # Aliases->Edit_Configs
 alias zshconfig="nvim '$HOME'/.zshrc"
@@ -97,5 +97,4 @@ alias univem="cd '$HOME'/Codes/UNIVEM/"
 stty -ixon
 
 # Sets the keyboard layout to BR-ABNT2
-setxkbmap -model abnt2 -layout br -variant abnt2 
-
+setxkbmap -model abnt2 -layout br -variant abnt2
