@@ -1,4 +1,5 @@
 "" Vim settings 
+
 set showmatch							" Show matching characters
 set t_Co=256							" Allow 256 colors
 set clipboard=unnamedplus				" Copy and pasting goes to system clipboard
@@ -19,7 +20,7 @@ set laststatus=2						" Always display status line
 set cindent								" Ident files according to C indentation standard
 set number 								" Show line numbers
 set cursorline							" Show cursor line
-set number relativenumber				" Enable relative line numbers
+"set number relativenumber				" Enable relative line numbers
 set autoread							" Re-read files changed outside of vim
 set confirm								" Confirm commands instead of failing
 set visualbell							" Visual bell instead of beeping
@@ -33,10 +34,25 @@ set noshowmode							" Dont show the mode of the GUI
 
 call plug#begin('~/.nvim/plugged')
 Plug 'itchyny/lightline.vim'
-Plug 'https://github.com/tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
+Plug 'octol/vim-cpp-enhanced-highlight'
+Plug 'sickill/vim-monokai'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 "" set runtimepath^=~/.vim/bundle/ctrlp.vim
 
+"" vim-cpp-enhanced-highlight configuration
+
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_simple_template_highlight = 1
+let g:cpp_experimental_template_highlight = 1
+let g:cpp_concepts_highlight = 1
+
+hi MatchParen guibg=NONE guifg=blue gui=bold
 "" Mapings
 " Press / twice to clear the search buffer
 nmap <silent> // :nohlsearch<CR>
@@ -65,5 +81,7 @@ noremap! <C-h> <C-w>
 " $ Actually goes to the end of an line
 :noremap $ g$
 
+syntax enable
+colorscheme monokai
 
 

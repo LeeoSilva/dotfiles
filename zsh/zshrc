@@ -44,8 +44,6 @@ unsetopt correct_all
 # Plugins
 plugins=(
   git
-  zsh-syntax-highlighting
-  zsh-autosuggestions
   tmux
   tmuxinator
   colored-man-pages
