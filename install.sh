@@ -2,7 +2,7 @@
 
 # If the script is running without root permissions
 # Enter root.
-
+  
 if [ $EUID == "0" ]
 	then
 		echo -e "You are running this with root permissions and the files will be installed in /root";
