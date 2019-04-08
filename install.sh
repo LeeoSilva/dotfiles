@@ -13,7 +13,7 @@ if [ $EUID == "0" ]
 		echo -e "Installing in 1...";
 		sleep 1;
 fi
-
+ 
 # Variables for the PATH of all config files
 conky="$HOME/.conkyrc";
 compton="$HOME/.config/compton.conf";
