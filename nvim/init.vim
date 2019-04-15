@@ -37,6 +37,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'octol/vim-cpp-enhanced-highlight'
 Plug 'sickill/vim-monokai'
+Plug 'tpope/vim-vividchalk'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -81,7 +82,13 @@ noremap! <C-h> <C-w>
 " $ Actually goes to the end of an line
 :noremap $ g$
 
+" Unbind arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+
 syntax enable
-colorscheme monokai
+colorscheme vividchalk 
 
 

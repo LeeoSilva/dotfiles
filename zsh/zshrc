@@ -16,7 +16,7 @@ ZSH_THEME="miloshadzic"
 DISABLE_AUTO_UPDATE="false"
 
 # Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=1
 
 # Enable colors in ls.
 DISABLE_LS_COLORS="false"
@@ -41,7 +41,7 @@ setopt sharehistory
 unsetopt correct
 unsetopt correct_all
 
-# Plugins
+
 plugins=(
   git
   tmux
@@ -74,7 +74,7 @@ alias please='sudo $(history -p !!)'
 alias :q="exit"
 alias :wq="exit"
 alias run="./a.out"
-alias python3="python3"
+alias yum="yum --color=always"
 
 # Aliases->Edit_Configs
 alias zshconfig="nvim '$HOME'/.zshrc"
@@ -90,9 +90,15 @@ alias dotfiles="cd '$HOME'/Codes/dotfiles/"
 alias hpo="cd '$HOME'/Codes/HelpPromptOffice/"
 alias docs="cd '$HOME'/Documents/"
 alias univem="cd '$HOME'/Codes/UNIVEM/"
+alias downloads="cd '$HOME'/Downloads/"
+alias documents="cd '$HOME'/Documents/"
+alias desktop="cd '$HOME'/Desktop/"
+alias cs="cd '$HOME'/Codes/cs-bachelor/"
 
 # Disables CTRL+S and CTRL+Q on the terminal
 stty -ixon
 
 # Sets the keyboard layout to BR-ABNT2
 setxkbmap -model abnt2 -layout br -variant abnt2
+
+
