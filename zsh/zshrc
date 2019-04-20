@@ -9,8 +9,26 @@ export TERM=xterm-256color
 ## User configuration
 export LANG=en_US.UTF-8
 
+## Exporting .local to PATH
+export PATH=~/.local/bin/:$PATH
+
+
 # ZSH Theme
-ZSH_THEME="miloshadzic"
+# ZSH_THEME="miloshadzic"
+ZSH_THEME="powerlevel9k/powerlevel9k"
+
+# POWERLEVEL9K CONFIG 
+POWERLEVEL9K_MODE="nerdfont-complete"
+POWERLEVEL9K_DISABLE_RPROMPT=true
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="▶ "
+POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX=""
+
+POWERLEVEL9K_CUSTOM_FEDORA_ICON="echo  "
+POWERLEVEL9K_CUSTOM_FEDORA_ICON_BACKGROUND=069
+POWERLEVEL9K_CUSTOM_FEDORA_ICON_FOREGROUND=015
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_fedora_icon dir vcs)
 
 # Enable bi-weekly auto-update checks.
 DISABLE_AUTO_UPDATE="false"
@@ -52,7 +70,7 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-source "${ZDOTDIR:-$HOME}/.zsh/prompt.sh"
+# source "${ZDOTDIR:-$HOME}/.zsh/prompt.sh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
@@ -75,6 +93,8 @@ alias :q="exit"
 alias :wq="exit"
 alias run="./a.out"
 alias yum="yum --color=always"
+alias mkae="make"
+
 
 # Aliases->Edit_Configs
 alias zshconfig="nvim '$HOME'/.zshrc"

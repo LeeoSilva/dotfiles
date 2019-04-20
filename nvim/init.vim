@@ -33,6 +33,7 @@ set noshowmode							" Dont show the mode of the GUI
 "" Plugins
 
 call plug#begin('~/.nvim/plugged')
+Plug 'tpope/vim-surround'
 Plug 'itchyny/lightline.vim'
 Plug 'tpope/vim-commentary'
 Plug 'octol/vim-cpp-enhanced-highlight'
