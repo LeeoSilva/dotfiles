@@ -29,21 +29,21 @@ set shiftwidth=4						" Width of tabs is 4 spaces
 set softtabstop=4						" Width of tabs in 4 spaces
 set virtualedit=onemore					" Makes the cursor goes after the last character
 set noshowmode							" Dont show the mode of the GUI
+filetype plugin on
 
 "" Plugins
 
 call plug#begin('~/.nvim/plugged')
-Plug 'tpope/vim-surround'
-Plug 'itchyny/lightline.vim'
-Plug 'tpope/vim-commentary'
-Plug 'octol/vim-cpp-enhanced-highlight'
-Plug 'sickill/vim-monokai'
-Plug 'tpope/vim-vividchalk'
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+	Plug 'tpope/vim-surround'
+	Plug 'itchyny/lightline.vim'
+	Plug 'octol/vim-cpp-enhanced-highlight'
+	Plug 'tpope/vim-commentary'
+	Plug 'sickill/vim-monokai'
+	Plug 'tpope/vim-vividchalk'
+	Plug 'ctrlpvim/ctrlp.vim'
+	Plug 'vim-airline/vim-airline'
+	Plug 'vim-airline/vim-airline-themes'
 call plug#end()
-"" set runtimepath^=~/.vim/bundle/ctrlp.vim
 
 "" vim-cpp-enhanced-highlight configuration
 
@@ -59,32 +59,24 @@ hi MatchParen guibg=NONE guifg=blue gui=bold
 " Press / twice to clear the search buffer
 nmap <silent> // :nohlsearch<CR>
 
-" Use ;; to exit insert mode
-inoremap ;; <Esc>
-
-" Mapping the save command :w to Ctrl+S
-inoremap <c-s> <Esc>:w<CR>l 
-
-" Try the following so Shift-Space also enters insert mode.
+" K + J sequencially exists insert mode
 :imap kj <Esc>
+
 " Or just Space to enter insert mode.
 :nmap <Space> i
-
-map <C-w> :qa<CR>
 
 " Insert newline without entering insert mode with ENTER
 nmap <S-Enter> o<Esc>
 nmap <CR> o<Esc>
 
-" Ctrl-Backspace to delete previuous word
-noremap! <C-BS> <C-w>
-noremap! <C-h> <C-w>
+" toggle comments by pressing Leader+/
+noremap <C-a> :Commentary<cr>
 
 " $ Actually goes to the end of an line
 :noremap $ g$
 
 " Unbind arrow keys
-noremap <Up> <Nop>
+" noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
@@ -92,4 +84,5 @@ noremap <Right> <Nop>
 syntax enable
 colorscheme vividchalk 
 
+highlight Comment ctermfg=blue
 
