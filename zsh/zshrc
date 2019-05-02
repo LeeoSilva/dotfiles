@@ -32,11 +32,12 @@ POWERLEVEL9K_WHITESPACE_BETWEEN_LEFT_SEGMENTS=''
 POWERLEVEL9K_ALWAYS_SHOW_USER=false
 POWERLEVEL9K_DIR_BACKGROUND='none'
 POWERLEVEL9K_DIR_FOREGROUND='none'
-
 POWERLEVEL9K_ETC_ICON=''
 POWERLEVEL9K_FOLDER_ICON=''
 POWERLEVEL9K_HOME_ICON=''
 POWERLEVEL9K_HOME_SUB_ICON=''
+
+
 
 POWERLEVEL9K_DIR_ETC_BACKGROUND='none'
 POWERLEVEL9K_DIR_ETC_FOREGROUND='005'
@@ -46,7 +47,6 @@ POWERLEVEL9K_DIR_DEFAULT_BACKGROUND='none'
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND='005'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='none'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='004'
-
 
 # PoweLevel9K right prompt
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
@@ -117,6 +117,8 @@ alias vim='nvim'
 alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/MeuBolso/Songs/%(title)s.%(ext)s"'
 alias ls='ls --color=auto'
 # alias ls="colorls"
+alias cat="bat||cat"
+alias open=xdg-open
 
 alias grep='grep --color=auto'
 alias fgrep="fgrep --color=auto"
@@ -133,6 +135,7 @@ alias :wq="exit"
 alias run="./a.out"
 alias yum="yum --color=always"
 alias mkae="make"
+alias gotop="gotop --rate=3 --color=monokai -s"
 
 
 # Aliases->Edit_Configs

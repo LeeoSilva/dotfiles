@@ -24,25 +24,19 @@ set cursorline							" Show cursor line
 set autoread							" Re-read files changed outside of vim
 set confirm								" Confirm commands instead of failing
 set visualbell							" Visual bell instead of beeping
-set noexpandtab							" Tab format
+set noexpandtab							" use tabs, not spaces
 set shiftwidth=4						" Width of tabs is 4 spaces
 set softtabstop=4						" Width of tabs in 4 spaces
-set virtualedit=onemore					" Makes the cursor goes after the last character
 set noshowmode							" Dont show the mode of the GUI
 filetype plugin on
 
 "" Plugins
 
 call plug#begin('~/.nvim/plugged')
-	Plug 'tpope/vim-surround'
+	Plug 'takac/vim-hardtime'
 	Plug 'itchyny/lightline.vim'
 	Plug 'octol/vim-cpp-enhanced-highlight'
-	Plug 'tpope/vim-commentary'
-	Plug 'sickill/vim-monokai'
 	Plug 'tpope/vim-vividchalk'
-	Plug 'ctrlpvim/ctrlp.vim'
-	Plug 'vim-airline/vim-airline'
-	Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 "" vim-cpp-enhanced-highlight configuration
@@ -54,6 +48,9 @@ let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 
+"" Enable hardtime plugin 
+let g:hardtime_default_on = 0
+
 hi MatchParen guibg=NONE guifg=blue gui=bold
 "" Mapings
 " Press / twice to clear the search buffer
@@ -64,10 +61,6 @@ nmap <silent> // :nohlsearch<CR>
 
 " Or just Space to enter insert mode.
 :nmap <Space> i
-
-" Insert newline without entering insert mode with ENTER
-nmap <S-Enter> o<Esc>
-nmap <CR> o<Esc>
 
 " toggle comments by pressing Leader+/
 noremap <C-a> :Commentary<cr>
