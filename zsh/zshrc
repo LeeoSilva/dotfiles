@@ -116,10 +116,8 @@ alias vi='nvim'
 alias vim='nvim'
 alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/MeuBolso/Songs/%(title)s.%(ext)s"'
 alias ls='ls --color=auto'
-# alias ls="colorls"
-alias cat="bat||cat"
 alias open=xdg-open
-
+alias pwd="pwd|xclip -selection clipboard"
 alias grep='grep --color=auto'
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
