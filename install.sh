@@ -64,6 +64,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting 2> /dev/null # syntax-highlighting
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" 2> /dev/null
 git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Installing TMUX Sessions
 echo -e "Installing [${color_light_green}TMUX Sessions${color_nc}]";
