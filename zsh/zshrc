@@ -137,10 +137,9 @@ alias gotop="gotop --rate=3 --color=monokai -s"
 
 
 # Aliases->Edit_Configs
-alias zshconfig="nvim '$HOME'/.zshrc"
-alias vimconfig="nvim '$HOME'/.config/nvim/init.vim"
-alias tmuxconfig="nvim '$HOME'/.tmux.conf"
-alias hposerve="cd '$HOME'/Codes/HelpPromptOffice/ && ionic serve --local --no-open"
+alias zshconfig="nvim  ~/Codes/dotfiles/zsh/zshrc"
+alias vimconfig="nvim  ~/Codes/dotfiles/nvim/init.vim"
+alias tmuxconfig="nvim ~/Codes/dotfiles/tmux.conf"
 
 # Aliases->Dirs
 alias hps="cd /srv/http/"
@@ -150,9 +149,10 @@ alias dotfiles="cd '$HOME'/Codes/dotfiles/"
 alias hpo="cd '$HOME'/Codes/HelpPromptOffice/"
 alias docs="cd '$HOME'/Documents/"
 alias univem="cd '$HOME'/Codes/UNIVEM/"
-alias downloads="cd '$HOME'/Downloads/"
-alias documents="cd '$HOME'/Documents/"
-alias desktop="cd '$HOME'/Desktop/"
+alias dow="cd '$HOME'/Downloads/"
+alias opt= "cd /opt/"
+alias doc="cd '$HOME'/Documents/"
+alias des="cd '$HOME'/Desktop/"
 alias cs="cd '$HOME'/Codes/cs-bachelor/"
 
 # Disables CTRL+S and CTRL+Q on the terminal

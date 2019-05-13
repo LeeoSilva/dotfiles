@@ -1,5 +1,4 @@
 "" Vim settings 
-
 set showmatch							" Show matching characters
 set t_Co=256							" Allow 256 colors
 set clipboard=unnamedplus				" Copy and pasting goes to system clipboard
@@ -28,13 +27,17 @@ set noexpandtab							" use tabs, not spaces
 set shiftwidth=4						" Width of tabs is 4 spaces
 set softtabstop=4						" Width of tabs in 4 spaces
 set noshowmode							" Dont show the mode of the GUI
-filetype plugin on
+set backupdir=~/.tmp
+set directory=~/.tmp					" Don't clutter my dirs up with swp and tmp 
+set smarttab
+set gdefault							" assume /g flag on :s substitutions 
+filetype plugin indent on				" Language dependent identation
 
 "" Plugins
 
 call plug#begin('~/.nvim/plugged')
-	Plug 'takac/vim-hardtime'
 	Plug 'itchyny/lightline.vim'
+	Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
 	Plug 'octol/vim-cpp-enhanced-highlight'
 	Plug 'tpope/vim-vividchalk'
 call plug#end()
@@ -48,28 +51,41 @@ let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
 
-"" Enable hardtime plugin 
-let g:hardtime_default_on = 0
+"" Semshi 
 
-hi MatchParen guibg=NONE guifg=blue gui=bold
+hi semshiLocal           ctermfg=209 guifg=#ff875f
+hi semshiGlobal          ctermfg=214 guifg=#ffaf00
+hi semshiImported        ctermfg=214 guifg=#ffaf00 cterm=bold gui=bold
+hi semshiParameter       ctermfg=75  guifg=#5fafff
+hi semshiParameterUnused ctermfg=117 guifg=#87d7ff cterm=underline gui=underline
+hi semshiFree            ctermfg=218 guifg=#ffafd7
+hi semshiBuiltin         ctermfg=207 guifg=#ff5fff
+hi semshiAttribute       ctermfg=49  guifg=#00ffaf
+hi semshiSelf            ctermfg=249 guifg=#b2b2b2
+hi semshiUnresolved      ctermfg=226 guifg=#ffff00 cterm=underline gui=underline
+hi semshiSelected        ctermfg=231 guifg=#ffffff ctermbg=161 guibg=#d7005f
+
+hi semshiErrorSign       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
+hi semshiErrorChar       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
+sign define semshiError text=E> texthl=semshiErrorSign
+let g:semshi#error_sign = v:false
+
 "" Mapings
 " Press / twice to clear the search buffer
 nmap <silent> // :nohlsearch<CR>
 
 " K + J sequencially exists insert mode
-:imap kj <Esc>
+imap kj <Esc>
+imap KJ <Esc>
 
 " Or just Space to enter insert mode.
-:nmap <Space> i
-
-" toggle comments by pressing Leader+/
-noremap <C-a> :Commentary<cr>
+nmap <Space> i
 
 " $ Actually goes to the end of an line
-:noremap $ g$
+noremap $ g$
 
 " Unbind arrow keys
-" noremap <Up> <Nop>
+noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
@@ -77,5 +93,6 @@ noremap <Right> <Nop>
 syntax enable
 colorscheme vividchalk 
 
+hi MatchParen guibg=NONE guifg=blue gui=bold
 highlight Comment ctermfg=blue
 

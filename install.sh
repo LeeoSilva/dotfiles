@@ -55,16 +55,15 @@ cp -uf zsh/zshrc "$zsh" 2> /dev/null && echo -e "ZSH config [${color_light_green
 cp -uf ranger/* "$ranger" 2> /dev/null && echo -e "RANGER config [${color_light_green}Installed${color_nc}]";
 cp -uf polybar/config "$polybar" 2> /dev/null && echo -e "POLYBAR config [${color_light_green}Installed${color_nc}]";
 
-# ZSH plugin
+# ZSH plugins 
 echo -e "Installing [${color_light_green}ZSH Plugins${color_nc}]";
-
 cp -uf zsh/prompt.sh "$zshdir" 2> /dev/null && echo -e "ZSH prompt script [${color_light_green}Installed${color_nc}]";
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions 2> /dev/null # autosuggestions
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting 2> /dev/null # syntax-highlighting
-git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" 2> /dev/null
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions  # autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting # syntax-highlighting
+git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" # ZPrezto 
+git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k # PowerLevel10K
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # Tmux Plugin Manager 
 
 # Installing TMUX Sessions
 echo -e "Installing [${color_light_green}TMUX Sessions${color_nc}]";
