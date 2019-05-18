@@ -121,7 +121,7 @@ alias pwd="pwd|xclip -selection clipboard"
 alias grep='grep --color=auto'
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
-alias t='sh ~/.tmux/sessions/startup'
+alias t="sh ~/Codes/dotfiles/tmux/sessions/startup"
 alias cls='clear'
 alias fucking='sudo'
 alias xclip="xclip -selection clipboard"

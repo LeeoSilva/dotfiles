@@ -9,6 +9,6 @@ tmux split-window -h \;
 tmux send-keys 'clear;neofetch' C-m  \;
 tmux split-window -v \;
 tmux send-keys 'gotop' C-m \;
-tmux select-pane -t 0
+tmux select-pane -t 1
 
 tmux attach -t main
