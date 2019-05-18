@@ -139,7 +139,7 @@ alias gotop="gotop --rate=3 --color=monokai -s"
 # Aliases->Edit_Configs
 alias zshconfig="nvim  ~/Codes/dotfiles/zsh/zshrc"
 alias vimconfig="nvim  ~/Codes/dotfiles/nvim/init.vim"
-alias tmuxconfig="nvim ~/Codes/dotfiles/tmux.conf"
+alias tmuxconfig="nvim ~/Codes/dotfiles/tmux/tmux.conf"
 
 # Aliases->Dirs
 alias hps="cd /srv/http/"

@@ -69,6 +69,7 @@ hi semshiErrorSign       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
 hi semshiErrorChar       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
 sign define semshiError text=E> texthl=semshiErrorSign
 let g:semshi#error_sign = v:false
+let g:semshi#mark_selected_nodes = 0 	
 
 "" Mapings
 " Press / twice to clear the search buffer
