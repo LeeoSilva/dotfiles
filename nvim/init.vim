@@ -36,10 +36,10 @@ filetype plugin indent on				" Language dependent identation
 "" Plugins
 
 call plug#begin('~/.nvim/plugged')
-	Plug 'itchyny/lightline.vim'
-	Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'}
-	Plug 'octol/vim-cpp-enhanced-highlight'
-	Plug 'tpope/vim-vividchalk'
+	Plug 'itchyny/lightline.vim' " Better status line 
+	Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Better Python syntax highlighting
+	Plug 'octol/vim-cpp-enhanced-highlight' " Better C++ syntax highlighting 
+	Plug 'tpope/vim-vividchalk' " ColorScheme
 call plug#end()
 
 "" vim-cpp-enhanced-highlight configuration
