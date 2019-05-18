@@ -5,7 +5,7 @@ set clipboard=unnamedplus				" Copy and pasting goes to system clipboard
 set background=dark						" Syntax colors addepted to dark backgrounds
 set hlsearch							" Highlight all search patterns
 set incsearch							" Highlight the searching string while typing
-set mouse=a								" Allow mouse in the vim terminal
+"set mouse=a								" Allow mouse in the vim terminal
 set nowrap								" No word wrapping
 set tabstop=4							" Tabs equals four spaces
 set ignorecase							" Make search case-insensitive
