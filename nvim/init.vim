@@ -86,8 +86,11 @@ nmap <Space> i
 noremap $ g$
 
 " Unbind arrow keys
-noremap <Up> <Nop>
+" Unbind Up arrow key
+noremap <Up> <Nop> 
+" Unbind down arrow key
 noremap <Down> <Nop>
+" Unbind Left arrow key
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
