@@ -14,9 +14,7 @@ export PATH=~/.local/bin/:$PATH
 
 
 # ZSH Theme
-# ZSH_THEME="miloshadzic"
 ZSH_THEME=powerlevel10k/powerlevel10k
-
 
 # POWERLEVEL9K CONFIG 
 POWERLEVEL9K_MODE="nerdfont-complete"
@@ -117,7 +115,7 @@ alias vim='nvim'
 alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/MeuBolso/Songs/%(title)s.%(ext)s"'
 alias ls='ls --color=auto'
 alias open=xdg-open
-alias pwd="pwd|xclip -selection clipboard"
+alias pwd="pwd; pwd|xclip -selection clipboard"
 alias grep='grep --color=auto'
 alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
@@ -133,6 +131,7 @@ alias :wq="exit"
 alias run="./a.out"
 alias yum="yum --color=always"
 alias mkae="make"
+alias amke="make"
 alias gotop="gotop --rate=3 --color=monokai -s"
 
 

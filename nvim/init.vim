@@ -16,6 +16,7 @@ set ffs=unix							" Convert line end to LF automatically
 set encoding=utf8						" UTF-8 encodding
 set ruler								" Display cursor position
 set laststatus=2						" Always display status line
+set foldmethod=manual					" Changes the state of the folding code method 
 set cindent								" Ident files according to C indentation standard
 set number 								" Show line numbers
 set cursorline							" Show cursor line
@@ -85,14 +86,19 @@ nmap <Space> i
 " $ Actually goes to the end of an line
 noremap $ g$
 
+"" Commands
+" Capital W saves the file '-'
+command W w
+
+
 " Unbind arrow keys
-" Unbind Up arrow key
 noremap <Up> <Nop> 
-" Unbind down arrow key
 noremap <Down> <Nop>
-" Unbind Left arrow key
 noremap <Left> <Nop>
 noremap <Right> <Nop>
+
+noremap <cr> <Nop>
+noremap <bs> <Nop>
 
 syntax enable
 colorscheme vividchalk 
