@@ -89,6 +89,9 @@ noremap $ g$
 "" Commands
 " Capital W saves the file '-'
 command W w
+command Q q
+command Wq wq
+command WQ wq
 
 
 " Unbind arrow keys

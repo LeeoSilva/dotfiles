@@ -112,7 +112,7 @@ source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 # Aliases
 alias vi='nvim'
 alias vim='nvim'
-alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/MeuBolso/Songs/%(title)s.%(ext)s"'
+alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/home/leonardo/Songs/%(title)s.%(ext)s"'
 alias ls='ls --color=auto'
 alias open=xdg-open
 alias pwd="pwd; pwd|xclip -selection clipboard"
@@ -130,8 +130,9 @@ alias :q="exit"
 alias :wq="exit"
 alias run="./a.out"
 alias yum="yum --color=always"
-alias mkae="make"
-alias amke="make"
+alias mkae="make -j5"
+alias amke="make -j5"
+alias make="make -j5"
 alias gotop="gotop --rate=3 --color=monokai -s"
 
 
