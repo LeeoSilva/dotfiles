@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/home/leonardo/.oh-my-zsh
+export ZSH=~/.oh-my-zsh
 
 # Exporting Neo-Vim as editor
 export EDITOR="nvim"
@@ -112,7 +112,7 @@ source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 # Aliases
 alias vi='nvim'
 alias vim='nvim'
-alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "/home/leonardo/Songs/%(title)s.%(ext)s"'
+alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "~/Songs/%(title)s.%(ext)s"'
 alias ls='ls --color=auto'
 alias open=xdg-open
 alias pwd="pwd; pwd|xclip -selection clipboard"
