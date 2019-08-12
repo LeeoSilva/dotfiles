@@ -113,6 +113,7 @@ source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.z
 alias vi='nvim'
 alias vim='nvim'
 alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "~/Songs/%(title)s.%(ext)s"'
+alias sl='ls --color=auto'
 alias ls='ls --color=auto'
 alias open=xdg-open
 alias pwd="pwd; pwd|xclip -selection clipboard"

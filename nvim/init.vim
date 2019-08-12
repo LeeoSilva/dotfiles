@@ -41,6 +41,7 @@ call plug#begin('~/.nvim/plugged')
 	Plug 'numirias/semshi', {'do': ':UpdateRemotePlugins'} " Better Python syntax highlighting
 	Plug 'octol/vim-cpp-enhanced-highlight' " Better C++ syntax highlighting 
 	Plug 'tpope/vim-vividchalk' " ColorScheme
+	Plug 'adamclerk/vim-razor'
 call plug#end()
 
 "" vim-cpp-enhanced-highlight configuration
