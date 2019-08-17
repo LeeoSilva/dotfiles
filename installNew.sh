@@ -39,6 +39,7 @@ color_light_green='\033[1;32m';
 if [ ! -d "$HOME/.fonts" ]; then mkdir -p "$fonts"; fi
 if [ ! -d "$HOME/.config" ]; then mkdir -p "$HOME/.config"; fi
 if [ ! -d "$HOME/.zsh" ]; then mkdir -p "$HOME/.zsh"; fi
+if [ ! -d "$HOME/.oh-my-zsh/themes/powerlevel10k" ]; then mkdir -p "$HOME/.oh-my-zsh/themes/powerlevel10"; fi
 if [ ! -d "$HOME/.tmux/sessions/" ]; then mkdir -p "$HOME/.tmux/sessions/	"; fi
 if [ ! -d "$HOME/.config/nvim/" ]; then mkdir -p "$HOME/.config/nvim/	"; fi
 if [ ! -d "$HOME/.config/htop/" ]; then mkdir -p "$HOME/.config/htop/	"; fi
@@ -68,7 +69,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosugges
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting # syntax-highlighting
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" # ZPrezto
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # Tmux Plugin Manager 
-git clone https://github.com/romkatv/powerlevel10k.git $ZSH_CUSTOM/themes/powerlevel10k
+git clone https://github.com/romkatv/powerlevel10k.git ${ZDOTDIR:-$HOME}/.oh-my-zsh/themes/powerlevel10k
 
 # Installing TMUX Sessions
 echo -e "Installing [${color_light_green}TMUX Sessions${color_nc}]";
