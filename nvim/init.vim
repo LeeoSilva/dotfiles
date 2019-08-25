@@ -1,5 +1,5 @@
 "" Vim settings 
-set showmatch							" Show matching characters
+set showmatch							" show matching characters
 set t_Co=256							" Allow 256 colors
 set clipboard=unnamedplus				" Copy and pasting goes to system clipboard
 set background=dark						" Syntax colors addepted to dark backgrounds
@@ -33,6 +33,7 @@ set directory=~/.tmp					" Don't clutter my dirs up with swp and tmp
 set smarttab
 set gdefault							" assume /g flag on :s substitutions 
 filetype plugin indent on				" Language dependent identation
+:let mapleader = ","
 
 "" Plugins
 
@@ -42,6 +43,10 @@ call plug#begin('~/.nvim/plugged')
 	Plug 'octol/vim-cpp-enhanced-highlight' " Better C++ syntax highlighting 
 	Plug 'tpope/vim-vividchalk' " ColorScheme
 	Plug 'adamclerk/vim-razor'
+	Plug 'tpope/vim-surround'
+	Plug 'skammer/vim-css-color'
+	Plug 'mattn/emmet-vim'
+	Plug 'leafgarland/typescript-vim'
 call plug#end()
 
 "" vim-cpp-enhanced-highlight configuration
@@ -72,6 +77,14 @@ hi semshiErrorChar       ctermfg=231 guifg=#ffffff ctermbg=160 guibg=#d70000
 sign define semshiError text=E> texthl=semshiErrorSign
 let g:semshi#error_sign = v:false
 let g:semshi#mark_selected_nodes = 0 	
+
+"" emmet-vim
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key=','
+
+"" typescript-vim
+au BufRead,BufNewFile *.ts   setfiletype typescript
 
 "" Mapings
 " Press / twice to clear the search buffer
