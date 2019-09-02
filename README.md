@@ -5,10 +5,10 @@ My personal workflow settings.
 
 ## tl;dr
 
-**Wallpaper:** [1920x1080](https://imgur.com/a/FzeY95F)
-**GTK:** [Plata Noir Compact](https://gitlab.com/tista500/plata-theme)
-**Icons:** [la-capitaine](https://github.com/keeferrourke/la-capitaine-icon-theme)
-**Font:** [Roboto](https://fonts.google.com/specimen/Roboto?selection.family=Roboto)
++ **Wallpaper:** [1920x1080](https://imgur.com/a/FzeY95F)
++ **GTK:** [Plata Noir Compact](https://gitlab.com/tista500/plata-theme)
++ **Icons:** [la-capitaine](https://github.com/keeferrourke/la-capitaine-icon-theme)
++ **Font:** [Roboto](https://fonts.google.com/specimen/Roboto?selection.family=Roboto)
 
 ## GNOME Extensions
 
