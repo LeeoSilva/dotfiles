@@ -9,6 +9,7 @@ set mouse=a								" Allow mouse in the vim terminal
 set nowrap								" No word wrapping
 set tabstop=4							" Tabs equals four spaces
 set ignorecase							" Make search case-insensitive
+set ai									" Disable auto identing
 set nobackup							" No backup file
 set nowb								" No backup file	
 set noswapfile							" No backup file
@@ -31,10 +32,10 @@ set noshowmode							" Dont show the mode of the GUI
 set backupdir=~/.tmp
 set directory=~/.tmp					" Don't clutter my dirs up with swp and tmp 
 set smarttab
-set gdefault							" assume /g flag on :s substitutions 
+highlight Comment ctermfg=green 
 filetype plugin indent on				" Language dependent identation
 :let mapleader = ","
-
+	
 "" Plugins
 
 call plug#begin('~/.nvim/plugged')
@@ -85,34 +86,6 @@ let g:user_emmet_leader_key=','
 
 "" typescript-vim
 au BufRead,BufNewFile *.ts   setfiletype typescript
-
-"" Mapings
-" Press / twice to clear the search buffer
-nmap <silent> // :nohlsearch<CR>
-
-" K + J sequencially exists insert mode
-imap kj <Esc>
-imap KJ <Esc>
-
-" Or just Space to enter insert mode.
-nmap <Space> i
-
-" $ Actually goes to the end of an line
-noremap $ g$
-
-"" Commands
-" Capital W saves the file '-'
-command W w
-command Q q
-command Wq wq
-command WQ wq
-
-
-" Unbind arrow keys
-noremap <Up> <Nop> 
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
 
 noremap <cr> <Nop>
 noremap <bs> <Nop>
