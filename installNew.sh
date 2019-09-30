@@ -55,6 +55,7 @@ if [ ! -d "$HOME/.config/htop/" ]; then mkdir -p "$HOME/.config/htop/	"; fi
 (echo "source $path/ncmpcpp/config" > $ncmpcpp) 2> /dev/null && echo -e "NCMPCPP config [${color_light_green}Installed${color_nc}]";
 (echo "source $path/mpd/mpd.conf" > $mpd) 2> /dev/null && echo -e "MPD config [${color_light_green}Installed${color_nc}]"; 
 (echo "source $path/dunst/dunstrc" > $dunst) 2> /dev/null && echo -e "DUNST config [${color_light_green}Installed${color_nc}]";
+(echo "source $path/zsh/aliases" > $zshdir/aliases.sh) 2> /dev/null && echo -e "ZSH aliases config [${color_light_green}Installed${color_nc}]";
 
 cp -uf fonts/* "$fonts" 2> /dev/null && echo -e "Fonts [${color_light_green}Installed${color_nc}]";
 cp -uf $path/ranger/* "$ranger" 2> /dev/null && echo -e "RANGER config [${color_light_green}Installed${color_nc}]";

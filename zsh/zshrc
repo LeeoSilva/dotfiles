@@ -108,52 +108,7 @@ source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 # source "${ZDOTDIR:-$HOME}/.zsh/prompt.sh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-
-# Aliases
-alias vi='nvim'
-alias vim='nvim'
-alias song-dl='youtube-dl --extract-audio --audio-format mp3 -o "~/Songs/%(title)s.%(ext)s"'
-alias sl='ls --color=auto'
-alias ls='ls --color=auto'
-alias open=xdg-open
-alias pwd="pwd; pwd|xclip -selection clipboard"
-alias grep='grep --color=auto'
-alias fgrep="fgrep --color=auto"
-alias egrep="egrep --color=auto"
-alias t="sh ~/Codes/dotfiles/tmux/sessions/startup"
-alias cls='clear'
-alias fucking='sudo'
-alias xclip="xclip -selection clipboard"
-alias sudo='sudo '
-alias yolo='git commit -m "minor change" && git push origin master'
-alias please='sudo $(history -p !!)'
-alias :q="exit"
-alias :wq="exit"
-alias run="./a.out"
-alias yum="yum --color=always"
-alias mkae="make -j5"
-alias amke="make -j5"
-alias make="make -j5"
-alias gotop="gotop --rate=3 --color=monokai -s"
-
-# Aliases->Edit Configs
-alias zshconfig="nvim  ~/Codes/dotfiles/zsh/zshrc"
-alias vimconfig="nvim  ~/Codes/dotfiles/nvim/init.vim"
-alias tmuxconfig="nvim ~/Codes/dotfiles/tmux/tmux.conf"
-
-# Aliases->Dirs
-alias hps="cd /srv/http/"
-alias codes="cd '$HOME'/Codes/"
-alias etec="cd '$HOME'/Codes/ETEC/"
-alias dotfiles="cd '$HOME'/Codes/dotfiles/"
-alias hpo="cd '$HOME'/Codes/HelpPromptOffice/"
-alias docs="cd '$HOME'/Documents/"
-alias univem="cd '$HOME'/Codes/cs-bachelor/"
-alias dow="cd '$HOME'/Downloads/"
-alias opt= "cd /opt/"
-alias doc="cd '$HOME'/Documents/"
-alias des="cd '$HOME'/Desktop/"
-alias cs="cd '$HOME'/Codes/cs-bachelor/"
+source "${ZDOTDIR:-$HOME}/.zsh/aliases.sh"
 
 # Disables CTRL+S and CTRL+Q on the terminal
 stty -ixon
