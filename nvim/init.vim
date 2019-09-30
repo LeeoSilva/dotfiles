@@ -28,6 +28,6 @@ let g:user_emmet_leader_key=','
 
 " Syntax highlighting changes to the default colorscheme
 hi Comment ctermfg=blue
-hi Search ctermbg=black ctermfg=yellow
+hi Search ctermbg=NONE ctermfg=yellow
 
 autocmd BufRead,BufNewFile *.ts set filetype=javascript " same filetype for .js and .ts files
