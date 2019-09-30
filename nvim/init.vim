@@ -26,7 +26,8 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key=','
 
+" Syntax highlighting changes to the default colorscheme
 hi Comment ctermfg=blue
-hi MatchParen guibg=NONE guifg=blue gui=bold
+hi Search ctermbg=black ctermfg=yellow
 
 autocmd BufRead,BufNewFile *.ts set filetype=javascript " same filetype for .js and .ts files
