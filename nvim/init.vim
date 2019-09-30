@@ -1,5 +1,4 @@
 "" Vim settings 
-
 syntax enable
 set clipboard=unnamedplus				" Copy and pasting goes to system clipboard
 set nowrap								" No word wrapping
@@ -27,7 +26,8 @@ autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key=','
 
 " Syntax highlighting changes to the default colorscheme
-hi Comment ctermfg=blue
-hi Search ctermbg=NONE ctermfg=yellow
+hi Comment ctermfg=green
+hi Search ctermfg=black ctermbg=darkcyan
+
 
 autocmd BufRead,BufNewFile *.ts set filetype=javascript " same filetype for .js and .ts files
