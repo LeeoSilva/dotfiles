@@ -1,7 +1,9 @@
 "" Vim settings 
+
 syntax enable
 set clipboard=unnamedplus				" Copy and pasting goes to system clipboard
 set nowrap								" No word wrapping
+set confirm								" Always confirm commands intead of failing
 set tabstop=4							" Tabs equals four spaces
 set shiftwidth=4						" Width of tabs is 4 spaces
 set softtabstop=4						" Width of tabs in 4 spaces
@@ -25,9 +27,5 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key=','
 
-" Syntax highlighting changes to the default colorscheme
-hi Comment ctermfg=green
-hi Search ctermfg=black ctermbg=darkcyan
-
-
 autocmd BufRead,BufNewFile *.ts set filetype=javascript " same filetype for .js and .ts files
+colorscheme vividchalk
