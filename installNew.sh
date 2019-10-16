@@ -31,7 +31,6 @@ zsh="$HOME/.zshrc";
 zshdir="$HOME/.zsh/";
 ncmpcpp="$HOME/.ncmpcpp/config";
 mpd="$HOME/.config/mpd/mpd.conf";
-path="$(pwd)"; # One day i'll fix this '-'
 
 color_nc='\033[0m'; # No Color
 color_light_green='\033[1;32m';
@@ -39,7 +38,6 @@ color_light_green='\033[1;32m';
 if [ ! -d "$HOME/.fonts" ]; then mkdir -p "$fonts"; fi
 if [ ! -d "$HOME/.config" ]; then mkdir -p "$HOME/.config"; fi
 if [ ! -d "$HOME/.zsh" ]; then mkdir -p "$HOME/.zsh"; fi
-if [ ! -d "$HOME/.oh-my-zsh/themes/powerlevel10k" ]; then mkdir -p "$HOME/.oh-my-zsh/themes/powerlevel10"; fi
 if [ ! -d "$HOME/.tmux/sessions/" ]; then mkdir -p "$HOME/.tmux/sessions/	"; fi
 if [ ! -d "$HOME/.config/nvim/" ]; then mkdir -p "$HOME/.config/nvim/	"; fi
 if [ ! -d "$HOME/.config/htop/" ]; then mkdir -p "$HOME/.config/htop/	"; fi
@@ -65,7 +63,7 @@ cp -urf $path/tmux/sessions/* "$tmuxsession" 2> /dev/null && echo -e "TMUX sessi
 # ZSH plugins 
 echo -e "Installing [${color_light_green}ZSH Plugins${color_nc}]";
 cp -uf zsh/prompt.sh "$zshdir" 2> /dev/null && echo -e "ZSH prompt script [${color_light_green}Installed${color_nc}]";
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)" # Oh my zsh
 git clone https://github.com/zsh-users/zsh-autosuggestions ~/.zsh/zsh-autosuggestions  # autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlighting # syntax-highlighting
 git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" # ZPrezto
