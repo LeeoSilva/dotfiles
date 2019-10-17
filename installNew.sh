@@ -31,6 +31,7 @@ zsh="$HOME/.zshrc";
 zshdir="$HOME/.zsh/";
 ncmpcpp="$HOME/.ncmpcpp/config";
 mpd="$HOME/.config/mpd/mpd.conf";
+path="$(pwd)"; # One day i'll fix this '-'
 
 color_nc='\033[0m'; # No Color
 color_light_green='\033[1;32m';
@@ -43,17 +44,16 @@ if [ ! -d "$HOME/.config/nvim/" ]; then mkdir -p "$HOME/.config/nvim/	"; fi
 if [ ! -d "$HOME/.config/htop/" ]; then mkdir -p "$HOME/.config/htop/	"; fi
 if [ ! -d "$HOME/.config/htop/" ]; then mkdir -p "$HOME/.config/htop/	"; fi
 
-(echo "source $path/zsh/zshrc" > $zsh) 2> /dev/null && echo -e "ZSH config[${color_light_green}Installed${color_nc}];"       # ZSH
-(echo "source $path/nvim/init.vim" > $vim) 2> /dev/null && echo -e "NEOVIM config [${color_light_green}Installed${color_nc};"		   # NVIM
-(echo "source $path/tmux/tmux.conf" > $tmux) 2> /dev/null && echo -e "TMUX config [${color_light_green}Installed${color_nc}];"	   # TMUX 
-(echo "source $path/htop/htoprc" > $htop) 2> /dev/null && echo -e "HTOP config [${color_light_green}Installed${color_nc}]";  # HTOP 
-(echo "source $path/termite/config" > $termite) 2> /dev/null && echo -e "TERMITE config [${color_light_green}Installed${color_nc}]"; # TERMITE 
-(echo "source $path/polybar/config" > $polybar) 2> /dev/null && echo -e "POLYBAR config [${color_light_green}Installed${color_nc}]"; # POLYBAR 
-(echo "source $path/i3/config" > $i3) 2> /dev/null && echo -e "I3 config [$(color_light_green)Installed${color_nc}]"; # I3
-(echo "source $path/ncmpcpp/config" > $ncmpcpp) 2> /dev/null && echo -e "NCMPCPP config [${color_light_green}Installed${color_nc}]";
-(echo "source $path/mpd/mpd.conf" > $mpd) 2> /dev/null && echo -e "MPD config [${color_light_green}Installed${color_nc}]"; 
-(echo "source $path/dunst/dunstrc" > $dunst) 2> /dev/null && echo -e "DUNST config [${color_light_green}Installed${color_nc}]";
-(echo "source $path/zsh/aliases" > $zshdir/aliases.sh) 2> /dev/null && echo -e "ZSH aliases config [${color_light_green}Installed${color_nc}]";
+(echo -e "source $path/zsh/zshrc" > $zsh) 2> /dev/null && echo -e "ZSH config[${color_light_green}Installed${color_nc}];"       # ZSH
+(echo -e "source $path/nvim/init.vim" > $vim) 2> /dev/null && echo -e "NEOVIM config [${color_light_green}Installed${color_nc};"		   # NVIM
+(echo -e "source $path/tmux/tmux.conf" > $tmux) 2> /dev/null && echo -e "TMUX config [${color_light_green}Installed${color_nc}];"	   # TMUX 
+(echo -e "source $path/htop/htoprc" > $htop) 2> /dev/null && echo -e "HTOP config [${color_light_green}Installed${color_nc}]";  # HTOP 
+(echo -e "source $path/termite/config" > $termite) 2> /dev/null && echo -e "TERMITE config [${color_light_green}Installed${color_nc}]"; # TERMITE 
+(echo -e "source $path/polybar/config" > $polybar) 2> /dev/null && echo -e "POLYBAR config [${color_light_green}Installed${color_nc}]"; # POLYBAR 
+(echo -e "source $path/i3/config" > $i3) 2> /dev/null && echo -e "I3 config [$(color_light_green)Installed${color_nc}]"; # I3
+(echo -e "source $path/ncmpcpp/config" > $ncmpcpp) 2> /dev/null && echo -e "NCMPCPP config [${color_light_green}Installed${color_nc}]";
+(echo -e "source $path/mpd/mpd.conf" > $mpd) 2> /dev/null && echo -e "MPD config [${color_light_green}Installed${color_nc}]"; 
+(echo -e "source $path/dunst/dunstrc" > $dunst) 2> /dev/null && echo -e "DUNST config [${color_light_green}Installed${color_nc}]";
 
 cp -uf fonts/* "$fonts" 2> /dev/null && echo -e "Fonts [${color_light_green}Installed${color_nc}]";
 cp -uf $path/ranger/* "$ranger" 2> /dev/null && echo -e "RANGER config [${color_light_green}Installed${color_nc}]";
