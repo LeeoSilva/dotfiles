@@ -1,6 +1,7 @@
 "" Vim settings 
 
 syntax enable
+set mouse=a
 set clipboard=unnamedplus				" Copy and pasting goes to system clipboard
 set nowrap								" No word wrapping
 set confirm								" Always confirm commands intead of failing
@@ -14,6 +15,7 @@ set ruler								" Display cursor position in status line
 set number 								" Show line numbers
 set laststatus=1						" Always display status line
 set cursorline							" Show cursor line
+set noswapfile							" No swap file
 let mapleader = ","
 	
 "" Plugins

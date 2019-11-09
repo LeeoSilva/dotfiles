@@ -12,6 +12,9 @@ export LANG=en_US.UTF-8
 ## Exporting .local to PATH
 export PATH=~/.local/bin/:$PATH
 
+# Exporting android to path
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
 
 # ZSH Theme
 ZSH_THEME=powerlevel10k/powerlevel10k
