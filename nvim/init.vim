@@ -24,6 +24,9 @@ call plug#begin('~/.nvim/plugged')
 	Plug 'mattn/emmet-vim'
 call plug#end()
 
+
+inoremap kj <ESC>
+
 "" emmet-vim
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
