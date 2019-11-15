@@ -25,12 +25,15 @@ call plug#begin('~/.nvim/plugged')
 call plug#end()
 
 
-inoremap kj <ESC>
+imap kj <ESC>
+command W w
 
 "" emmet-vim
 let g:user_emmet_install_global = 0
-autocmd FileType html,css EmmetInstall
+autocmd FileType html,css,php EmmetInstall
 let g:user_emmet_leader_key=','
 
 autocmd BufRead,BufNewFile *.ts set filetype=javascript " same filetype for .js and .ts files
 colorscheme vividchalk
+
+hi comment ctermfg=blue
