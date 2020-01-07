@@ -37,4 +37,7 @@ let g:user_emmet_leader_key=','
 autocmd BufRead,BufNewFile *.ts set filetype=javascript " same filetype for .js and .ts files
 colorscheme vividchalk
 
+" Cursorline background color
+highlight CursorLine ctermbg=NONE
+
 hi comment ctermfg=blue
