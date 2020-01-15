@@ -2,6 +2,7 @@
 
 syntax enable
 set path=$PWD/**
+set nocompatible
 set mouse=a
 set clipboard=unnamedplus				" Copy and pasting goes to system clipboard
 set nowrap								" No word wrapping
