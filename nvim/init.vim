@@ -5,6 +5,7 @@ set path=$PWD/**
 set nocompatible
 set mouse=a
 set clipboard=unnamedplus				" Copy and pasting goes to system clipboard
+set autoread							" Watch the file for changes
 set nowrap								" No word wrapping
 set confirm								" Always confirm commands intead of failing
 set tabstop=4							" Tabs equals four spaces
@@ -24,6 +25,7 @@ let mapleader = ","
 call plug#begin('~/.nvim/plugged')
 	Plug 'tpope/vim-vividchalk' " ColorScheme
 	Plug 'mattn/emmet-vim'
+	Plug 'tpope/vim-commentary'
 call plug#end()
 
 
@@ -37,6 +39,9 @@ let g:user_emmet_leader_key=','
 
 autocmd BufRead,BufNewFile *.ts set filetype=javascript " same filetype for .js and .ts files
 colorscheme vividchalk
+
+autocmd FocusGained * checktime		" Checks if the file has been changed outside of vim and reloads the file
+
 
 " Cursorline background color
 highlight CursorLine ctermbg=NONE
