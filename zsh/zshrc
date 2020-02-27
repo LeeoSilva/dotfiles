@@ -127,8 +127,7 @@ alias dot="cd '$HOME'/Codes/dotfiles/"
 alias dow="cd '$HOME'/Downloads/"
 alias doc="cd '$HOME'/Documents/"
 alias des="cd '$HOME'/Desktop/"
-alias jw="cd '$HOME'/Codes/ja-web/"
-alias ja="cd '$HOME'/Codes/ja-app/"
+alias opt="cd /opt/"
 
 source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
