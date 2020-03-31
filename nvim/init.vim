@@ -33,6 +33,8 @@ Plug 'tpope/vim-commentary'
 Plug 'jaredgorski/spacecamp'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
+Plug 'maxmellon/vim-jsx-pretty'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 imap kj <ESC>
@@ -44,8 +46,11 @@ set t_Co=256
 
 "" emmet-vim
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,php EmmetInstall
+autocmd FileType html,css,javascript,php,javascript.jsx EmmetInstall
 let g:user_emmet_leader_key=','
+
+
+let g:vim_jsx_pretty_colorful_config = 1
 
 autocmd BufRead,BufNewFile *.ts set filetype=javascript " same filetype for .js and .ts files
 
