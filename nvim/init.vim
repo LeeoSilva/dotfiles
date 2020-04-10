@@ -27,14 +27,21 @@ filetype plugin indent on
 
 "" Plugins
 call plug#begin('~/.nvim/plugged')
-Plug 'tpope/vim-vividchalk' " ColorScheme
+
+"" Functionality
 Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-commentary'
-Plug 'jaredgorski/spacecamp'
 Plug 'vim-airline/vim-airline'
 Plug 'tpope/vim-fugitive'
+
+"" Syntax support
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'pangloss/vim-javascript'
+
+"" Colorschemes
+Plug 'tpope/vim-vividchalk'
+Plug 'jaredgorski/spacecamp'
+
 call plug#end()
 
 imap kj <ESC>

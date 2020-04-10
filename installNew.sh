@@ -31,6 +31,7 @@ zsh="$HOME/.zshrc";
 zshdir="$HOME/.zsh/";
 ncmpcpp="$HOME/.ncmpcpp/config";
 mpd="$HOME/.config/mpd/mpd.conf";
+fontconfig="$HOME/.config/fontconfig/";
 path="$(pwd)"; # One day i'll fix this '-'
 
 color_nc='\033[0m'; # No Color
@@ -43,6 +44,7 @@ if [ ! -d "$HOME/.tmux/sessions/" ]; then mkdir -p "$HOME/.tmux/sessions/	"; fi
 if [ ! -d "$HOME/.config/nvim/" ]; then mkdir -p "$HOME/.config/nvim/	"; fi
 if [ ! -d "$HOME/.config/htop/" ]; then mkdir -p "$HOME/.config/htop/	"; fi
 if [ ! -d "$HOME/.config/htop/" ]; then mkdir -p "$HOME/.config/htop/	"; fi
+if [ ! -d "$HOME/.config/fontconfig/" ]; then mkdir -p "$HOME/.config/fontconfig/"; fi
 
 (echo -e "source $path/zsh/zshrc" > $zsh) 2> /dev/null && echo -e "ZSH config[${color_light_green}Installed${color_nc}];"       # ZSH
 (echo -e "source $path/nvim/init.vim" > $vim) 2> /dev/null && echo -e "NEOVIM config [${color_light_green}Installed${color_nc};"		   # NVIM
@@ -56,6 +58,7 @@ if [ ! -d "$HOME/.config/htop/" ]; then mkdir -p "$HOME/.config/htop/	"; fi
 (echo -e "source $path/dunst/dunstrc" > $dunst) 2> /dev/null && echo -e "DUNST config [${color_light_green}Installed${color_nc}]";
 
 cp -uf fonts/* "$fonts" 2> /dev/null && echo -e "Fonts [${color_light_green}Installed${color_nc}]";
+cp -uf fontconfig/* "$fontconfig" 2> /dev/null && echo -e "Emoji support [${color_light_green}Installed${color_nc}]";
 cp -uf $path/ranger/* "$ranger" 2> /dev/null && echo -e "RANGER config [${color_light_green}Installed${color_nc}]";
 cp -urf $path/tmux/sessions/* "$tmuxsession" 2> /dev/null && echo -e "TMUX sessions [${color_light_green}Installed${color_nc}]";
 
