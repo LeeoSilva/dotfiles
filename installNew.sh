@@ -62,6 +62,8 @@ cp -uf fontconfig/* "$fontconfig" 2> /dev/null && echo -e "Emoji support [${colo
 cp -uf $path/ranger/* "$ranger" 2> /dev/null && echo -e "RANGER config [${color_light_green}Installed${color_nc}]";
 cp -urf $path/tmux/sessions/* "$tmuxsession" 2> /dev/null && echo -e "TMUX sessions [${color_light_green}Installed${color_nc}]";
 
+sudo pacman -S --noconfirm noto-fonts-emoji ttf-joypixels 
+
 
 # ZSH plugins 
 echo -e "Installing [${color_light_green}ZSH Plugins${color_nc}]";
