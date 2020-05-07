@@ -20,6 +20,9 @@ set number 							" Show line numbers
 set laststatus=1						" Always display status line
 set cursorline							" Show cursor line
 set noswapfile							" No swap file
+set foldmethod=indent
+set nofoldenable
+set foldlevel=1
 let mapleader = ","
 set expandtab 
 set smarttab
@@ -72,6 +75,9 @@ let g:cpp_no_function_highlight = 0
 let g:cpp_simple_highlight = 1
 let g:cpp_named_requirements_highlight = 1
 let c_no_curly_error = 1
+
+"" aditional clang options 
+let g:doge_clang_args = ['-I', '/my/include/path']
 
 autocmd BufRead,BufNewFile *.ts set filetype=javascript " same filetype for .js and .ts files
 autocmd FocusGained * checktime		" Checks if the file has been changed outside of vim and reloads the file
