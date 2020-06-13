@@ -47,7 +47,6 @@ Plug 'bfrg/vim-cpp-modern'
 
 "" Colorschemes
 Plug 'tpope/vim-vividchalk'
-Plug 'jaredgorski/spacecamp'
 
 call plug#end()
 
@@ -79,6 +78,9 @@ let c_no_curly_error = 1
 "" aditional clang options 
 let g:doge_clang_args = ['-I', '/my/include/path']
 
+
+let g:gruvbox_contrast_dark = 'hard'
+
 autocmd BufRead,BufNewFile *.ts set filetype=javascript " same filetype for .js and .ts files
 autocmd FocusGained * checktime		" Checks if the file has been changed outside of vim and reloads the file
 
@@ -89,7 +91,5 @@ autocmd FocusGained * checktime		" Checks if the file has been changed outside o
 colorscheme vividchalk 
 hi comment ctermfg=blue
 highlight CursorLine ctermbg=NONE
-
-
 
 

@@ -114,6 +114,7 @@ alias xclip="xclip -selection clipboard"
 alias :q="exit"
 alias :wq="exit"
 alias gotop="gotop --rate=3 --color=monokai -s"
+alias mkae="make"
 
 # Aliases->Edit Configs
 alias zshconfig="nvim  '$HOME'/Codes/dotfiles/zsh/zshrc"
