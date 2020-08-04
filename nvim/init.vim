@@ -1,4 +1,4 @@
-"" Vim settings 
+" Vim settings 
 
 syntax enable
 set path=$PWD/**
@@ -42,6 +42,7 @@ Plug 'kkoomen/vim-doge'
 
 "" Syntax support
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'   
 Plug 'pangloss/vim-javascript'
 Plug 'bfrg/vim-cpp-modern'
 
@@ -55,6 +56,7 @@ command W w
 "" DOGE 
 let g:doge_enable_mappings = 1
 let g:doge_mapping = '<leader>f'
+let g:doge_doc_standard_cpp='doxygen_javadoc'
 
 
 "" Airline
@@ -66,7 +68,7 @@ let g:user_emmet_install_global = 0
 autocmd FileType html,css,javascript,php,javascript.jsx EmmetInstall
 let g:user_emmet_leader_key=','
 
-"" jsx-pretty
+"" jsx-prettynpm i --save @types/socket.io
 let g:vim_jsx_pretty_colorful_config = 1
 
 "" vim-cpp-modern
@@ -75,13 +77,10 @@ let g:cpp_simple_highlight = 1
 let g:cpp_named_requirements_highlight = 1
 let c_no_curly_error = 1
 
-"" aditional clang options 
-let g:doge_clang_args = ['-I', '/my/include/path']
 
 
 let g:gruvbox_contrast_dark = 'hard'
 
-autocmd BufRead,BufNewFile *.ts set filetype=javascript " same filetype for .js and .ts files
 autocmd FocusGained * checktime		" Checks if the file has been changed outside of vim and reloads the file
 
 

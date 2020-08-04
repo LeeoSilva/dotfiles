@@ -9,6 +9,9 @@ export TERM=xterm-256color
 ## User configuration
 export LANG=en_US.UTF-8
 
+# C-Family env
+export LD_LIBRARY_PATH=/usr/lib/
+
 ## Exporting .local to PATH
 export PATH=~/.local/bin/:$PATH
 
