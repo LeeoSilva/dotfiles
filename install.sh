@@ -32,6 +32,7 @@ zshdir="$HOME/.zsh/";
 ncmpcpp="$HOME/.ncmpcpp/config";
 mpd="$HOME/.config/mpd/mpd.conf";
 fontconfig="$HOME/.config/fontconfig/";
+fontconfig="$HOME/.config/kitty/kitty.conf";
 path="$(pwd)"; # One day i'll fix this '-'
 
 color_nc='\033[0m'; # No Color
@@ -45,6 +46,7 @@ if [ ! -d "$HOME/.config/nvim/" ]; then mkdir -p "$HOME/.config/nvim/	"; fi
 if [ ! -d "$HOME/.config/htop/" ]; then mkdir -p "$HOME/.config/htop/	"; fi
 if [ ! -d "$HOME/.config/htop/" ]; then mkdir -p "$HOME/.config/htop/	"; fi
 if [ ! -d "$HOME/.config/fontconfig/" ]; then mkdir -p "$HOME/.config/fontconfig/"; fi
+if [ ! -d "$HOME/.config/kitty/" ]; then mkdir -p "$HOME/.config/kitty/"; fi
 
 (echo -e "source $path/zsh/zshrc" > $zsh) 2> /dev/null && echo -e "ZSH config[${color_light_green}Installed${color_nc}];"       # ZSH
 (echo -e "source $path/nvim/init.vim" > $vim) 2> /dev/null && echo -e "NEOVIM config [${color_light_green}Installed${color_nc};"		   # NVIM
@@ -56,14 +58,12 @@ if [ ! -d "$HOME/.config/fontconfig/" ]; then mkdir -p "$HOME/.config/fontconfig
 (echo -e "source $path/ncmpcpp/config" > $ncmpcpp) 2> /dev/null && echo -e "NCMPCPP config [${color_light_green}Installed${color_nc}]";
 (echo -e "source $path/mpd/mpd.conf" > $mpd) 2> /dev/null && echo -e "MPD config [${color_light_green}Installed${color_nc}]"; 
 (echo -e "source $path/dunst/dunstrc" > $dunst) 2> /dev/null && echo -e "DUNST config [${color_light_green}Installed${color_nc}]";
+(echo -e "include $path/kitty/kitty.conf" > $kitty) 2> /dev/null && echo -e "Kitty config [${color_light_green}Installed${color_nc}]";
 
 cp -uf fonts/* "$fonts" 2> /dev/null && echo -e "Fonts [${color_light_green}Installed${color_nc}]";
 cp -uf fontconfig/* "$fontconfig" 2> /dev/null && echo -e "Emoji support [${color_light_green}Installed${color_nc}]";
 cp -uf $path/ranger/* "$ranger" 2> /dev/null && echo -e "RANGER config [${color_light_green}Installed${color_nc}]";
 cp -urf $path/tmux/sessions/* "$tmuxsession" 2> /dev/null && echo -e "TMUX sessions [${color_light_green}Installed${color_nc}]";
-
-sudo pacman -S --noconfirm noto-fonts-emoji ttf-joypixels 
-
 
 # ZSH plugins 
 echo -e "Installing [${color_light_green}ZSH Plugins${color_nc}]";

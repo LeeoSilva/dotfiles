@@ -124,6 +124,7 @@ alias zshconfig="nvim  '$HOME'/Codes/dotfiles/zsh/zshrc"
 alias aliases="nvim '$HOME'/Codes/dotfiles/zsh/aliases.sh"
 alias vimconfig="nvim  '$HOME'/Codes/dotfiles/nvim/init.vim"
 alias tmuxconfig="nvim '$HOME'/Codes/dotfiles/tmux/tmux.conf"
+alias kittyconfig="nvim '$HOME'/Codes/dotfiles/kitty/kitty.conf"
 
 # Aliases->Dirs
 alias codes="cd '$HOME'/Codes/"

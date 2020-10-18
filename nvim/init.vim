@@ -3,6 +3,9 @@
 syntax enable
 set path=$PWD/**
 set nocompatible
+set encoding=utf-8
+set t_Co=256
+set termencoding=utf-8
 set mouse=a
 set clipboard=unnamedplus				        " Copy and pasting goes to system clipboard
 set autoread							" Watch the file for changes
@@ -61,11 +64,10 @@ let g:doge_doc_standard_cpp='doxygen_javadoc'
 
 "" Airline
 let g:airline_powerline_fonts = 1
-set t_Co=256
 
 "" emmet-vim
 let g:user_emmet_install_global = 0
-autocmd FileType html,css,javascript,php,javascript.jsx EmmetInstall
+autocmd FileType html,css,javascript,javascript.jsx,vue EmmetInstall
 let g:user_emmet_leader_key=','
 
 "" jsx-prettynpm i --save @types/socket.io
@@ -76,8 +78,6 @@ let g:cpp_no_function_highlight = 0
 let g:cpp_simple_highlight = 1
 let g:cpp_named_requirements_highlight = 1
 let c_no_curly_error = 1
-
-
 
 let g:gruvbox_contrast_dark = 'hard'
 
