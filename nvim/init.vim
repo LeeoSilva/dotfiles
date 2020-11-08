@@ -48,6 +48,7 @@ Plug 'maxmellon/vim-jsx-pretty'
 Plug 'HerringtonDarkholme/yats.vim'   
 Plug 'pangloss/vim-javascript'
 Plug 'bfrg/vim-cpp-modern'
+Plug 'leafOfTree/vim-vue-plugin'
 
 "" Colorschemes
 Plug 'tpope/vim-vividchalk'
