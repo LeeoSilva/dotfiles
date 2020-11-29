@@ -61,7 +61,7 @@ command W w
 let g:doge_enable_mappings = 1
 let g:doge_mapping = '<leader>f'
 let g:doge_doc_standard_cpp='doxygen_javadoc'
-
+let g:doge_php_settings = { 'resolve_fqn': 1 }
 
 "" Airline
 let g:airline_powerline_fonts = 1
