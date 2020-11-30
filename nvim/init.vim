@@ -57,6 +57,12 @@ call plug#end()
 
 command W w
 
+"" Maps the F1 Key to escape 
+map <F1> <Esc>
+imap <F1> <Esc>
+
+nmap K k
+
 "" DOGE 
 let g:doge_enable_mappings = 1
 let g:doge_mapping = '<leader>f'
