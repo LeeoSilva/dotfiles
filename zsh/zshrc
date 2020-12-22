@@ -119,6 +119,7 @@ alias :wq="exit"
 alias gotop="gotop --rate=3 --color=monokai -s"
 alias mkae="make"
 alias artisan="php artisan"
+alias gti="git"
 
 # Aliases->Edit Configs
 alias zshconfig="nvim  '$HOME'/Codes/dotfiles/zsh/zshrc"
