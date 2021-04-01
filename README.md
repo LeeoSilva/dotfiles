@@ -19,6 +19,7 @@ My personal workflow settings.
 + [Remove Audio Device Selection Dialog](https://extensions.gnome.org/extension/1482/remove-audio-device-selection-dialog/)
 + [TopIcons Plus](https://extensions.gnome.org/extension/1031/topicons/)
 + [User Themes](https://extensions.gnome.org/extension/19/user-themes/)
++ [Panel OSD](https://extensions.gnome.org/extension/708/panel-osd/)
 
 ## Programs whose configs can be found here:
 
