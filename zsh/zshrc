@@ -111,7 +111,7 @@ alias vim='nvim'
 alias ls='ls --color=aut'
 alias pwd="pwd; pwd|xclip -selection clipboard"
 alias grep='grep --color=auto'
-alias t="sh '$HOME'/Codes/dotfiles/tmux/sessions/startup"
+alias t="sh '$HOME'/workspace/dotfiles/tmux/sessions/startup"
 alias cls='clear'
 alias xclip="xclip -selection clipboard"
 alias :q="exit"
@@ -122,11 +122,11 @@ alias artisan="php artisan"
 alias gti="git"
 
 # Aliases->Edit Configs
-alias zshconfig="nvim  '$HOME'/Codes/dotfiles/zsh/zshrc"
-alias aliases="nvim '$HOME'/Codes/dotfiles/zsh/aliases.sh"
-alias vimconfig="nvim  '$HOME'/Codes/dotfiles/nvim/init.vim"
-alias tmuxconfig="nvim '$HOME'/Codes/dotfiles/tmux/tmux.conf"
-alias kittyconfig="nvim '$HOME'/Codes/dotfiles/kitty/kitty.conf"
+alias zshconfig="nvim  '$HOME'/workspace/dotfiles/zsh/zshrc"
+alias aliases="nvim '$HOME'/workspace/dotfiles/zsh/aliases.sh"
+alias vimconfig="nvim  '$HOME'/workspace/dotfiles/nvim/init.vim"
+alias tmuxconfig="nvim '$HOME'/workspace/dotfiles/tmux/tmux.conf"
+alias kittyconfig="nvim '$HOME'/workspace/dotfiles/kitty/kitty.conf"
 
 # Aliases->Dirs
 alias codes="cd '$HOME'/Codes/"
