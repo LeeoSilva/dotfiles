@@ -51,7 +51,7 @@ POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND='none'
 POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND='004'
 
 # PoweLevel9K right prompt
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vcs virtualenv)
 POWERLEVEL9K_STATUS_VERBOSE=false
 POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR=' '
 POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR=' '
@@ -102,24 +102,28 @@ plugins=(
   tmuxinator
   colored-man-pages
   git-flow
+  pyenv
 )
 
 # Terminal Aliases
 
-alias vi='nvim'
-alias vim='nvim'
 alias ls='ls --color=aut'
 alias pwd="pwd; pwd|xclip -selection clipboard"
 alias grep='grep --color=auto'
 alias t="sh '$HOME'/workspace/dotfiles/tmux/sessions/startup"
 alias cls='clear'
 alias xclip="xclip -selection clipboard"
+alias gotop="gotop --rate=3 --color=monokai -s"
+alias artisan="php artisan"
+
+# Aliases->Typos
+alias gti="git"
+alias mkae="make"
 alias :q="exit"
 alias :wq="exit"
-alias gotop="gotop --rate=3 --color=monokai -s"
-alias mkae="make"
-alias artisan="php artisan"
-alias gti="git"
+alias vi='nvim'
+alias vim='nvim'
+alias pyevn="pyenv"
 
 # Aliases->Edit Configs
 alias zshconfig="nvim  '$HOME'/workspace/dotfiles/zsh/zshrc"
