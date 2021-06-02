@@ -50,6 +50,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'cespare/vim-toml'
+Plug 'thanethomson/vim-jenkinsfile'
 
 "" Colorschemes
 Plug 'tpope/vim-vividchalk'
