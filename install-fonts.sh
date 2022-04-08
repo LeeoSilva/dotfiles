@@ -5,4 +5,8 @@
 
 
 ## Apt package manager - Debian or Debian-based distros
-sudo apt install fonts-roboto fonts-firacode fonts-noto fonts-noto-cjk fonts-noto-color-emoji fonts-noto-cjk-extra fonts-font-awesome ttf-dejavu
+# sudo apt install fonts-roboto fonts-firacode fonts-noto fonts-noto-cjk fonts-noto-color-emoji fonts-noto-cjk-extra fonts-font-awesome ttf-dejavu
+
+## Dnf package manager - Red Hat-based distros
+sudo dnf install google-roboto-fonts fira-code-fonts google-noto-*  google-{roboto,noto-\*}-fonts gdouros-symbola-fonts fontawesome-fonts
+
