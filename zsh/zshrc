@@ -152,4 +152,7 @@ stty -ixon
 # Sets the keyboard layout to BR-ABNT2
 setxkbmap -model abnt2 -layout br -variant abnt2
 
+# Enter key is mapped to be used.
+bindkey -s "^[OM" "^M"
+
 
