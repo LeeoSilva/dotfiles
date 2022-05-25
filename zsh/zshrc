@@ -107,23 +107,10 @@ plugins=(
 
 # Terminal Aliases
 
-alias ls='ls --color=aut'
+alias ls='ls --color=auto'
 alias pwd="pwd; pwd|xclip -selection clipboard"
 alias grep='grep --color=auto'
-alias t="sh '$HOME'/workspace/dotfiles/tmux/sessions/startup"
-alias cls='clear'
 alias xclip="xclip -selection clipboard"
-alias gotop="gotop --rate=3 --color=monokai -s"
-alias artisan="php artisan"
-
-# Aliases->Typos
-alias gti="git"
-alias mkae="make"
-alias :q="exit"
-alias :wq="exit"
-alias vi='nvim'
-alias vim='nvim'
-alias pyevn="pyenv"
 
 # Aliases->Edit Configs
 alias zshconfig="nvim  '$HOME'/workspace/dotfiles/zsh/zshrc"
@@ -131,14 +118,6 @@ alias aliases="nvim '$HOME'/workspace/dotfiles/zsh/aliases.sh"
 alias vimconfig="nvim  '$HOME'/workspace/dotfiles/nvim/init.vim"
 alias tmuxconfig="nvim '$HOME'/workspace/dotfiles/tmux/tmux.conf"
 alias kittyconfig="nvim '$HOME'/workspace/dotfiles/kitty/kitty.conf"
-
-# Aliases->Dirs
-alias codes="cd '$HOME'/Codes/"
-alias dot="cd '$HOME'/Codes/dotfiles/"
-alias dow="cd '$HOME'/Downloads/"
-alias doc="cd '$HOME'/Documents/"
-alias des="cd '$HOME'/Desktop/"
-alias opt="cd /opt/"
 
 source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
