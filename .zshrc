@@ -106,22 +106,10 @@ plugins=(
 )
 
 # Terminal Aliases
-
-alias ls='ls --color=auto'
-alias pwd="pwd; pwd|xclip -selection clipboard"
 alias grep='grep --color=auto'
-alias xclip="xclip -selection clipboard"
-
-# Aliases->Edit Configs
-alias zshconfig="nvim  '$HOME'/workspace/dotfiles/zsh/zshrc"
-alias aliases="nvim '$HOME'/workspace/dotfiles/zsh/aliases.sh"
-alias vimconfig="nvim  '$HOME'/workspace/dotfiles/nvim/init.vim"
-alias tmuxconfig="nvim '$HOME'/workspace/dotfiles/tmux/tmux.conf"
-alias kittyconfig="nvim '$HOME'/workspace/dotfiles/kitty/kitty.conf"
 
 source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
-# source "${ZDOTDIR:-$HOME}/.zsh/prompt.sh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
@@ -133,5 +121,3 @@ setxkbmap -model abnt2 -layout br -variant abnt2
 
 # Enter key is mapped to be used.
 bindkey -s "^[OM" "^M"
-
-
