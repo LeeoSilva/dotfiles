@@ -22,9 +22,5 @@ ln -s -f "$CWD/.zshrc" "$ZSH"
 # git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm # Tmux Plugin Manager 
 # git clone https://github.com/romkatv/powerlevel10k.git ${ZDOTDIR:-$HOME}/.oh-my-zsh/themes/powerlevel10k
 
-# Installing TMUX Sessions
-# echo -e "Installing [${color_light_green}TMUX Sessions${color_nc}]";
-# cp -urf tmux/sessions/* "$tmuxsession" 2> /dev/null && echo -e "TMUX sessions [${color_light_green}Installed${color_nc}]";
-
 # Finishing up
-# echo -e "${color_light_green}All Set-up!${color_nc}";
+echo -e "${color_light_green}All Set-up!${color_nc}";

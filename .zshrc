@@ -9,9 +9,6 @@ export TERM=xterm-256color
 ## User configuration
 export LANG=en_US.UTF-8
 
-# C-Family env
-export LD_LIBRARY_PATH=/usr/lib/
-
 ## Exporting .local to PATH
 export PATH=~/.local/bin/:$PATH
 
@@ -107,17 +104,14 @@ plugins=(
 
 # Terminal Aliases
 alias grep='grep --color=auto'
+alias vim='nvim'
 
 source $ZSH/oh-my-zsh.sh
-source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
 
 # Disables CTRL+S and CTRL+Q on the terminal
 stty -ixon
-
-# Sets the keyboard layout to BR-ABNT2
-setxkbmap -model abnt2 -layout br -variant abnt2
 
 # Enter key is mapped to be used.
 bindkey -s "^[OM" "^M"
