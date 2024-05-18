@@ -79,11 +79,5 @@ git clone https://github.com/romkatv/powerlevel10k.git ${ZDOTDIR:-$HOME}/.oh-my-
 echo -e "Installing [${color_light_green}TMUX Sessions${color_nc}]";
 cp -urf tmux/sessions/* "$tmuxsession" 2> /dev/null && echo -e "TMUX sessions [${color_light_green}Installed${color_nc}]";
 
-# Installing VIM Plugins
-echo -e "Installing [${color_light_green}NEOVIM Plugins${color_nc}]";
-curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim;
-vim -c :PlugInstall -c :q! -c q!;
-
 # Finishing up
 echo -e "${color_light_green}All Set-up!${color_nc}";
