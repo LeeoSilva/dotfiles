@@ -110,13 +110,23 @@ plugins=(
 # Terminal Aliases
 alias grep='grep --color=auto'
 alias vim='nvim'
+alias cat='bat --paging=never'
+alias fvim='nvim $(fzf --preview="bat --color=always {}")'
 
 source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+source <(fzf --zsh)
+
+export JAVA_HOME=$(/usr/libexec/java_home)
+export SPARK_HOME=/opt/spark-3.1.1-amzn-0-bin-3.2.1-amzn-3
+export PATH=$PATH:/opt/apache-maven-3.6.0/bin
+export PATH=$PATH:/opt/aws-glue-3-0/libs/bin
 
 # Disables CTRL+S and CTRL+Q on the terminal
 stty -ixon
 
 # Enter key is mapped to be used.
 bindkey -s "^[OM" "^M"
+
+eval "$(zoxide init zsh)"

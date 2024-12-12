@@ -1,5 +1,6 @@
 #!/bin/bash
 
+LOCALBIN="($HOME/.local/bin)";
 TMUX="$HOME/.tmux.conf";
 NVIM="$HOME/.config/nvim/init.vim";
 ZSH="$HOME/.zshrc";
@@ -8,6 +9,7 @@ CWD="$(pwd)";
 mkdir -p "$HOME/.config/"
 mkdir -p "$HOME/.config/nvim/"
 
+ln -s -f "$CWD/.local/bin/tmux-sessionizer" "$LOCALBIN/tmux-sessionizer"
 ln -s -f "$CWD/.tmux.conf" "$TMUX"
 ln -s -f "$CWD/init.vim" "$NVIM"
 ln -s -f "$CWD/.zshrc" "$ZSH"
