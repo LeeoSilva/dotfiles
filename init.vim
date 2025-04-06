@@ -9,11 +9,7 @@ set clipboard=unnamedplus				        " Copy and pasting goes to system clipboard
 set autoread							" Watch the file for changes
 set nowrap							" No word wrapping
 set confirm							" Always confirm commands intead of failing
-set tabstop=8
-set shiftwidth=4						" Width of tabs is 4 spaces
 set ffs=dos,unix
-set softtabstop=4						" Width of tabs in 4 spaces
-set noexpandtab							" use tabs, not spaces
 set ignorecase							" Make search case-insensitive
 set ai								" Disable auto identing
 set ruler							" Display cursor position in status line
@@ -24,11 +20,14 @@ set noswapfile							" No swap file
 set foldmethod=indent
 set nofoldenable
 set foldlevel=1
+set noexpandtab
+set copyindent
+set preserveindent
+set softtabstop=0
+set shiftwidth=4
+set tabstop=4
 let mapleader = ","
-set expandtab 
-set smarttab
-set autoindent
-set cindent
+
 filetype plugin indent on
 
 let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
