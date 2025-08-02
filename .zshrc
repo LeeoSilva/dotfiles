@@ -21,6 +21,7 @@ source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
 
 
+
 # ZSH Theme
 ZSH_THEME=powerlevel10k/powerlevel10k
 
@@ -121,12 +122,8 @@ alias fkill="ps -e | fzf | awk '{print $1}' | xargs kill"
 source $ZSH/oh-my-zsh.sh
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
 source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
-source <(fzf --zsh)
 
 export JAVA_HOME=$(/usr/libexec/java_home)
-export SPARK_HOME=/opt/spark-3.1.1-amzn-0-bin-3.2.1-amzn-3
-export PATH=$PATH:/opt/apache-maven-3.6.0/bin
-export PATH=$PATH:/opt/aws-glue-3-0/libs/bin
 
 # Disables CTRL+S and CTRL+Q on the terminal
 stty -ixon
@@ -135,3 +132,10 @@ stty -ixon
 bindkey -s "^[OM" "^M"
 
 eval "$(zoxide init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source <(fzf --zsh)
+
