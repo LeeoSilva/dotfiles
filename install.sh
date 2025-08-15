@@ -12,7 +12,7 @@ mkdir -p "$HOME/.config/ghostty/"
 
 ln -s -f "$CWD/.tmux.conf" "$TMUX"
 ln -s -f "$CWD/.config/nvim/init.vim" "$NVIM"
-ln -s -f "$CWD/.config/ghostty/init.vim" "$GHOSTTY"
+ln -s -f "$CWD/.config/ghostty/config" "$GHOSTTY"
 ln -s -f "$CWD/.zshrc" "$ZSH"
 
 # ZSH plugins 
