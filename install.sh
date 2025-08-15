@@ -21,3 +21,4 @@ ln -sf "$CWD/.zshrc" "$ZSH"
 [ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ] && git clone --recursive https://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" 
 [ ! -d "${ZDOTDIR:-$HOME}/.oh-my-zsh/themes/powerlevel10k" ] && git clone https://github.com/romkatv/powerlevel10k.git "${ZDOTDIR:-$HOME}/.oh-my-zsh/themes/powerlevel10k" 
 
+exit 0
