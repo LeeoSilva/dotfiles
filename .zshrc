@@ -16,12 +16,6 @@ export PATH=~/.local/bin/:$PATH
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 
-# GCP Cloud sdk
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-
-
-
 # ZSH Theme
 ZSH_THEME=powerlevel10k/powerlevel10k
 
