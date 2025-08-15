@@ -1,0 +1,9 @@
+font-family = JetBrainsMono Nerd Font Mono
+font-size = 17
+theme = GitHub-Dark-High-Contrast
+term = xterm-ghostty
+title = 👻
+macos-titlebar-style=tabs
+window-save-state = always
+window-theme = auto
+
