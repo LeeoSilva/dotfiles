@@ -8,7 +8,7 @@ set clipboard=unnamedplus				        " Copy and pasting goes to system clipboard
 set autoread							" Watch the file for changes
 set nowrap							" No word wrapping
 set confirm							" Always confirm commands intead of failing
-set ffs=dos,unix
+set ffs=unix
 set nofsync
 set ignorecase							" Make search case-insensitive
 set ai								" Disable auto identing
