@@ -6,4 +6,5 @@ title = 👻
 macos-titlebar-style=tabs
 window-save-state = always
 window-theme = auto
+command = zsh -l -c "/opt/homebrew/bin/tmux attach || /opt/homebrew/bin/tmux"
 
