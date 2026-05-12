@@ -96,11 +96,27 @@ POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='none'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='003'
 POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-remotebranch git-tagname)
 
+# Completion system
+autoload -Uz compinit
+zmodload zsh/complist
+
+# initialize completion
+compinit
+
+# menu selection
+zstyle ':completion:*' menu select
+
+# selected item style
+zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}' ma=48;5;238'
+
+
 # Plugins 
 zinit ice depth=1; zinit light romkatv/powerlevel10k 
-zinit snippet OMZP::git 
-zinit light zsh-users/zsh-autosuggestions 
-zinit light zsh-users/zsh-syntax-highlighting
+
+zinit wait lucid for \
+	OMZP::git \
+	atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
+	zdharma-continuum/fast-syntax-highlighting
 
 setopt autocd sharehistory HIST_IGNORE_DUPS HIST_IGNORE_SPACE HIST_FIND_NO_DUPS EXTENDED_HISTORY
 unsetopt correct correct_all
@@ -135,17 +151,20 @@ fsearch() {
 }
 
 
-export JAVA_HOME=${JAVA_HOME:-$(/usr/libexec/java_home)}
+_java_init() {
+	unfunction java javac mvn gradle 2>/dev/null
+	export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
+}
+java() { _java_init; java "@"; }
+javac() { _java_init; javac "@"; }
+mvn() { _java_init; mvn "@"; }
+gradle() { _java_init; gradle "@"; }
 
 stty -ixon
 
 bindkey -s "^[OM" "^M"
 
-
-# NVM and other configs
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_DOWNLOAD_TOOL=aria2
-
-
