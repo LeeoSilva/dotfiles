@@ -1,0 +1,21 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": true,
+  "autoupdate": true,
+  "permission": {
+    "external_directory": "allow",
+
+    "bash": {
+      "git push": "deny",
+      "git push *": "deny",
+      "sudo *": "deny",
+      "rm -rf /": "deny",
+      "rm -rf /*": "deny",
+      "rm -rf ~": "deny",
+      "rm -rf ~/*": "deny",
+      ":(){:|:&};:": "deny"
+    }
+  },
+
+  "plugin": []
+}

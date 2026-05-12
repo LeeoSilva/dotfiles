@@ -1,0 +1,13 @@
+{
+	"permissions": { 
+		"defaultMode": "auto"
+	},
+	"preferredNotifChannel": "terminal_bell", 
+	"skipAutoPermissionPrompt": true,
+	"enabledPlugins": [
+		"pyright",
+		"typescript-lsp",
+		"gopls",
+		"jdtls"
+	]
+}
