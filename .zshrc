@@ -94,8 +94,6 @@ POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND='none'
 POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND='005'
 POWERLEVEL9K_VCS_MODIFIED_BACKGROUND='none'
 POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='003'
-
-
 POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-remotebranch git-tagname)
 
 # Plugins 
@@ -104,9 +102,12 @@ zinit snippet OMZP::git
 zinit light zsh-users/zsh-autosuggestions 
 zinit light zsh-users/zsh-syntax-highlighting
 
-setopt autocd sharehistory 
+setopt autocd sharehistory HIST_IGNORE_DUPS HIST_IGNORE_SPACE HIST_FIND_NO_DUPS EXTENDED_HISTORY
 unsetopt correct correct_all
 
+HISTFILE="$HOME/.zsh_history"
+HISTSIZE=100_000
+SAVEHIST=100_000
 
 # Terminal Aliases
 alias grep='grep --color=auto'
