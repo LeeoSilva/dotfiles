@@ -13,6 +13,16 @@ export LANG=en_US.UTF-8
 ## Exporting .local to PATH
 export PATH=~/.local/bin/:$PATH
 
+# --- zinit ----
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+if [[ ! -d $ZINIT_HOME ]]; then 
+	mkdir -p "$(dirname $ZINIT_HOME)"
+	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+source "${ZINIT_HOME}/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit 
+
 # pyenv - static shims (fast), lazy-load shell integration on first use
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
@@ -26,15 +36,19 @@ python3() { _pyenv_lazy_init; python3 "$@"; }
 pip() { _pyenv_lazy_init; pip "$@"; } 
 pip3() { _pyenv_lazy_init; pip3 "$@"; } 
 
-# --- zinit ----
-ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
-if [[ ! -d $ZINIT_HOME ]]; then 
-	mkdir -p "$(dirname $ZINIT_HOME)"
-	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-source "${ZINIT_HOME}/zinit.zsh"
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit 
+# nvm - lazy-load shell integration
+export NVM_DIR="$HOME/.nvm"
+[ ! -d "$NVM_DIR" ] && export NVM_DIR="/opt/homebrew/opt/nvm"
+_nvm_lazy_init() {
+	unset -f nvm node npm npx yarn
+	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+}
+nvm() { _nvm_lazy_init; nvm "$@"; }
+node() { _nvm_lazy_init; node "$@"; }
+npm() { _nvm_lazy_init; npm "$@"; }
+npx() { _nvm_lazy_init; npx "$@"; }
+yarn() { _nvm_lazy_init; yarn "$@"; }
 
 # Exporting android to path
 export ANDROID_HOME=$HOME/Android/Sdk
@@ -127,12 +141,7 @@ stty -ixon
 bindkey -s "^[OM" "^M"
 
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source <(fzf --zsh)
-
+# NVM and other configs
 export HOMEBREW_NO_AUTO_UPDATE=1
 export HOMEBREW_NO_INSTALL_CLEANUP=1
 export HOMEBREW_NO_ANALYTICS=1
