@@ -1,5 +1,6 @@
-# Path to your oh-my-zsh installation.
-export ZSH=~/.oh-my-zsh
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then 
+	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # Exporting Neo-Vim as editor
 export EDITOR="nvim"
@@ -12,14 +13,33 @@ export LANG=en_US.UTF-8
 ## Exporting .local to PATH
 export PATH=~/.local/bin/:$PATH
 
+# pyenv - static shims (fast), lazy-load shell integration on first use
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
+_pyenv_lazy_init() {
+	unset -f pyenv python python3 pip pip3
+	eval "$(pyenv init -)"
+}
+pyenv() { _pyenv_lazy_init; pyenv "$@"; } 
+python() { _pyenv_lazy_init; python "$@"; } 
+python3() { _pyenv_lazy_init; python3 "$@"; } 
+pip() { _pyenv_lazy_init; pip "$@"; } 
+pip3() { _pyenv_lazy_init; pip3 "$@"; } 
+
+# --- zinit ----
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+if [[ ! -d $ZINIT_HOME ]]; then 
+	mkdir -p "$(dirname $ZINIT_HOME)"
+	git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+source "${ZINIT_HOME}/zinit.zsh"
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit 
+
 # Exporting android to path
 export ANDROID_HOME=$HOME/Android/Sdk
 export PATH=$PATH:$ANDROID_HOME/tools
 
-# ZSH Theme
-ZSH_THEME=powerlevel10k/powerlevel10k
-
-# POWERLEVEL9K CONFIG 
 POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_COLOR_SCHEME='dark'
 POWERLEVEL9K_DISABLE_PROMPT=true
@@ -64,46 +84,20 @@ POWERLEVEL9K_VCS_MODIFIED_FOREGROUND='003'
 
 POWERLEVEL9K_VCS_GIT_HOOKS=(vcs-detect-changes git-untracked git-aheadbehind git-remotebranch git-tagname)
 
-# Enable bi-weekly auto-update checks.
-DISABLE_AUTO_UPDATE="false"
+# Plugins 
+zinit ice depth=1; zinit light romkatv/powerlevel10k 
+zinit snippet OMZP::git 
+zinit light zsh-users/zsh-autosuggestions 
+zinit light zsh-users/zsh-syntax-highlighting
 
-# Uncomment the following line to change how often to auto-update (in days).
-export UPDATE_ZSH_DAYS=7
+setopt autocd sharehistory 
+unsetopt correct correct_all
 
-# Enable colors in ls.
-DISABLE_LS_COLORS="false"
-
-# Disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
-
-# Enable command auto-correction.
-ENABLE_CORRECTION="false"
-DISABLE_CORRECTION="true"
-
-# Display red dots whilst waiting for completion.
-COMPLETION_WAITING_DOTS="true"
-
-# Assume "cd" when a command is a directory
-setopt autocd
-
-# Share the same history between all shells
-setopt sharehistory
-
-# Disables auto-correction
-unsetopt correct
-unsetopt correct_all
-
-plugins=(
-  git
-  tmux
-  tmuxinator
-  colored-man-pages
-  git-flow
-  pyenv
-)
 
 # Terminal Aliases
 alias grep='grep --color=auto'
+alias ls='ls --color=auto'
+alias la='ls -alhi --color=auto'
 alias vim='nvim'
 alias cat='bat --paging=never'
 alias fvim='nvim $(fzf --preview="bat --color=always {}")'
@@ -113,24 +107,35 @@ alias fcd='cd $(find . -type d -print | fzf)'
 alias fpbcopy='/bin/cat $(fzf) | pbcopy'
 alias fkill="ps -e | fzf | awk '{print $1}' | xargs kill"
 
-source $ZSH/oh-my-zsh.sh
-source "${ZDOTDIR:-$HOME}/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh"
-source "${ZDOTDIR:-$HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh"
+# fsearch - search content with ripgrep and open in nvim at line
+fsearch() {
+  local file
+  local line
 
-export JAVA_HOME=$(/usr/libexec/java_home)
+  read -r file line <<< "$(rg --line-number --column --no-heading --color=always --smart-case "${1:-}" | fzf --ansi --delimiter : --preview 'bat --color=always --highlight-line {2} {1}' --preview-window 'up,60%,border-bottom,+{2}+3/3' | awk -F: '{print $1, $2}')"
 
-# Disables CTRL+S and CTRL+Q on the terminal
+  if [[ -n $file ]]; then
+    nvim "+$line" "$file"
+  fi
+}
+
+
+export JAVA_HOME=${JAVA_HOME:-$(/usr/libexec/java_home)}
+
 stty -ixon
 
-# Enter key is mapped to be used.
 bindkey -s "^[OM" "^M"
 
-eval "$(zoxide init zsh)"
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh && source <(fzf --zsh)
-source <(fzf --zsh)
+
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_DOWNLOAD_TOOL=aria2
+
 
