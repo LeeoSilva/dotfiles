@@ -101,7 +101,11 @@ autoload -Uz compinit
 zmodload zsh/complist
 
 # initialize completion
-compinit
+if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then 
+	compinit
+else 
+	compinit -C
+fi
 
 # menu selection
 zstyle ':completion:*' menu select
@@ -155,10 +159,10 @@ _java_init() {
 	unfunction java javac mvn gradle 2>/dev/null
 	export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
 }
-java() { _java_init; java "@"; }
-javac() { _java_init; javac "@"; }
-mvn() { _java_init; mvn "@"; }
-gradle() { _java_init; gradle "@"; }
+java() { _java_init; java "$@"; }
+javac() { _java_init; javac "$@"; }
+mvn() { _java_init; mvn "$@"; }
+gradle() { _java_init; gradle "$@"; }
 
 stty -ixon
 
