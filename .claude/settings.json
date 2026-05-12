@@ -1,13 +1,17 @@
 {
+	"env": {
+		"CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE": "1"
+	},
+	"autoUpdatesChannel": "stable",
 	"permissions": { 
 		"defaultMode": "auto"
 	},
 	"preferredNotifChannel": "terminal_bell", 
 	"skipAutoPermissionPrompt": true,
-	"enabledPlugins": [
-		"pyright",
-		"typescript-lsp",
-		"gopls",
-		"jdtls"
-	]
+	"enabledPlugins": {
+		"pyright-lsp@claude-plugins-official": true,
+		"typescript-lsp@claude-plugins-official": true,
+		"gopls-lsp@claude-plugins-official": true,
+		"jdtls-lsp@claude-plugins-official": true
+	}
 }
