@@ -2,16 +2,13 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Exporting Neo-Vim as editor
 export EDITOR="nvim"
 export VISUAL="nvim"
 export TERM=xterm-256color
-
-## User configuration
 export LANG=en_US.UTF-8
-
-## Exporting .local to PATH
 export PATH=~/.local/bin/:$PATH
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PATH"
 
 # --- zinit ----
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -23,18 +20,7 @@ source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit 
 
-# pyenv - static shims (fast), lazy-load shell integration on first use
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PYENV_ROOT/shims:$PATH"
-_pyenv_lazy_init() {
-	unset -f pyenv python python3 pip pip3
-	eval "$(pyenv init -)"
-}
-pyenv() { _pyenv_lazy_init; pyenv "$@"; } 
-python() { _pyenv_lazy_init; python "$@"; } 
-python3() { _pyenv_lazy_init; python3 "$@"; } 
-pip() { _pyenv_lazy_init; pip "$@"; } 
-pip3() { _pyenv_lazy_init; pip3 "$@"; } 
+
 
 # nvm - lazy-load shell integration
 export NVM_DIR="$HOME/.nvm"
@@ -102,7 +88,7 @@ zmodload zsh/complist
 
 # initialize completion
 if [[ -n ${ZDOTDIR:-$HOME}/.zcompdump(#qN.mh+24) ]]; then 
-	compinit
+	compinit -u
 else 
 	compinit -C
 fi
@@ -113,11 +99,13 @@ zstyle ':completion:*' menu select
 # selected item style
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}' ma=48;5;238'
 
+(( $+commands[fzf] )) && source <(fzf --zsh)
 
 # Plugins 
 zinit ice depth=1; zinit light romkatv/powerlevel10k 
 
 zinit wait lucid for \
+	has"fzf" Aloxaf/fzf-tab \
 	OMZP::git \
 	atload"_zsh_autosuggest_start" zsh-users/zsh-autosuggestions \
 	zdharma-continuum/fast-syntax-highlighting
@@ -142,27 +130,17 @@ alias fcd='cd $(find . -type d -print | fzf)'
 alias fpbcopy='/bin/cat $(fzf) | pbcopy'
 alias fkill="ps -e | tail -n +2 | fzf | awk '{print \$1}' | xargs kill"
 
-# fsearch - search content with ripgrep and open in nvim at line
-fsearch() {
-  local file
-  local line
-
-  read -r file line <<< "$(rg --line-number --column --no-heading --color=always --smart-case "${1:-}" | fzf --ansi --delimiter : --preview 'bat --color=always --highlight-line {2} {1}' --preview-window 'up,60%,border-bottom,+{2}+3/3' | awk -F: '{print $1, $2}')"
-
-  if [[ -n $file ]]; then
-    nvim "+$line" "$file"
-  fi
+export SDKMAN_DIR="$HOME/.sdkman"
+_sdkman_init() { 
+	unset -f sdk java javac mvn gradle kotlin
+	[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
 }
-
-
-_java_init() {
-	unfunction java javac mvn gradle 2>/dev/null
-	export JAVA_HOME=$(/usr/libexec/java_home 2>/dev/null)
-}
-java() { _java_init; java "$@"; }
-javac() { _java_init; javac "$@"; }
-mvn() { _java_init; mvn "$@"; }
-gradle() { _java_init; gradle "$@"; }
+sdk() { _sdkman_init; sdk "$@"; } 
+java() { _sdkman_init; java "$@"; } 
+javac() { _sdkman_init; javac "$@"; } 
+mvn() { _sdkman_init; mvn "$@"; } 
+gradle() { _sdkman_init; gradle "$@"; } 
+kotlin() { _sdkman_init; kotlin "$@"; } 
 
 stty -ixon
 
