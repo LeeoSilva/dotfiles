@@ -119,7 +119,7 @@ alias fcode='code $(find . -type d -print | fzf)'
 alias fcat='cat $(fzf)'
 alias fcd='cd $(find . -type d -print | fzf)'
 alias fpbcopy='/bin/cat $(fzf) | pbcopy'
-alias fkill="ps -e | fzf | awk '{print $1}' | xargs kill"
+alias fkill="ps -e | tail -n +2 | fzf | awk '{print \$1}' | xargs kill"
 
 # fsearch - search content with ripgrep and open in nvim at line
 fsearch() {
