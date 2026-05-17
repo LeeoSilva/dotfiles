@@ -135,7 +135,7 @@ mvn() { _sdkman_init; mvn "$@"; }
 gradle() { _sdkman_init; gradle "$@"; } 
 kotlin() { _sdkman_init; kotlin "$@"; } 
 
-stty -ixon
+[[ -t 0 ]] && stty -ixon
 
 bindkey -s "^[OM" "^M"
 
