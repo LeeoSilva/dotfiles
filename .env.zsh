@@ -1,0 +1,16 @@
+export EDITOR="nvim"
+export VISUAL="nvim"
+export TERM=xterm-256color
+export LANG=en_US.UTF-8
+export PATH=~/.local/bin/:$PATH
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/shims:$PATH"
+export PATH="$HOME/.opencode/bin:$PATH"
+export NVM_DIR="$HOME/.nvm"
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export SDKMAN_DIR="$HOME/.sdkman"
+export HOMEBREW_NO_AUTO_UPDATE=1
+export HOMEBREW_NO_INSTALL_CLEANUP=1
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_DOWNLOAD_TOOL=aria2

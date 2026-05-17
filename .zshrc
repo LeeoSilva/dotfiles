@@ -1,15 +1,8 @@
+source "$HOME/workspace/dotfiles/.env.zsh"
+
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then 
 	source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-export EDITOR="nvim"
-export VISUAL="nvim"
-export TERM=xterm-256color
-export LANG=en_US.UTF-8
-export PATH=~/.local/bin/:$PATH
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/shims:$PATH"
-export PATH="$HOME/.opencode/bin:$PATH"
 
 # --- zinit ----
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -24,7 +17,6 @@ autoload -Uz _zinit
 
 
 # nvm - lazy-load shell integration
-export NVM_DIR="$HOME/.nvm"
 [ ! -d "$NVM_DIR" ] && export NVM_DIR="/opt/homebrew/opt/nvm"
 _nvm_lazy_init() {
 	unset -f nvm node npm npx yarn
@@ -38,8 +30,6 @@ npx() { _nvm_lazy_init; npx "$@"; }
 yarn() { _nvm_lazy_init; yarn "$@"; }
 
 # Exporting android to path
-export ANDROID_HOME=$HOME/Android/Sdk
-export PATH=$PATH:$ANDROID_HOME/tools
 
 POWERLEVEL9K_MODE="nerdfont-complete"
 POWERLEVEL9K_COLOR_SCHEME='dark'
@@ -134,8 +124,6 @@ alias fcat='cat $(fzf)'
 alias fcd='cd $(find . -type d -print | fzf)'
 alias fpbcopy='/bin/cat $(fzf) | pbcopy'
 alias fkill="ps -e | tail -n +2 | fzf | awk '{print \$1}' | xargs kill"
-
-export SDKMAN_DIR="$HOME/.sdkman"
 _sdkman_init() { 
 	unset -f sdk java javac mvn gradle kotlin
 	[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
@@ -151,7 +139,6 @@ stty -ixon
 
 bindkey -s "^[OM" "^M"
 
-export HOMEBREW_NO_AUTO_UPDATE=1
-export HOMEBREW_NO_INSTALL_CLEANUP=1
-export HOMEBREW_NO_ANALYTICS=1
-export HOMEBREW_DOWNLOAD_TOOL=aria2
+# Restore Alt+Backspace behavior to delete entire word
+bindkey '^[^?' backward-kill-word
+bindkey '^[^H' backward-kill-word

@@ -66,6 +66,7 @@ link_file "$CWD/.config/ghostty/config" "$HOME/.config/ghostty/config"
 link_file "$CWD/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
 link_file "$CWD/.claude/settings.json" "$HOME/.claude/settings.json"
 link_file "$CWD/.zshrc" "$HOME/.zshrc"
+link_file "$CDW/.env.zsh" "$HOME/.env.zsh"
 
 # Zinit installation
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
