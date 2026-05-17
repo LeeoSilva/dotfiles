@@ -9,6 +9,7 @@ export LANG=en_US.UTF-8
 export PATH=~/.local/bin/:$PATH
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/shims:$PATH"
+export PATH="$HOME/.opencode/bin:$PATH"
 
 # --- zinit ----
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
@@ -99,7 +100,11 @@ zstyle ':completion:*' menu select
 # selected item style
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}' ma=48;5;238'
 
-(( $+commands[fzf] )) && source <(fzf --zsh)
+(( $+commands[fzf] )) && {
+	if fzf --zsh > /dev/null 2>&1; then
+		source <(fzf --zsh)
+	fi
+}
 
 # Plugins 
 zinit ice depth=1; zinit light romkatv/powerlevel10k 
