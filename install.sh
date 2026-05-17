@@ -88,6 +88,27 @@ if command -v brew >/dev/null 2>&1 && [ -f "$CWD/Brewfile" ]; then
     fi
 fi
 
+# Aptfile check
+if command -v apt-get >/dev/null 2>&1 && [ -f "$CWD/Aptfile" ]; then
+    [ $CHANGES_MADE -eq 0 ] && print_header "Applying changes"
+    print_info "Installing Ubuntu dependencies..."
+    # Filter comments and empty lines, then install
+    grep -v '^#' "$CWD/Aptfile" | xargs sudo apt-get install -y
+    
+    # Python specific LSP installations for Ubuntu
+    if command -v pip3 >/dev/null 2>&1; then
+        print_info "Installing pyright via pip..."
+        pip3 install --user pyright
+    fi
+
+    # Check for npm to install bash-language-server if apt package is missing or preferred
+    if command -v npm >/dev/null 2>&1; then
+        print_info "Ensuring bash-language-server via npm..."
+        sudo npm install -g bash-language-server
+    fi
+    print_success "Ubuntu dependencies installed"
+fi
+
 if [ $CHANGES_MADE -eq 1 ]; then
     printf "\n${BOLD}${GREEN}Installation complete!${NC}\n\n"
 fi
