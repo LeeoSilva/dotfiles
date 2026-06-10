@@ -99,6 +99,10 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}' ma=48;5;238'
 # Plugins 
 zinit ice depth=1; zinit light romkatv/powerlevel10k 
 
+# Disable git commit message long characters.
+typeset -gA FAST_HIGHLIGHT
+FAST_HIGHLIGHT[git-cmsg-len]=99999
+
 zinit wait lucid for \
 	has"fzf" Aloxaf/fzf-tab \
 	OMZP::git \
