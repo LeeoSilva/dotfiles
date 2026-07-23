@@ -14,21 +14,6 @@ source "${ZINIT_HOME}/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit 
 
-
-
-# nvm - lazy-load shell integration
-[ ! -d "$NVM_DIR" ] && export NVM_DIR="/opt/homebrew/opt/nvm"
-_nvm_lazy_init() {
-	unset -f nvm node npm npx yarn
-	[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-	[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-}
-nvm() { _nvm_lazy_init; nvm "$@"; }
-node() { _nvm_lazy_init; node "$@"; }
-npm() { _nvm_lazy_init; npm "$@"; }
-npx() { _nvm_lazy_init; npx "$@"; }
-yarn() { _nvm_lazy_init; yarn "$@"; }
-
 # Exporting android to path
 
 POWERLEVEL9K_MODE="nerdfont-complete"
@@ -116,28 +101,7 @@ HISTFILE="$HOME/.zsh_history"
 HISTSIZE=100_000
 SAVEHIST=100_000
 
-# Terminal Aliases
-alias grep='grep --color=auto'
-alias ls='ls --color=auto'
-alias la='ls -alhi --color=auto'
-alias vim='nvim'
-alias cat='bat --paging=never'
-alias fvim='nvim $(fzf --preview="bat --color=always {}")'
-alias fcode='code $(find . -type d -print | fzf)'
-alias fcat='cat $(fzf)'
-alias fcd='cd $(find . -type d -print | fzf)'
-alias fpbcopy='/bin/cat $(fzf) | pbcopy'
-alias fkill="ps -e | tail -n +2 | fzf | awk '{print \$1}' | xargs kill"
-_sdkman_init() { 
-	unset -f sdk java javac mvn gradle kotlin
-	[[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
-}
-sdk() { _sdkman_init; sdk "$@"; } 
-java() { _sdkman_init; java "$@"; } 
-javac() { _sdkman_init; javac "$@"; } 
-mvn() { _sdkman_init; mvn "$@"; } 
-gradle() { _sdkman_init; gradle "$@"; } 
-kotlin() { _sdkman_init; kotlin "$@"; } 
+source "$HOME/workspace/dotfiles/.aliases.zsh"
 
 [[ -t 0 ]] && stty -ixon
 

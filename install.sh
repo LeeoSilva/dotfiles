@@ -65,7 +65,14 @@ link_file "$CWD/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 link_file "$CWD/.config/ghostty/config" "$HOME/.config/ghostty/config"
 link_file "$CWD/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
 link_file "$CWD/.claude/settings.json" "$HOME/.claude/settings.json"
+link_file "$CWD/.aliases.zsh" "$HOME/.aliases.zsh"
 link_file "$CWD/.zshrc" "$HOME/.zshrc"
+# Ensure .env.zsh exists from example if not present
+if [ ! -f "$CWD/.env.zsh" ]; then
+    [ $CHANGES_MADE -eq 0 ] && print_header "Applying changes"
+    print_info ".env.zsh: Creating from .env.zsh.example"
+    cp "$CWD/.env.zsh.example" "$CWD/.env.zsh"
+fi
 link_file "$CWD/.env.zsh" "$HOME/.env.zsh"
 
 # Zinit installation
