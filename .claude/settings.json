@@ -1,17 +1,19 @@
 {
-	"env": {
-		"CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE": "1"
-	},
-	"autoUpdatesChannel": "stable",
-	"permissions": { 
-		"defaultMode": "auto"
-	},
-	"preferredNotifChannel": "terminal_bell", 
-	"skipAutoPermissionPrompt": true,
-	"enabledPlugins": {
-		"pyright-lsp@claude-plugins-official": true,
-		"typescript-lsp@claude-plugins-official": true,
-		"gopls-lsp@claude-plugins-official": true,
-		"jdtls-lsp@claude-plugins-official": true
-	}
+  "env": {
+    "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE": "1"
+  },
+  "permissions": {
+    "defaultMode": "auto"
+  },
+  "model": "opus[1m]",
+  "enabledPlugins": {
+    "pyright-lsp@claude-plugins-official": true,
+    "typescript-lsp@claude-plugins-official": true,
+    "gopls-lsp@claude-plugins-official": true,
+    "jdtls-lsp@claude-plugins-official": true
+  },
+  "effortLevel": "high",
+  "autoUpdatesChannel": "stable",
+  "preferredNotifChannel": "terminal_bell",
+  "skipAutoPermissionPrompt": true
 }
