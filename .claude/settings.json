@@ -5,7 +5,7 @@
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "opus[1m]",
+  "model": "claude-fable-5[1m]",
   "enabledPlugins": {
     "pyright-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true,
@@ -14,6 +14,7 @@
   },
   "effortLevel": "high",
   "autoUpdatesChannel": "stable",
+  "theme": "dark",
   "preferredNotifChannel": "terminal_bell",
   "skipAutoPermissionPrompt": true
 }
