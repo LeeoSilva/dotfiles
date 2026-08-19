@@ -16,5 +16,9 @@
   "autoUpdatesChannel": "stable",
   "theme": "dark",
   "preferredNotifChannel": "terminal_bell",
-  "skipAutoPermissionPrompt": true
+  "skipAutoPermissionPrompt": true,
+  "statusLine": {
+    "type": "command",
+    "command": "bash \"$HOME/.claude/statusline.sh\""
+  }
 }
