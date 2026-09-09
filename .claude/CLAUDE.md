@@ -23,6 +23,6 @@
 
 ## tmux window naming
 
-- When `$TMUX` is set, name the window after the current task: `tmux rename-window <name>`.
+- When `$TMUX` is set, name the window after the current task: `tmux rename-window -t "$TMUX_PANE" <name>`. Always pass `-t "$TMUX_PANE"`, otherwise it renames whichever window the user is looking at.
 - Name: 1–3 lowercase words, dash-separated, no prefix or suffix. Examples: `tmux-naming`, `fix-auth`, `deploy`.
 - Set it on the first real task of the session. Rename only if the task changes materially.
