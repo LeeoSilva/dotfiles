@@ -65,6 +65,8 @@ link_file "$CWD/.config/nvim/init.vim" "$HOME/.config/nvim/init.vim"
 link_file "$CWD/.config/ghostty/config" "$HOME/.config/ghostty/config"
 link_file "$CWD/.config/opencode/opencode.json" "$HOME/.config/opencode/opencode.json"
 link_file "$CWD/.claude/settings.json" "$HOME/.claude/settings.json"
+link_file "$CWD/.claude/CLAUDE.md" "$HOME/.claude/CLAUDE.md"
+link_file "$CWD/.claude/statusline.sh" "$HOME/.claude/statusline.sh"
 link_file "$CWD/.aliases.zsh" "$HOME/.aliases.zsh"
 link_file "$CWD/.zshrc" "$HOME/.zshrc"
 # Ensure .env.zsh exists from example if not present
