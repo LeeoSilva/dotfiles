@@ -77,6 +77,14 @@ if [ ! -f "$CWD/.env.zsh" ]; then
 fi
 link_file "$CWD/.env.zsh" "$HOME/.env.zsh"
 
+# Claude Code (native installer, not brew)
+if [ ! -x "$HOME/.local/bin/claude" ]; then
+    [ $CHANGES_MADE -eq 0 ] && print_header "Applying changes"
+    print_info "Installing Claude Code..."
+    curl -fsSL https://claude.ai/install.sh | bash >/dev/null 2>&1
+    print_success "Claude Code installed"
+fi
+
 # Zinit installation
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 if [ ! -d "$ZINIT_HOME" ]; then
