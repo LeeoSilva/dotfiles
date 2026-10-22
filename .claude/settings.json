@@ -5,7 +5,19 @@
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "fable[1m]",
+  "model": "opus",
+  "hooks": {
+    "SessionEnd": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "[ -n \"$TMUX_PANE\" ] && tmux setw -t \"$TMUX_PANE\" automatic-rename on; exit 0"
+          }
+        ]
+      }
+    ]
+  },
   "statusLine": {
     "type": "command",
     "command": "bash \"$HOME/.claude/statusline.sh\""
@@ -17,20 +29,47 @@
     "jdtls-lsp@claude-plugins-official": true
   },
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
   "autoUpdatesChannel": "latest",
   "theme": "dark",
   "preferredNotifChannel": "terminal_bell",
   "skipAutoPermissionPrompt": true,
-  "hooks": {
-    "SessionEnd": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "[ -n \"$TMUX_PANE\" ] && tmux setw -t \"$TMUX_PANE\" automatic-rename on; exit 0"
-          }
-        ]
-      }
+  "autoMode": {
+    "soft_deny": [
+      "$defaults",
+      "Bash(aws s3 rm:*) — CLAUDE.md states never write via AWS CLI; reinforce as soft block given aws is the top non-standard CLI (90×) and write subcommands are a plausible footgun",
+      "Bash(aws glue delete-*:*) / Bash(aws glue update-*:*) — same rationale, glue/athena write operations against the datalake"
+    ],
+    "environment": [
+      "### Org-wide",
+      "**Organization**: Plataforma Assaad squad (evidenced by hostnames aosystem.dev, plataformaassaad.com.br, and skill/agent docs referencing the squad) — repo itself (domain-pa) has no tracked files or remotes",
+      "**Cloud provider(s)**: AWS (SQS, S3, ELB), and secondarily GCP (gcloud, bq, analyticsdata.googleapis.com) — both seen in host/CLI usage this project",
+      "**Repository visibility**: assume private (no remote configured; cannot query gh — org/repo not derivable)",
+      "**Internal sharing / snippet hosting**: None configured — treat public paste/gist services as outside the trust boundary",
+      "**Secrets management**: None configured",
+      "**Default / protected branches**: not queryable (no remotes, gh check failed) — treat as unknown/unprotected only with caution; assume standard protections apply if remote is later configured",
+      "**CI/CD deploy targets**: None configured",
+      "**Network posture**: None configured",
+      "**Host containment**: None configured — assume Claude Code runs on an ordinary developer machine with open internet",
+      "**Source control**: The trusted repo and its remote(s) only — this repo currently has no remotes configured",
+      "**Trusted internal domains**: aosystem.dev (supabase-dev.aosystem.dev, events.aosystem.dev, api-dev.aosystem.dev, api-hml.aosystem.dev, metabase.aosystem.dev), plataformaassaad.com.br (metabase.plataformaassaad.com.br, app.plataformaassaad.com.br), amplifyapp.com (development.d3b0fiha9a3agt.amplifyapp.com), vercel.app (assaad-next-hml.vercel.app) — all frequently contacted from this project's transcripts",
+      "**Trusted cloud buckets**: assaad-datalake-bronze (config-derived — not a confirmed upload destination; uploads of local data still require confirmation)",
+      "**Key internal services**: SQS (sqs.us-east-1.amazonaws.com), Supabase (supabase-dev.aosystem.dev, api.supabase.com, bceezqsxalnxgrxlmwqb.supabase.co), Metabase (metabase.aosystem.dev, metabase.plataformaassaad.com.br)",
+      "**Internal package registry**: None configured",
+      "**Sensitive data locations & audiences**: .env.dev-front (env file, likely holds dev credentials) — any file or store holding personal data, confidential business data, credentials, regulated data, or similarly sensitive material; preserve exact handles when known and share only with audiences cleared at the [named+specifics] bar",
+      "**Data retention / declassification**: None configured",
+      "**Sensitive remote targets**: any namespace, host, or container whose name carries `prod` or `production` as a whole word or name segment; note hml/dev hosts observed (api-hml.aosystem.dev, assaad-next-hml.vercel.app) are staging, not production, but should not be conflated with prod",
+      "**Protected deployment namespaces / environments**: None configured — fall back to the Sensitive remote targets heuristic (k8s namespaces observed: deploy, scripts, transform, enable, libpq — none carry a prod marker)",
+      "**Protected IaC scopes**: IAM, RBAC, networking, quota, and node-pool resources; anything whose name or tag carries `prod` or `production` as a whole word or name segment",
+      "### User-specific",
+      "**Primary use of Claude Code**: software development — data engineering / platform work for Plataforma Assaad (AWS, dbt, Supabase, Metabase)",
+      "**Trusted repo**: The git repository the agent started in (/Users/leonardo/workspace/plataforma-assaad/domain-pa) — currently untracked with no files and no remotes configured",
+      "**Org-specific CLIs**: aws, gcloud, bq, duckdb, dbt, psql (frequently used in this project per transcript and shell-history evidence)",
+      "No 'routine under <user>/ prefix' qualifiers found"
     ]
   }
 }

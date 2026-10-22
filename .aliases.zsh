@@ -1,7 +1,7 @@
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias la='ls -alhi --color=auto'
-alias cc='claude --enable-auto-mode'
+alias cl='claude --enable-auto-mode'
 alias vim='nvim'
 alias cat='bat --paging=never'
 alias fvim='nvim $(fzf --preview="bat --color=always {}")'

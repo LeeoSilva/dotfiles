@@ -110,3 +110,6 @@ bindkey -s "^[OM" "^M"
 # Restore Alt+Backspace behavior to delete entire word
 bindkey '^[^?' backward-kill-word
 bindkey '^[^H' backward-kill-word
+export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
+
+set -a; [ -f ~/.config/supabase/.env ] && source ~/.config/supabase/.env; set +a
