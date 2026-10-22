@@ -112,4 +112,8 @@ bindkey '^[^?' backward-kill-word
 bindkey '^[^H' backward-kill-word
 export PATH="/opt/homebrew/opt/libpq/bin:$PATH"
 
+for sock in "$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-agent.sock" "$HOME/.bitwarden-ssh-agent.sock"; do
+	[[ -S $sock ]] && { export SSH_AUTH_SOCK=$sock; break; }
+done
+
 set -a; [ -f ~/.config/supabase/.env ] && source ~/.config/supabase/.env; set +a
