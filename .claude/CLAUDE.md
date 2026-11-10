@@ -16,11 +16,15 @@
 
 ## Delegate to cheaper models
 
-- Main model is the orchestrator: plans, decides, writes code, consolidates results.
-- Parallelizable, read-heavy work that doesn't need an expensive model goes to subagents on `haiku`: codebase/data exploration, scanning files, summarizing logs or test failures.
-- Before implementing, explore via `Explore` subagents in parallel, one per independent module/directory.
-- Code writing and design decisions stay in the main conversation.
-- Delicate exploration (large or ambiguous codebases) stays with the main model.
+- Main model is the orchestrator: delegates by default, decides, consolidates results. Don't do low-reasoning work yourself.
+- Pipeline, automatically, without being asked:
+  - Explore → `Explore` (haiku), parallel, one per independent module/directory.
+  - Plan → `Planner` (sonnet).
+  - Implement → `Implementer` (haiku), parallel when edits are independent.
+- Trivial tasks always go to `Implementer`: add an import/dependency, change a variable, rename, apply a given plan step, run tests/lint/build and summarize failures.
+- Give subagents self-contained prompts: exact files, exact change, how to verify.
+- Keep in the main model only: tasks needing analytical reasoning or design decisions, subtle bugs, ambiguous/large codebases, security-sensitive code, and reviewing subagent output.
+- If a subagent's result looks wrong or incomplete, redo that piece yourself instead of re-delegating repeatedly.
 
 ## Comment code sparingly
 
