@@ -14,6 +14,14 @@
 - Print the exact command for Leonardo to run instead. Same for `terraform apply`.
 - This also means: don't reach for an SDK (boto3, etc.) to do the write the CLI isn't allowed to do.
 
+## Delegate to cheaper models
+
+- Main model is the orchestrator: plans, decides, writes code, consolidates results.
+- Parallelizable, read-heavy work that doesn't need an expensive model goes to subagents on `haiku`: codebase/data exploration, scanning files, summarizing logs or test failures.
+- Before implementing, explore via `Explore` subagents in parallel, one per independent module/directory.
+- Code writing and design decisions stay in the main conversation.
+- Delicate exploration (large or ambiguous codebases) stays with the main model.
+
 ## Comment code sparingly
 
 - Comment only when absolutely necessary. Default to none.

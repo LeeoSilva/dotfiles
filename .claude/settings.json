@@ -1,11 +1,12 @@
 {
   "env": {
-    "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE": "1"
+    "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE": "1",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "400000"
   },
   "permissions": {
     "defaultMode": "auto"
   },
-  "model": "opus",
+  "model": "sonnet",
   "hooks": {
     "SessionEnd": [
       {
@@ -31,7 +32,10 @@
   "effortLevel": "high",
   "modelSettings": {
     "claude-opus-5-5": {
-      "effortLevel": "xhigh"
+      "effortLevel": "medium"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "medium"
     }
   },
   "autoUpdatesChannel": "latest",
