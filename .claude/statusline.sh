@@ -36,6 +36,10 @@ fi
 [ -z "$cwd" ] && cwd="$PWD"
 dir_base=$(basename "$cwd")
 
+cfg_dir="${CLAUDE_CONFIG_DIR:-$HOME/.claude}"
+account=""
+[ "$cfg_dir" != "$HOME/.claude" ] && account=$(basename "$cfg_dir" | sed 's/^\.claude-//')
+
 branch=""
 if git -C "$cwd" --no-optional-locks rev-parse --is-inside-work-tree >/dev/null 2>&1; then
   branch=$(git -C "$cwd" --no-optional-locks branch --show-current 2>/dev/null)
@@ -47,7 +51,7 @@ fi
 # (>5 min, e.g. a crashed refresh) are reclaimed.
 mon_cost=""
 if [ "$have_jq" = "1" ] && command -v npx >/dev/null 2>&1; then
-  cache_dir="$HOME/.claude/cache"
+  cache_dir="$cfg_dir/cache"
   cache="$cache_dir/monthly-cost.txt"
   lock="$cache_dir/monthly-cost.lock"
   mkdir -p "$cache_dir"
@@ -73,6 +77,7 @@ if [ "$have_jq" = "1" ] && command -v npx >/dev/null 2>&1; then
 fi
 
 RESET="\033[0m"
+BOLD="\033[1m"
 DIM="\033[2m"
 CYAN="\033[36m"
 YELLOW="\033[33m"
@@ -103,6 +108,7 @@ cost_str=""
 [ -n "$cost" ] && cost_str=$(awk -v c="$cost" 'BEGIN{printf "$%.2f", c}')
 
 out="${DIM}${dir_base}${RESET}"
+[ -n "$account" ] && out="${BOLD}${account}${RESET} ${DIM}│${RESET} ${out}"
 [ -n "$branch" ] && out="${out} ${DIM}│${RESET} ${GREEN}${branch}${RESET}"
 out="${out} ${DIM}│${RESET} ${CYAN}${model}${RESET}"
 [ -n "$ctx_str" ] && out="${out} ${DIM}│${RESET} ${YELLOW}${ctx_str}${RESET}"
