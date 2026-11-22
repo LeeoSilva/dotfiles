@@ -117,3 +117,5 @@ for sock in "$HOME/Library/Containers/com.bitwarden.desktop/Data/.bitwarden-ssh-
 done
 
 set -a; [ -f ~/.config/supabase/.env ] && source ~/.config/supabase/.env; set +a
+
+export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
