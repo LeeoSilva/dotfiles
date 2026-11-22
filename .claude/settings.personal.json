@@ -1,6 +1,7 @@
 {
   "env": {
-    "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE": "1"
+    "CLAUDE_CODE_PACKAGE_MANAGER_AUTO_UPDATE": "1",
+    "CLAUDE_CODE_AUTO_COMPACT_WINDOW": "400000"
   },
   "permissions": {
     "defaultMode": "auto"
@@ -32,14 +33,16 @@
   "effortLevel": "high",
   "modelSettings": {
     "claude-opus-5-5": {
-      "effortLevel": "xhigh",
-      "autoCompactWindow": 400000
+      "effortLevel": "xhigh"
     },
     "claude-fable-5-1": {
       "effortLevel": "xhigh"
     },
     "claude-fable-5-2": {
       "effortLevel": "xhigh"
+    },
+    "claude-sonnet-5-5": {
+      "effortLevel": "medium"
     }
   },
   "autoUpdatesChannel": "latest",
